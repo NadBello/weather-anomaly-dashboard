@@ -1,0 +1,1829 @@
+temperature_2m,surface_pressure,precipitation,wind_speed_10m,temp_lower,temp_upper,wind_lower,wind_upper,press_lower,press_upper,if_score,is_if_anomaly,lstm_error,is_lstm_anomaly,if_threshold,lstm_threshold,anomaly_label,reconstruction_error_summary,reconstruction_error_plot,TreeSHAP_natural_language_summary,local_contribution_plot_path
+23.0,1011.4,0.0,24.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1626693313868577,0,0.680834913439075,1,0.0330438584870278,0.6425,Pattern anomaly,"🕒 Timestamp: 2025-05-31 17:00:00
+🔎 Anomaly Severity: Consistent unusual behavior (pattern-level issue)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.599)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.603)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_0_error_plot.png,"Sample Index: 0
+Anomaly Label: Pattern anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **10.91**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.48)
+  • **precip_z_24h** = 0.00 (contribution: +0.42)
+  • **surface_pressure_z** = -0.44 (contribution: +0.30)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.73 (contribution: -1.92)
+  • **temperature_2m_z** = 1.98 (contribution: -1.07)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_0.png
+21.9,1011.2,0.0,24.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1691932072792112,0,0.6443278947769518,1,0.0330438584870278,0.6425,Pattern anomaly,"🕒 Timestamp: 2025-05-31 18:00:00
+🔎 Anomaly Severity: Consistent unusual behavior (pattern-level issue)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.597)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.602)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_1_error_plot.png,"Sample Index: 1
+Anomaly Label: Pattern anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.11**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.48)
+  • **precip_z_24h** = 0.00 (contribution: +0.46)
+  • **surface_pressure_z** = -0.47 (contribution: +0.32)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.77 (contribution: -2.02)
+  • **temperature_2m_z** = 1.75 (contribution: -0.82)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_1.png
+21.1,1010.8,0.0,25.2,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1673938821420758,0,0.6689630066830164,1,0.0330438584870278,0.6425,Pattern anomaly,"🕒 Timestamp: 2025-05-31 19:00:00
+🔎 Anomaly Severity: Consistent unusual behavior (pattern-level issue)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.596)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.593)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_2_error_plot.png,"Sample Index: 2
+Anomaly Label: Pattern anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.05**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.48)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.52 (contribution: +0.25)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.80 (contribution: -2.19)
+  • **temperature_2m_z** = 1.58 (contribution: -0.65)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_2.png
+20.1,1010.9,0.0,15.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2003753784341799,0,0.507134208353873,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-05-31 20:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.595)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.593)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_3_error_plot.png,"Sample Index: 3
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **12.12**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.52)
+  • **precip_z_24h** = 0.00 (contribution: +0.45)
+  • **surface_pressure_z** = -0.51 (contribution: +0.32)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.45 (contribution: -1.38)
+  • **temperature_2m_z** = 1.37 (contribution: -0.48)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_3.png
+18.7,1011.7,0.0,18.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2346454905978317,0,0.508397414786235,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-05-31 21:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.599)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_4_error_plot.png,"Sample Index: 4
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.32**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.47)
+  • **surface_pressure_z** = -0.40 (contribution: +0.41)
+  • **temperature_2m_z** = 1.07 (contribution: +0.08)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.17 (contribution: -0.88)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_4.png
+17.9,1011.9,0.0,14.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2654582561279325,0,0.407580151567855,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-05-31 22:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.593)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.601)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_5_error_plot.png,"Sample Index: 5
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.49**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.58)
+  • **precip_z_24h** = 0.00 (contribution: +0.50)
+  • **surface_pressure_z** = -0.37 (contribution: +0.40)
+  • **temperature_2m_z** = 0.90 (contribution: +0.23)
+  • **wind_r** = 0.69 (contribution: +0.08)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_5.png
+16.8,1012.1,0.0,18.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2668567480753478,0,0.4340598422768567,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-05-31 23:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.595)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.607)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_6_error_plot.png,"Sample Index: 6
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.54**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.34 (contribution: +0.40)
+  • **temperature_2m_z** = 0.67 (contribution: +0.39)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.80 (contribution: -0.01)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_6.png
+15.8,1012.3,0.0,14.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2690053977086907,0,0.3420143707317916,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 00:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.595)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.609)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_7_error_plot.png,"Sample Index: 7
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.63**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.47)
+  • **temperature_2m_z** = 0.46 (contribution: +0.37)
+  • **surface_pressure_z** = -0.32 (contribution: +0.36)
+  • **wind_r** = 0.65 (contribution: +0.17)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_7.png
+15.0,1012.0,0.0,8.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2760191670671841,0,0.3766842789878132,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 01:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.608)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_8_error_plot.png,"Sample Index: 8
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.91**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **precip_z_24h** = 0.00 (contribution: +0.50)
+  • **temperature_2m_z** = 0.29 (contribution: +0.43)
+  • **surface_pressure_z** = -0.36 (contribution: +0.40)
+  • **wind_r** = 0.42 (contribution: +0.32)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_8.png
+14.7,1011.7,0.0,13.3,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2752336633249881,0,0.3528383850573023,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 02:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.608)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_9_error_plot.png,"Sample Index: 9
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.88**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **precip_z_24h** = 0.00 (contribution: +0.50)
+  • **temperature_2m_z** = 0.22 (contribution: +0.43)
+  • **surface_pressure_z** = -0.40 (contribution: +0.34)
+  • **wind_r** = 0.20 (contribution: +0.34)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_9.png
+14.8,1011.5,0.0,15.5,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2763114387668079,0,0.3965732057666835,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 03:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.593)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.607)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_10_error_plot.png,"Sample Index: 10
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.92**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **precip_z_24h** = 0.00 (contribution: +0.50)
+  • **temperature_2m_z** = 0.25 (contribution: +0.43)
+  • **wind_r** = 0.23 (contribution: +0.37)
+  • **surface_pressure_z** = -0.43 (contribution: +0.35)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_10.png
+14.4,1011.5,0.0,17.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2718681018313493,0,0.4313264369296614,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 04:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.593)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.611)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_11_error_plot.png,"Sample Index: 11
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.74**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **temperature_2m_z** = 0.16 (contribution: +0.48)
+  • **surface_pressure_z** = -0.43 (contribution: +0.38)
+  • **wind_r** = 0.62 (contribution: +0.15)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_11.png
+13.1,1011.7,0.0,13.7,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2730663756847319,0,0.3714089225999087,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 05:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.612)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_12_error_plot.png,"Sample Index: 12
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.79**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **temperature_2m_z** = -0.11 (contribution: +0.54)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.40 (contribution: +0.41)
+  • **wind_r** = 0.63 (contribution: +0.10)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_12.png
+12.9,1011.9,0.0,14.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2724780363861911,0,0.3606092220680071,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 06:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.612)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_13_error_plot.png,"Sample Index: 13
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.76**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **temperature_2m_z** = -0.16 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.37 (contribution: +0.43)
+  • **wind_r** = 0.60 (contribution: +0.12)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_13.png
+13.4,1012.1,0.0,16.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2738758599330945,0,0.4014874438456933,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 07:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_14_error_plot.png,"Sample Index: 14
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.82**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **temperature_2m_z** = -0.05 (contribution: +0.54)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.34 (contribution: +0.40)
+  • **wind_r** = 0.56 (contribution: +0.15)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_14.png
+14.5,1012.3,0.0,19.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2692884473331746,0,0.4304446896881722,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 08:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_15_error_plot.png,"Sample Index: 15
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.64**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **temperature_2m_z** = 0.18 (contribution: +0.50)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.32 (contribution: +0.37)
+  • **wind_r** = 0.79 (contribution: +0.04)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_15.png
+15.6,1012.1,0.0,16.9,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2578094336896543,0,0.4134285195599551,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 09:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.593)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.611)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_16_error_plot.png,"Sample Index: 16
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.19**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.54)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.34 (contribution: +0.43)
+  • **temperature_2m_z** = 0.41 (contribution: +0.32)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.88 (contribution: -0.26)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_16.png
+16.6,1012.0,0.0,18.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2526715132989598,0,0.4539214814870441,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 10:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.592)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.612)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_17_error_plot.png,"Sample Index: 17
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.99**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.53)
+  • **precip_z_24h** = 0.00 (contribution: +0.47)
+  • **surface_pressure_z** = -0.36 (contribution: +0.42)
+  • **temperature_2m_z** = 0.63 (contribution: +0.36)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.96 (contribution: -0.49)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_17.png
+18.4,1011.7,0.0,22.3,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2336591118000376,0,0.5438579192266388,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 11:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.591)
+- Surface pressure (avg error: 0.612)
+- Wind speed 10m (avg error: 0.619)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_18_error_plot.png,"Sample Index: 18
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.28**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.52)
+  • **precip_z_24h** = 0.00 (contribution: +0.46)
+  • **surface_pressure_z** = -0.40 (contribution: +0.38)
+  • **temperature_2m_z** = 1.01 (contribution: +0.09)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.10 (contribution: -0.86)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_18.png
+19.5,1011.4,0.0,21.2,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2179586274693389,0,0.5256627199026371,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 12:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.612)
+- Wind speed 10m (avg error: 0.619)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_19_error_plot.png,"Sample Index: 19
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **12.72**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.54)
+  • **precip_z_24h** = 0.00 (contribution: +0.46)
+  • **surface_pressure_z** = -0.44 (contribution: +0.38)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.28 (contribution: -1.16)
+  • **temperature_2m_z** = 1.24 (contribution: -0.18)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_19.png
+20.1,1010.9,0.0,24.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2012682956452868,0,0.6217662812695546,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 13:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.612)
+- Wind speed 10m (avg error: 0.613)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_20_error_plot.png,"Sample Index: 20
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **12.15**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.52)
+  • **precip_z_24h** = 0.00 (contribution: +0.45)
+  • **surface_pressure_z** = -0.51 (contribution: +0.33)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.53 (contribution: -1.44)
+  • **temperature_2m_z** = 1.37 (contribution: -0.40)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_20.png
+20.0,1010.7,0.0,21.2,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2003035276484792,0,0.5915006024299604,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 14:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.587)
+- Surface pressure (avg error: 0.613)
+- Wind speed 10m (avg error: 0.609)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_21_error_plot.png,"Sample Index: 21
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **12.12**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.51)
+  • **precip_z_24h** = 0.00 (contribution: +0.45)
+  • **surface_pressure_z** = -0.54 (contribution: +0.29)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.48 (contribution: -1.40)
+  • **temperature_2m_z** = 1.35 (contribution: -0.43)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_21.png
+20.0,1010.4,0.0,25.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1872530438809468,0,0.673945396902098,1,0.0330438584870278,0.6425,Pattern anomaly,"🕒 Timestamp: 2025-06-01 15:00:00
+🔎 Anomaly Severity: Consistent unusual behavior (pattern-level issue)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.586)
+- Surface pressure (avg error: 0.613)
+- Wind speed 10m (avg error: 0.599)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_22_error_plot.png,"Sample Index: 22
+Anomaly Label: Pattern anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.69**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.45)
+  • **surface_pressure_z** = -0.58 (contribution: +0.23)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.67 (contribution: -1.79)
+  • **temperature_2m_z** = 1.35 (contribution: -0.39)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_22.png
+19.4,1010.2,0.0,28.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1811830779406131,0,0.7028679855515685,1,0.0330438584870278,0.6425,Pattern anomaly,"🕒 Timestamp: 2025-06-01 16:00:00
+🔎 Anomaly Severity: Consistent unusual behavior (pattern-level issue)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.584)
+- Surface pressure (avg error: 0.613)
+- Wind speed 10m (avg error: 0.601)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_23_error_plot.png,"Sample Index: 23
+Anomaly Label: Pattern anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.49**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.50)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.61 (contribution: +0.20)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.85 (contribution: -2.29)
+  • **temperature_2m_z** = 1.22 (contribution: -0.09)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_23.png
+17.9,1010.4,0.0,21.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1846488724860731,0,0.5341257351409515,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 17:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.582)
+- Surface pressure (avg error: 0.613)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_24_error_plot.png,"Sample Index: 24
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.60**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.50)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.58 (contribution: +0.24)
+  • **temperature_2m_z** = 0.90 (contribution: +0.09)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.87 (contribution: -2.40)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_24.png
+18.2,1010.0,0.0,25.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1827920676680237,0,0.5843809642860659,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 18:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Surface pressure (avg error: 0.614)
+- Wind speed 10m (avg error: 0.602)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_25_error_plot.png,"Sample Index: 25
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.54**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.46)
+  • **surface_pressure_z** = -0.63 (contribution: +0.18)
+  • **temperature_2m_z** = 0.97 (contribution: +0.08)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.87 (contribution: -2.37)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_25.png
+17.8,1010.0,0.0,25.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1898834628998877,0,0.6003007867479595,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 19:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Surface pressure (avg error: 0.612)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_26_error_plot.png,"Sample Index: 26
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.77**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.45)
+  • **surface_pressure_z** = -0.63 (contribution: +0.18)
+  • **temperature_2m_z** = 0.88 (contribution: +0.12)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.75 (contribution: -2.16)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_26.png
+16.9,1010.3,0.0,23.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.1918989426589885,0,0.5466012134546423,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 20:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.586)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.606)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_27_error_plot.png,"Sample Index: 27
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **11.84**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.48)
+  • **precip_z_24h** = 0.00 (contribution: +0.47)
+  • **temperature_2m_z** = 0.69 (contribution: +0.29)
+  • **surface_pressure_z** = -0.59 (contribution: +0.20)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.81 (contribution: -2.29)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_27.png
+15.8,1010.9,0.0,19.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2231868469018234,0,0.4491328778480307,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 21:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.607)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_28_error_plot.png,"Sample Index: 28
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **12.91**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.50)
+  • **precip_z_24h** = 0.00 (contribution: +0.44)
+  • **surface_pressure_z** = -0.51 (contribution: +0.38)
+  • **temperature_2m_z** = 0.46 (contribution: +0.36)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.53 (contribution: -1.46)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_28.png
+14.8,1011.5,0.0,16.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2467357755524005,0,0.3666553001871105,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 22:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.587)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.608)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_29_error_plot.png,"Sample Index: 29
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.77**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.49)
+  • **temperature_2m_z** = 0.25 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.47)
+  • **surface_pressure_z** = -0.43 (contribution: +0.37)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.14 (contribution: -0.75)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_29.png
+14.2,1011.7,0.0,16.9,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2621734196626387,0,0.3604857055580149,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-01 23:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.586)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.608)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_30_error_plot.png,"Sample Index: 30
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.36**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **temperature_2m_z** = 0.12 (contribution: +0.47)
+  • **surface_pressure_z** = -0.40 (contribution: +0.43)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.88 (contribution: -0.27)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_30.png
+13.7,1012.1,0.0,15.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2734444458094635,0,0.3164541027685485,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 00:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.586)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.608)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_31_error_plot.png,"Sample Index: 31
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.80**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.01 (contribution: +0.56)
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.34 (contribution: +0.44)
+  • **wind_r** = 0.74 (contribution: +0.07)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_31.png
+13.2,1012.3,0.0,14.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2720232498773503,0,0.3337241899259645,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 01:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.586)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.608)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_32_error_plot.png,"Sample Index: 32
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.75**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **temperature_2m_z** = -0.09 (contribution: +0.53)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.32 (contribution: +0.37)
+  • **wind_r** = 0.66 (contribution: +0.11)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_32.png
+12.9,1012.7,0.0,13.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2747787500691827,0,0.3188005048902934,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 02:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.587)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.607)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_33_error_plot.png,"Sample Index: 33
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.86**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **temperature_2m_z** = -0.16 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.26 (contribution: +0.39)
+  • **wind_r** = 0.50 (contribution: +0.24)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_33.png
+12.5,1013.1,0.0,10.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2795762945838697,0,0.3529960732793914,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 03:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.587)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.606)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_34_error_plot.png,"Sample Index: 34
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.05**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **precip_z_24h** = 0.00 (contribution: +0.51)
+  • **temperature_2m_z** = -0.24 (contribution: +0.46)
+  • **surface_pressure_z** = -0.20 (contribution: +0.44)
+  • **wind_r** = 0.25 (contribution: +0.39)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_34.png
+12.3,1013.6,0.0,8.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2827908995614134,0,0.3645058843502552,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 04:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.603)
+- Wind speed 10m (avg error: 0.606)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_35_error_plot.png,"Sample Index: 35
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.18**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **temperature_2m_z** = -0.28 (contribution: +0.48)
+  • **surface_pressure_z** = -0.13 (contribution: +0.46)
+  • **wind_r** = -0.02 (contribution: +0.45)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_35.png
+12.3,1014.4,0.0,6.5,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2820679023332569,0,0.3635003744180441,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 05:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.603)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_36_error_plot.png,"Sample Index: 36
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.15**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **precip_z_24h** = 0.00 (contribution: +0.54)
+  • **temperature_2m_z** = -0.28 (contribution: +0.47)
+  • **surface_pressure_z** = -0.02 (contribution: +0.45)
+  • **wind_r** = -0.29 (contribution: +0.44)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_36.png
+12.8,1015.2,0.0,10.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2813920978559014,0,0.2483925909565634,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 06:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.602)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_37_error_plot.png,"Sample Index: 37
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.13**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.54)
+  • **surface_pressure_z** = 0.09 (contribution: +0.48)
+  • **temperature_2m_z** = -0.18 (contribution: +0.45)
+  • **wind_r** = -0.29 (contribution: +0.41)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_37.png
+13.0,1016.0,0.0,14.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.288717468775685,0,0.2485104305256645,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 07:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.596)
+- Surface pressure (avg error: 0.608)
+- Wind speed 10m (avg error: 0.603)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_38_error_plot.png,"Sample Index: 38
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.43**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **surface_pressure_z** = 0.20 (contribution: +0.56)
+  • **wind_r** = -0.06 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.54)
+  • **temperature_2m_z** = -0.14 (contribution: +0.52)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_38.png
+13.8,1016.5,0.0,13.3,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2832472616879216,0,0.2468694533764426,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 08:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.596)
+- Surface pressure (avg error: 0.610)
+- Wind speed 10m (avg error: 0.601)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_39_error_plot.png,"Sample Index: 39
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.20**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **surface_pressure_z** = 0.27 (contribution: +0.56)
+  • **temperature_2m_z** = 0.03 (contribution: +0.52)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **wind_r** = 0.23 (contribution: +0.34)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_39.png
+15.4,1016.6,0.0,14.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2783455156298725,0,0.2576527350438613,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 09:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.596)
+- Surface pressure (avg error: 0.609)
+- Wind speed 10m (avg error: 0.606)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_40_error_plot.png,"Sample Index: 40
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.00**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **surface_pressure_z** = 0.28 (contribution: +0.53)
+  • **precip_z_24h** = 0.00 (contribution: +0.50)
+  • **temperature_2m_z** = 0.37 (contribution: +0.42)
+  • **wind_r** = 0.40 (contribution: +0.29)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_40.png
+15.9,1017.0,0.0,18.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2689963962441037,0,0.3424965142371636,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 10:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.595)
+- Surface pressure (avg error: 0.607)
+- Wind speed 10m (avg error: 0.606)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_41_error_plot.png,"Sample Index: 41
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.63**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.56)
+  • **surface_pressure_z** = 0.34 (contribution: +0.51)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **temperature_2m_z** = 0.48 (contribution: +0.30)
+  • **wind_r** = 0.59 (contribution: +0.07)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_41.png
+16.7,1017.3,0.0,13.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2703694735268752,0,0.2590374066224456,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 11:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.606)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_42_error_plot.png,"Sample Index: 42
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.68**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.57)
+  • **surface_pressure_z** = 0.38 (contribution: +0.51)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **temperature_2m_z** = 0.65 (contribution: +0.35)
+  • **wind_r** = 0.57 (contribution: +0.07)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_42.png
+18.0,1016.9,0.0,10.1,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2731514263541263,0,0.2799711896591158,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 12:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.594)
+- Surface pressure (avg error: 0.605)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_43_error_plot.png,"Sample Index: 43
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.79**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.58)
+  • **surface_pressure_z** = 0.32 (contribution: +0.56)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **wind_r** = 0.41 (contribution: +0.25)
+  • **temperature_2m_z** = 0.92 (contribution: +0.18)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_43.png
+19.0,1016.5,0.0,11.5,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2756408550345792,0,0.2969244920833831,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 13:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.593)
+- Surface pressure (avg error: 0.604)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_44_error_plot.png,"Sample Index: 44
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.89**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.61)
+  • **surface_pressure_z** = 0.27 (contribution: +0.58)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **wind_r** = 0.11 (contribution: +0.40)
+  • **temperature_2m_z** = 1.13 (contribution: +0.09)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_44.png
+18.2,1016.0,0.0,10.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2791173783312217,0,0.3036097688114558,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 14:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.592)
+- Surface pressure (avg error: 0.610)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_45_error_plot.png,"Sample Index: 45
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.03**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.60)
+  • **surface_pressure_z** = 0.20 (contribution: +0.59)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **wind_r** = -0.00 (contribution: +0.49)
+  • **temperature_2m_z** = 0.97 (contribution: +0.14)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_45.png
+18.7,1015.3,0.0,11.2,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2791131684578054,0,0.3147006443726813,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 15:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.591)
+- Surface pressure (avg error: 0.612)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_46_error_plot.png,"Sample Index: 46
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **15.03**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.61)
+  • **surface_pressure_z** = 0.10 (contribution: +0.58)
+  • **precip_z_24h** = 0.00 (contribution: +0.53)
+  • **wind_r** = 0.05 (contribution: +0.45)
+  • **temperature_2m_z** = 1.07 (contribution: +0.18)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_46.png
+19.1,1014.7,0.0,11.9,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2746692442364991,0,0.3179818911107902,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 16:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.610)
+- Wind speed 10m (avg error: 0.606)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_47_error_plot.png,"Sample Index: 47
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.85**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.60)
+  • **surface_pressure_z** = 0.02 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **wind_r** = 0.06 (contribution: +0.41)
+  • **temperature_2m_z** = 1.16 (contribution: +0.08)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_47.png
+19.5,1014.1,0.0,12.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2679865379162148,0,0.3135608931748848,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 17:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.609)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_48_error_plot.png,"Sample Index: 48
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.59**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.59)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **surface_pressure_z** = -0.07 (contribution: +0.47)
+  • **wind_r** = 0.16 (contribution: +0.38)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **temperature_2m_z** = 1.24 (contribution: -0.07)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_48.png
+19.9,1013.5,0.0,13.7,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2644015417885947,0,0.323946246924747,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 18:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.617)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_49_error_plot.png,"Sample Index: 49
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.44**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.60)
+  • **precip_z_24h** = 0.00 (contribution: +0.52)
+  • **surface_pressure_z** = -0.15 (contribution: +0.49)
+  • **wind_r** = 0.26 (contribution: +0.41)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **temperature_2m_z** = 1.33 (contribution: -0.26)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_49.png
+19.9,1013.0,0.0,14.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2607038436724829,0,0.3791964785968448,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 19:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.581)
+- Surface pressure (avg error: 0.619)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_50_error_plot.png,"Sample Index: 50
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.30**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.59)
+  • **precip_z_24h** = 0.00 (contribution: +0.51)
+  • **surface_pressure_z** = -0.22 (contribution: +0.47)
+  • **wind_r** = 0.39 (contribution: +0.31)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **temperature_2m_z** = 1.33 (contribution: -0.27)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_50.png
+19.1,1012.9,0.0,16.2,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2676110735590906,0,0.4033280793432038,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 20:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.581)
+- Surface pressure (avg error: 0.619)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_51_error_plot.png,"Sample Index: 51
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.57**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.59)
+  • **precip_z_24h** = 0.00 (contribution: +0.51)
+  • **surface_pressure_z** = -0.23 (contribution: +0.48)
+  • **wind_r** = 0.54 (contribution: +0.21)
+  • **temperature_2m_z** = 1.16 (contribution: +0.08)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_51.png
+18.0,1012.9,0.0,17.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2682061339655097,0,0.4070448899850986,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 21:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.582)
+- Surface pressure (avg error: 0.619)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_52_error_plot.png,"Sample Index: 52
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.59**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.58)
+  • **precip_z_24h** = 0.00 (contribution: +0.51)
+  • **surface_pressure_z** = -0.23 (contribution: +0.49)
+  • **temperature_2m_z** = 0.92 (contribution: +0.24)
+  • **wind_r** = 0.71 (contribution: +0.08)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  *(None)*
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_52.png
+16.8,1012.7,0.0,18.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2580593058323015,0,0.3909635756145364,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 22:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.584)
+- Surface pressure (avg error: 0.619)
+- Wind speed 10m (avg error: 0.605)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_53_error_plot.png,"Sample Index: 53
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.20**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.26 (contribution: +0.39)
+  • **temperature_2m_z** = 0.67 (contribution: +0.38)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.86 (contribution: -0.29)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_53.png
+15.6,1012.1,0.0,18.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2551697023699231,0,0.352187347306355,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-02 23:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.583)
+- Surface pressure (avg error: 0.619)
+- Wind speed 10m (avg error: 0.604)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_54_error_plot.png,"Sample Index: 54
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.09**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.53)
+  • **precip_z_24h** = 0.00 (contribution: +0.48)
+  • **surface_pressure_z** = -0.34 (contribution: +0.42)
+  • **temperature_2m_z** = 0.41 (contribution: +0.34)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.94 (contribution: -0.37)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_54.png
+14.5,1011.2,0.0,16.9,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2618786681041185,0,0.314231165673148,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 00:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.582)
+- Surface pressure (avg error: 0.617)
+- Wind speed 10m (avg error: 0.599)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_55_error_plot.png,"Sample Index: 55
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.35**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **temperature_2m_z** = 0.18 (contribution: +0.48)
+  • **surface_pressure_z** = -0.47 (contribution: +0.42)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.91 (contribution: -0.28)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_55.png
+13.5,1010.3,0.0,16.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2632209970832435,0,0.3778029650643736,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 01:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.581)
+- Surface pressure (avg error: 0.610)
+- Wind speed 10m (avg error: 0.599)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_56_error_plot.png,"Sample Index: 56
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.40**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = -0.03 (contribution: +0.56)
+  • **precip_z_12h** = 0.00 (contribution: +0.55)
+  • **precip_z_24h** = 0.00 (contribution: +0.49)
+  • **surface_pressure_z** = -0.59 (contribution: +0.32)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.83 (contribution: -0.21)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_56.png
+12.9,1009.3,0.0,16.9,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2607790351770299,0,0.434238654098706,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 02:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.599)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_57_error_plot.png,"Sample Index: 57
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.30**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.53)
+  • **temperature_2m_z** = -0.16 (contribution: +0.51)
+  • **precip_z_24h** = 0.00 (contribution: +0.46)
+  • **surface_pressure_z** = -0.73 (contribution: +0.18)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.79 (contribution: -0.07)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_57.png
+12.6,1008.2,0.0,17.3,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2549086599328559,0,0.476183514884703,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 03:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.589)
+- Surface pressure (avg error: 0.613)
+- Wind speed 10m (avg error: 0.603)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_58_error_plot.png,"Sample Index: 58
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **14.08**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.52)
+  • **temperature_2m_z** = -0.22 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.46)
+  • **surface_pressure_z** = -0.88 (contribution: +0.05)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.80 (contribution: -0.13)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_58.png
+12.5,1007.2,0.0,18.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.246776592008846,0,0.510961162887429,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 04:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.588)
+- Surface pressure (avg error: 0.615)
+- Wind speed 10m (avg error: 0.597)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_59_error_plot.png,"Sample Index: 59
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.77**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **precip_z_12h** = 0.00 (contribution: +0.51)
+  • **temperature_2m_z** = -0.24 (contribution: +0.47)
+  • **precip_z_24h** = 0.00 (contribution: +0.45)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 0.88 (contribution: -0.33)
+  • **surface_pressure_z** = -1.02 (contribution: -0.04)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_59.png
+12.6,1006.3,0.0,19.8,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2374486189540688,0,0.5325946479956533,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 05:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.587)
+- Surface pressure (avg error: 0.614)
+- Wind speed 10m (avg error: 0.596)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_60_error_plot.png,"Sample Index: 60
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.42**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = -0.22 (contribution: +0.53)
+  • **precip_z_12h** = 0.00 (contribution: +0.47)
+  • **precip_z_24h** = 0.00 (contribution: +0.47)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.01 (contribution: -0.50)
+  • **surface_pressure_z** = -1.15 (contribution: -0.24)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_60.png
+12.9,1005.6,0.0,21.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.229909804078394,0,0.542102188765104,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 06:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.586)
+- Surface pressure (avg error: 0.609)
+- Wind speed 10m (avg error: 0.591)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_61_error_plot.png,"Sample Index: 61
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **13.15**. This suggests it's **normal** ✅.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = -0.16 (contribution: +0.53)
+  • **precip_z_12h** = 0.00 (contribution: +0.49)
+  • **precip_z_24h** = 0.00 (contribution: +0.44)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.19 (contribution: -0.73)
+  • **surface_pressure_z** = -1.25 (contribution: -0.28)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_61.png
+13.2,1004.8,0.0,23.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0.2132920133513946,0,0.6034317100936153,0,0.0330438584870278,0.6425,Normal,"🕒 Timestamp: 2025-06-03 07:00:00
+🔎 Anomaly Severity: No concern
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.584)
+- Surface pressure (avg error: 0.611)
+- Wind speed 10m (avg error: 0.592)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_62_error_plot.png,"Sample Index: 62
+Anomaly Label: Normal
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **12.56**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = -0.09 (contribution: +0.56)
+  • **precip_z_12h** = 0.00 (contribution: +0.47)
+  • **precip_z_24h** = 0.00 (contribution: +0.43)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **wind_r** = 1.39 (contribution: -1.05)
+  • **surface_pressure_z** = -1.36 (contribution: -0.53)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_62.png
+13.4,1004.0,0.2,24.5,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0202751760114454,1,0.6810051970504034,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 08:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.583)
+- Surface pressure (avg error: 0.614)
+- Wind speed 10m (avg error: 0.594)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_63_error_plot.png,"Sample Index: 63
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **6.12**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = -0.05 (contribution: +0.31)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 182321.56 (contribution: -3.05)
+  • **precip_z_12h** = 182321.56 (contribution: -2.55)
+  • **wind_r** = 1.59 (contribution: -0.86)
+  • **surface_pressure_z** = -1.47 (contribution: -0.43)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_63.png
+13.5,1003.2,0.2,25.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0368250904956705,1,0.7199308817532906,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 09:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.583)
+- Surface pressure (avg error: 0.616)
+- Wind speed 10m (avg error: 0.596)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_64_error_plot.png,"Sample Index: 64
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.75**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = -0.03 (contribution: +0.31)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 182321.56 (contribution: -2.99)
+  • **precip_z_12h** = 182321.56 (contribution: -2.52)
+  • **wind_r** = 1.76 (contribution: -1.21)
+  • **surface_pressure_z** = -1.58 (contribution: -0.53)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_64.png
+13.9,1002.5,0.2,26.3,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0379229810547849,1,0.7315803802488745,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 10:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.619)
+- Wind speed 10m (avg error: 0.597)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_65_error_plot.png,"Sample Index: 65
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.73**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.05 (contribution: +0.31)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 182321.56 (contribution: -2.90)
+  • **precip_z_12h** = 182321.56 (contribution: -2.43)
+  • **wind_r** = 1.90 (contribution: -1.39)
+  • **surface_pressure_z** = -1.68 (contribution: -0.56)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_65.png
+14.5,1001.9,0.1,27.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0463477301394003,1,0.7141174383051411,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 11:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.622)
+- Wind speed 10m (avg error: 0.598)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_66_error_plot.png,"Sample Index: 66
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.55**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.18 (contribution: +0.26)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 95310.18 (contribution: -2.77)
+  • **precip_z_12h** = 95310.18 (contribution: -2.38)
+  • **wind_r** = 2.01 (contribution: -1.62)
+  • **surface_pressure_z** = -1.76 (contribution: -0.63)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_66.png
+15.3,1001.4,0.1,27.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0538260665359738,1,0.7095973307348254,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 12:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.589)
+- Surface pressure (avg error: 0.623)
+- Wind speed 10m (avg error: 0.600)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_67_error_plot.png,"Sample Index: 67
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.39**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.35 (contribution: +0.25)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 95310.18 (contribution: -2.76)
+  • **precip_z_12h** = 95310.18 (contribution: -2.38)
+  • **wind_r** = 2.09 (contribution: -1.69)
+  • **surface_pressure_z** = -1.83 (contribution: -0.74)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_67.png
+16.1,1001.0,0.1,27.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0558060652174343,1,0.757791132889809,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 13:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.589)
+- Surface pressure (avg error: 0.618)
+- Wind speed 10m (avg error: 0.601)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_68_error_plot.png,"Sample Index: 68
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.34**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.52 (contribution: +0.20)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 95310.18 (contribution: -2.70)
+  • **precip_z_12h** = 95310.18 (contribution: -2.36)
+  • **wind_r** = 2.12 (contribution: -1.69)
+  • **surface_pressure_z** = -1.88 (contribution: -0.80)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_68.png
+16.9,1000.9,0.9,25.6,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0576936987564986,1,0.8427204770420906,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 14:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.589)
+- Surface pressure (avg error: 0.622)
+- Wind speed 10m (avg error: 0.602)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_69_error_plot.png,"Sample Index: 69
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.30**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.69 (contribution: +0.11)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 641853.89 (contribution: -2.62)
+  • **precip_z_12h** = 641853.89 (contribution: -2.45)
+  • **wind_r** = 2.06 (contribution: -1.63)
+  • **surface_pressure_z** = -1.90 (contribution: -0.79)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_69.png
+17.7,1000.9,0.9,23.4,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0536320074196238,1,0.8325184364955205,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 15:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.625)
+- Wind speed 10m (avg error: 0.603)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_70_error_plot.png,"Sample Index: 70
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.39**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  • **temperature_2m_z** = 0.86 (contribution: +0.04)
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 641853.89 (contribution: -2.74)
+  • **precip_z_12h** = 641853.89 (contribution: -2.43)
+  • **wind_r** = 1.89 (contribution: -1.37)
+  • **surface_pressure_z** = -1.90 (contribution: -0.80)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_70.png
+18.4,1000.8,0.9,22.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,-0.0468009022583568,1,0.8225135013035132,1,0.0330438584870278,0.6425,Compound anomaly,"🕒 Timestamp: 2025-06-03 16:00:00
+🔎 Anomaly Severity: Severe anomaly (multiple detection methods agree)
+
+⚠️ Notable deviations in:
+- Temperature 2m (avg error: 0.590)
+- Surface pressure (avg error: 0.626)
+- Wind speed 10m (avg error: 0.603)
+
+Interpretation: These features were harder to reconstruct, suggesting potentially unusual weather conditions.
+📌 Action: Investigate meteorological patterns, sensor quality, or model scope for this period.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/REA/sample_71_error_plot.png,"Sample Index: 71
+Anomaly Label: Compound anomaly
+
+The model's baseline anomaly score is **12.70**. For this event, the score is **5.54**. This suggests it's **more unusual than normal** 🚨.
+
+**Why did it happen?** 🤔
+Here's how features influenced the score:
+- Features that **decreased** the anomaly score (made it seem more normal) ✨:
+  *(None)*
+- Features that **increased** the anomaly score (made it seem more anomalous) 📈:
+  • **precip_z_24h** = 641853.89 (contribution: -2.86)
+  • **precip_z_12h** = 641853.89 (contribution: -2.45)
+  • **wind_r** = 1.67 (contribution: -1.02)
+  • **surface_pressure_z** = -1.91 (contribution: -0.82)
+  • **temperature_2m_z** = 1.01 (contribution: -0.02)
+
+**What should we do?** ✅ Review variables that increased the anomaly score. Validate against known events or investigate further if unexpected.",/content/drive/MyDrive/Data Science Group Project/XAI outputs for dashboard/Plots/TreeSHAP/shap_plot_71.png
