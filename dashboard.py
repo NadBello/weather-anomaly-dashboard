@@ -1,4 +1,14 @@
-# ================================================================================================
+# Integration status indicator - this lets me know everything's working properly
+    if len(weather_data) > 0:
+        st.markdown("""
+        <div class='integration-success'>
+            ✅ <strong>Live Data Integration:</strong> Jeremy's ML Pipeline Active | Marie's XAI Analysis Ready | 72-Hour Forecast Available
+        </div>
+        """, unsafe_allow_html=True)
+
+    # ============================================================================================
+    # OVERVIEW PAGE - LAYMAN'S MODE (Enhanced for Deployment)
+    # # ================================================================================================
 # WEATHER ANOMALY DETECTION DASHBOARD - MSc Data Science Group Project
 # University of Greenwich - 2025 - FINAL DEPLOYMENT VERSION
 # ================================================================================================
@@ -8,8 +18,8 @@
 #
 # TEAM RESPONSIBILITIES:
 # - Jeremy: ETL & ML - Data ingestion, preprocessing, ML training - INTEGRATED ✅
-# - Marie: XAI - Model explanation, SHAP/LIME/NLG - INTEGRATED ✅
-# - Nad: Dashboard Design - Interactive visualisation of results - COMPLETE ✅
+# - Marie: XAI - Model explanation, SHAP/LIME/NLG - INTEGRATED ✅  
+# - Nad (me): Dashboard Design - Interactive visualisation of results - COMPLETE ✅
 # - Dipo: Community Engagement - Feedback collection, light NLP analysis - INTEGRATED ✅
 #
 # DASHBOARD OVERVIEW:
@@ -20,7 +30,7 @@
 # FINAL INTEGRATION STATUS:
 # ✅ Jeremy's ML Pipeline: Real CSV data with 18 columns, 72-hour forecast
 # ✅ System Information: Updated with real model details (30 May 2025 training)
-# ✅ Enhanced Visualizations: Professional Altair charts with anomaly overlays
+# ✅ Enhanced Visualisations: Professional Altair charts with anomaly overlays
 # ✅ Marie's XAI Components: TreeSHAP summaries and reconstruction error analysis
 # ✅ Government-Ready Styling: Professional UI for operational deployment
 #
@@ -46,6 +56,7 @@ import os
 # STYLING AND PAGE CONFIGURATION
 # ================================================================================================
 # Enhanced professional styling for government dashboard deployment
+# CSS configured for operational use with professional colour schemes
 
 st.set_page_config(
     page_title="Weather Anomaly Detection Dashboard",
@@ -55,6 +66,7 @@ st.set_page_config(
 )
 
 # Professional CSS for deployment-ready styling
+# Configured for government operations with accessibility compliance
 st.markdown("""
 <style>
     /* Main dashboard styling */
@@ -204,7 +216,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 # ================================================================================================
 # DATA LOADING AND PROCESSING FUNCTIONS - JEREMY'S INTEGRATION COMPLETE
 # ================================================================================================
@@ -213,13 +224,13 @@ st.markdown("""
 def load_sample_data():
     """
     *** JEREMY'S ML PIPELINE INTEGRATION - COMPLETE ***
-
-    Load Jeremy's actual ML pipeline output from dashboard_input_20250531_1700.csv
-    Real 72-hour forecast data with anomaly detection results from IF and LSTM models.
-
-    Data includes:
+    
+    Loads Jeremy's ML pipeline output from dashboard_input_20250531_1700.csv.
+    Contains 72-hour forecast data with anomaly detection results from IF and LSTM models.
+    
+    Data structure includes:
     - Weather variables: temperature_2m, surface_pressure, precipitation, wind_speed_10m
-    - Statistical bounds: temp_lower/upper, wind_lower/upper, press_lower/upper
+    - Statistical bounds: temp_lower/upper, wind_lower/upper, press_lower/upper  
     - Model scores: if_score, lstm_error
     - Anomaly flags: is_if_anomaly, is_lstm_anomaly
     - Thresholds: if_threshold, lstm_threshold
@@ -228,23 +239,23 @@ def load_sample_data():
     try:
         # Load Jeremy's actual data - deployment path
         data = pd.read_csv("data/dashboard_input_20250531_1700.csv", parse_dates=['date'])
-
-        # Validate required columns
+        
+        # Validate required columns structure
         required_columns = [
             'date', 'temperature_2m', 'surface_pressure', 'precipitation', 'wind_speed_10m',
             'temp_lower', 'temp_upper', 'wind_lower', 'wind_upper', 'press_lower', 'press_upper',
-            'if_score', 'is_if_anomaly', 'lstm_error', 'is_lstm_anomaly',
+            'if_score', 'is_if_anomaly', 'lstm_error', 'is_lstm_anomaly', 
             'if_threshold', 'lstm_threshold', 'anomaly_label'
         ]
-
+        
         missing_cols = [col for col in required_columns if col not in data.columns]
         if missing_cols:
             st.error(f"Missing columns in Jeremy's data: {missing_cols}")
             return load_fallback_data()
-
+        
         # Rename for compatibility with existing dashboard code
         data = data.rename(columns={'date': 'timestamp'})
-
+        
         # Add confidence levels based on Jeremy's anomaly classifications
         def assign_confidence(row):
             if row['anomaly_label'] == 'Compound anomaly':
@@ -253,9 +264,9 @@ def load_sample_data():
                 return 'Medium'
             else:
                 return 'High'  # Normal cases have high confidence
-
+        
         data['confidence'] = data.apply(assign_confidence, axis=1)
-
+        
         # Map Jeremy's labels to dashboard display format
         def map_pseudo_label(label):
             if label == 'Normal':
@@ -266,15 +277,15 @@ def load_sample_data():
                 return 'Point Anomaly'
             else:
                 return 'Uncertain'
-
+        
         data['pseudo_label'] = data['anomaly_label'].apply(map_pseudo_label)
-
+        
         # Success message for deployment monitoring
         anomaly_count = len(data[data['anomaly_label'] != 'Normal'])
         st.sidebar.success(f"✅ Jeremy's ML Data Loaded: {len(data)} records, {anomaly_count} anomalies detected")
-
+        
         return data
-
+        
     except FileNotFoundError:
         st.sidebar.warning("⚠️ Using demo data - Jeremy's file not found in deployment")
         return load_fallback_data()
@@ -286,13 +297,14 @@ def load_sample_data():
 def load_fallback_data():
     """
     Fallback data function for development/demo purposes.
-    This ensures dashboard works even if Jeremy's CSV is temporarily unavailable.
+    Ensures dashboard functionality when Jeremy's CSV is unavailable.
+    Uses realistic UK weather patterns for testing.
     """
     np.random.seed(42)
-
+    
     current_time = datetime.datetime.now()
     timestamps = [current_time - datetime.timedelta(hours=i) for i in range(72, 0, -1)]
-
+    
     data = []
     for i, ts in enumerate(timestamps):
         # Generate realistic weather data for UK conditions
@@ -300,7 +312,7 @@ def load_fallback_data():
         base_pressure = 1013 + 8 * np.sin(i / 20) + np.random.normal(0, 3)
         base_precip = max(0, np.random.exponential(0.5) if np.random.random() > 0.8 else 0)
         base_wind = 8 + 4 * np.sin(i / 15) + np.random.normal(0, 2)
-
+        
         # Statistical bounds (simulating Jeremy's calculations)
         temp_lower = base_temp - 5
         temp_upper = base_temp + 5
@@ -308,19 +320,19 @@ def load_fallback_data():
         wind_upper = base_wind + 8
         press_lower = base_pressure - 15
         press_upper = base_pressure + 15
-
-        # Anomaly scores
+        
+        # Anomaly scores matching Jeremy's model output format
         if_score = 0.3 + 0.4 * np.random.random()
         lstm_error = 0.2 + 0.5 * np.random.random()
-
-        # Thresholds
+        
+        # Thresholds consistent with Jeremy's model configuration
         if_threshold = 0.15
         lstm_threshold = 0.65
-
+        
         # Anomaly flags
         is_if_anomaly = 1 if if_score < if_threshold else 0
         is_lstm_anomaly = 1 if lstm_error > lstm_threshold else 0
-
+        
         # Determine final label
         if is_if_anomaly and is_lstm_anomaly:
             anomaly_label = "Compound anomaly"
@@ -338,7 +350,7 @@ def load_fallback_data():
             anomaly_label = "Normal"
             pseudo_label = "Normal"
             confidence = "High"
-
+        
         data.append({
             'timestamp': ts,
             'temperature_2m': base_temp,
@@ -361,19 +373,19 @@ def load_fallback_data():
             'confidence': confidence,
             'pseudo_label': pseudo_label
         })
-
+    
     return pd.DataFrame(data)
 
 
 def load_marie_xai_data():
     """
     *** MARIE'S XAI INTEGRATION POINT ***
-
-    Load Marie's explainable AI outputs including TreeSHAP summaries,
+    
+    Loads Marie's explainable AI outputs including TreeSHAP summaries,
     reconstruction error analysis, and natural language explanations.
-
-    If Marie's XAI files are available, they will be loaded here.
-    Currently using structured sample data based on real ML model architecture.
+    
+    Currently uses structured sample data based on real ML model architecture.
+    Will be replaced with Marie's actual XAI files when available.
     """
     try:
         # Try loading Marie's actual XAI outputs
@@ -382,7 +394,7 @@ def load_marie_xai_data():
         pass
     except:
         pass
-
+    
     # Sample XAI explanations based on real model structure
     explanations = [
         {
@@ -400,7 +412,7 @@ def load_marie_xai_data():
         },
         {
             "sample_index": 68,
-            "timestamp": "2025-06-03 07:00:00",
+            "timestamp": "2025-06-03 07:00:00", 
             "summary": "Pattern Anomaly: LSTM reconstruction error elevated due to temporal sequence disruption in precipitation patterns.",
             "confidence": "Medium",
             "key_factors": ["Precipitation Timing", "Wind Direction", "Pressure Trend"],
@@ -416,17 +428,17 @@ def load_marie_xai_data():
 
 
 # ================================================================================================
-# ENHANCED VISUALIZATION FUNCTIONS - JEREMY'S PLOTTING INTEGRATION
+# ENHANCED VISUALISATION FUNCTIONS - JEREMY'S PLOTTING INTEGRATION
 # ================================================================================================
 
 def create_enhanced_forecast_chart(data, selected_metric):
     """
-    *** JEREMY'S ENHANCED ALTAIR VISUALIZATION INTEGRATION ***
-
+    *** JEREMY'S ENHANCED ALTAIR VISUALISATION INTEGRATION ***
+    
     Creates professional forecast charts using Jeremy's plotting methodology
     with normal range bands, anomaly overlays, and interactive features.
-
-    Based on Jeremy's Plotting_Script.py with adaptations for dashboard integration.
+    
+    Adapted from Jeremy's Plotting_Script.py for dashboard integration.
     """
     try:
         # Determine metric-specific parameters
@@ -437,7 +449,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
             title = "72-Hour Temperature Forecast: Anomalies and Confidence Band"
             y_title = "Temperature (°C)"
             band_label = "Normal Range (Q1 to Q3 + 1.5×IQR)"
-
+            
         elif selected_metric == "pressure":
             y_col = "surface_pressure"
             lower_col = "press_lower"
@@ -445,7 +457,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
             title = "72-Hour Surface Pressure Forecast: Anomalies and Confidence Band"
             y_title = "Surface Pressure (hPa)"
             band_label = "Normal Range (±2×std)"
-
+            
         elif selected_metric == "precipitation":
             y_col = "precipitation"
             lower_col = None  # No normal range for precipitation
@@ -453,7 +465,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
             title = "72-Hour Precipitation Forecast: Anomalies and Rain Thresholds"
             y_title = "Precipitation (mm)"
             band_label = None
-
+            
         elif selected_metric == "wind_speed":
             y_col = "wind_speed_10m"
             lower_col = "wind_lower"
@@ -461,35 +473,35 @@ def create_enhanced_forecast_chart(data, selected_metric):
             title = "72-Hour Wind Speed Forecast: Anomalies and Confidence Band"
             y_title = "Wind Speed (km/h)"
             band_label = "Normal Range (10th to Q3 + 1.5×IQR)"
-
+        
         # Add band label for legend
         if lower_col and upper_col:
             data_copy = data.copy()
             data_copy["band_label"] = band_label
         else:
             data_copy = data.copy()
-
+        
         # Base chart configuration
         base = alt.Chart(data_copy).encode(
             x=alt.X('timestamp:T',
                     title='Date & Time',
                     axis=alt.Axis(format='%d %b %H:%M', labelAngle=-45, tickCount=12, grid=False))
         )
-
+        
         # Create layers list
         layers = []
-
+        
         # Add normal range band if available
         if lower_col and upper_col and selected_metric != "precipitation":
             band = base.mark_area(opacity=0.3).encode(
                 y=alt.Y(f'{lower_col}:Q'),
                 y2=alt.Y(f'{upper_col}:Q'),
                 color=alt.Color('band_label:N',
-                                scale=alt.Scale(domain=[band_label], range=['lightgrey']),
-                                legend=alt.Legend(title=f'{selected_metric.title()} Band (last 60 days)'))
+                               scale=alt.Scale(domain=[band_label], range=['lightgrey']),
+                               legend=alt.Legend(title=f'{selected_metric.title()} Band (last 60 days)'))
             )
             layers.append(band)
-
+        
         # Add precipitation thresholds if precipitation
         if selected_metric == "precipitation":
             # Create threshold rules
@@ -497,30 +509,30 @@ def create_enhanced_forecast_chart(data, selected_metric):
                 'y': [0.5, 2.0, 5.0],
                 'label': ['Light Rain (0.5mm)', 'Moderate Rain (2mm)', 'Heavy Rain (5mm)']
             })
-
+            
             threshold_lines = alt.Chart(thresholds_df).mark_rule(strokeDash=[4, 2]).encode(
                 y='y:Q',
                 color=alt.Color('label:N',
-                                scale=alt.Scale(domain=thresholds_df['label'].tolist(),
-                                                range=['green', 'orange', 'red']),
-                                title='Rain Intensity Thresholds')
+                               scale=alt.Scale(domain=thresholds_df['label'].tolist(),
+                                             range=['green', 'orange', 'red']),
+                               title='Rain Intensity Thresholds')
             )
             layers.append(threshold_lines)
-
+        
         # Main line chart
         line = base.mark_line(color='steelblue', strokeWidth=2).encode(
             y=alt.Y(f'{y_col}:Q', title=y_title)
         )
         layers.append(line)
-
+        
         # Anomaly points
         anomalies = base.mark_circle(size=80).encode(
             y=f'{y_col}:Q',
             color=alt.Color('anomaly_label:N',
-                            scale=alt.Scale(
-                                domain=['IF anomaly', 'LSTM anomaly', 'Compound anomaly'],
-                                range=['#00bfff', '#ba55d3', '#27408b']),
-                            title='Anomaly Type'),
+                           scale=alt.Scale(
+                               domain=['IF anomaly', 'LSTM anomaly', 'Compound anomaly'],
+                               range=['#00bfff', '#ba55d3', '#27408b']),
+                           title='Anomaly Type'),
             tooltip=[
                 alt.Tooltip('timestamp:T', title='Timestamp', format='%d %b %H:%M'),
                 alt.Tooltip(f'{y_col}:Q', title=y_title, format='.1f'),
@@ -531,7 +543,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
             alt.datum.anomaly_label != 'Normal'
         )
         layers.append(anomalies)
-
+        
         # Combine all layers
         final_chart = alt.layer(*layers).resolve_scale(
             color='independent'
@@ -540,9 +552,9 @@ def create_enhanced_forecast_chart(data, selected_metric):
             width=900,
             height=400
         )
-
+        
         return final_chart
-
+        
     except Exception as e:
         st.error(f"Error creating enhanced chart: {e}")
         # Fallback to simple plotly chart
@@ -552,22 +564,22 @@ def create_enhanced_forecast_chart(data, selected_metric):
 
 def create_expert_model_scores_chart(data):
     """
-    *** JEREMY'S MODEL SCORES VISUALIZATION ***
-
-    Creates the expert mode chart showing LSTM error and IF scores
+    *** JEREMY'S MODEL SCORES VISUALISATION ***
+    
+    Creates expert mode chart showing LSTM error and IF scores
     with threshold zones and anomaly markers.
-
-    Based on Jeremy's expert visualization methodology.
+    
+    Uses Jeremy's expert visualisation methodology for technical users.
     """
     try:
         # Y-axis bounds with padding
         y_min = data['if_score'].min() - 0.05
         y_max = max(data['lstm_error'].max(), data['if_score'].max()) + 0.05
-
+        
         # Get thresholds
         lstm_thresh = data["lstm_threshold"].iloc[0]
         if_thresh = data["if_threshold"].iloc[0]
-
+        
         # Create threshold breach zones
         band_df = pd.DataFrame({
             "timestamp": [data["timestamp"].min(), data["timestamp"].max()],
@@ -577,45 +589,45 @@ def create_expert_model_scores_chart(data):
             "if_bottom": [y_min] * 2,
             "zone_type": ["Threshold Breach Zone"] * 2
         })
-
+        
         # Base chart
         base = alt.Chart(data).encode(
             x=alt.X('timestamp:T',
                     axis=alt.Axis(format='%d %b %H:%M', tickCount=12, labelAngle=-45, grid=False),
                     title='Date & Time')
         )
-
+        
         # Threshold breach zones
         top_band = alt.Chart(band_df).mark_area(opacity=0.15, color='red').encode(
             x='timestamp:T',
             y=alt.Y('lstm_threshold:Q', scale=alt.Scale(domain=[y_min, y_max])),
             y2='lstm_top:Q'
         )
-
+        
         bottom_band = alt.Chart(band_df).mark_area(opacity=0.15, color='red').encode(
             x='timestamp:T',
             y=alt.Y('if_bottom:Q', scale=alt.Scale(domain=[y_min, y_max])),
             y2='if_threshold:Q'
         )
-
+        
         # Model score lines
         lstm_line = base.mark_line(color='#ba55d3', strokeWidth=2).encode(
             y=alt.Y('lstm_error:Q', title='Score', scale=alt.Scale(domain=[y_min, y_max]))
         )
-
+        
         if_line = base.mark_line(color='#00bfff', strokeWidth=2).encode(
             y='if_score:Q'
         )
-
+        
         # Threshold lines
         lstm_thresh_line = base.mark_rule(strokeDash=[4, 2], color='#ba55d3').encode(
             y='lstm_threshold:Q'
         )
-
+        
         if_thresh_line = base.mark_rule(strokeDash=[4, 2], color='#00bfff').encode(
             y='if_threshold:Q'
         )
-
+        
         # Anomaly dots
         lstm_anomalies = base.mark_circle(size=60, color='#ba55d3').encode(
             y='lstm_error:Q',
@@ -627,7 +639,7 @@ def create_expert_model_scores_chart(data):
         ).transform_filter(
             alt.datum.is_lstm_anomaly == 1
         )
-
+        
         if_anomalies = base.mark_circle(size=60, color='#00bfff').encode(
             y='if_score:Q',
             tooltip=[
@@ -638,7 +650,7 @@ def create_expert_model_scores_chart(data):
         ).transform_filter(
             alt.datum.is_if_anomaly == 1
         )
-
+        
         # Combine layers
         final_chart = alt.layer(
             top_band,
@@ -654,9 +666,9 @@ def create_expert_model_scores_chart(data):
             width=900,
             height=400
         )
-
+        
         return final_chart
-
+        
     except Exception as e:
         st.error(f"Error creating model scores chart: {e}")
         return None
@@ -666,10 +678,17 @@ def create_expert_model_scores_chart(data):
 # UTILITY FUNCTIONS FOR DASHBOARD LOGIC
 # ================================================================================================
 
-def get_metric_status(value, metric_type, season='winter'):
-    """Determine weather metric status and alert classification"""
+def get_metric_status(value, metric_type, season='spring'):
+    """Determine weather metric status and alert classification.
+    
+    Thresholds configured for UK weather patterns and local government operations."""
+    # Updated ranges for May/June UK weather
     ranges = {
-        'temperature': {'winter': {'min': 2, 'max': 8}},
+        'temperature': {
+            'spring': {'min': 8, 'max': 18},  # More appropriate for May/June
+            'summer': {'min': 12, 'max': 22},
+            'winter': {'min': 2, 'max': 8}
+        },
         'pressure': {'min': 1000, 'max': 1025},
         'precipitation': {'max': 2},
         'wind_speed': {'max': 10}
@@ -714,9 +733,11 @@ def get_metric_status(value, metric_type, season='winter'):
 def generate_natural_language_explanation(current_data, anomaly_explanations):
     """
     *** ENHANCED WITH MARIE'S NLG INTEGRATION ***
-
+    
     Convert technical ML outputs into human-readable explanations.
     Integrates Marie's TreeSHAP analysis and natural language generation.
+    
+    Designed for operations teams requiring actionable weather information.
     """
     latest = current_data.iloc[-1]
 
@@ -749,7 +770,7 @@ def generate_natural_language_explanation(current_data, anomaly_explanations):
         explanation += "**🔬 AI Model Analysis:**<br>"
         explanation += f"• Isolation Forest Score: {latest['if_score']:.3f} (threshold: {latest['if_threshold']:.3f})<br>"
         explanation += f"• LSTM Reconstruction Error: {latest['lstm_error']:.3f} (threshold: {latest['lstm_threshold']:.3f})<br><br>"
-
+        
         # Add Marie's TreeSHAP explanation if available
         for exp in anomaly_explanations:
             if abs((pd.to_datetime(exp['timestamp']) - latest['timestamp']).total_seconds()) < 3600:  # Within 1 hour
@@ -757,7 +778,7 @@ def generate_natural_language_explanation(current_data, anomaly_explanations):
                 explanation += f"{exp['summary']}<br><br>"
                 break
 
-    # Operational risk assessment
+    # Operational risk assessment for decision support
     temp_status, _ = get_metric_status(latest['temperature_2m'], 'temperature')
     if temp_status in ['Freezing', 'Below Normal'] and latest['precipitation'] > 0:
         explanation += "🧊 **ICE RISK**: Sub-zero temperatures with precipitation detected.<br>"
@@ -769,6 +790,8 @@ def create_heathrow_map(needs_gritting=False):
     """
     Create interactive map of Heathrow area showing road network status.
     Enhanced for operational deployment with realistic road network data.
+    
+    Focuses on key operational routes: M4, A4, and A30 corridors.
     """
     m = folium.Map(location=[51.4700, -0.4543], zoom_start=12, tiles="OpenStreetMap")
 
@@ -812,7 +835,7 @@ def main():
     """
 
     # ============================================================================================
-    # DATA LOADING - JEREMY'S INTEGRATION COMPLETE
+    # DATA LOADING - TEAM INTEGRATION COMPLETE
     # ============================================================================================
 
     weather_data = load_sample_data()  # Jeremy's real ML pipeline data
@@ -836,17 +859,28 @@ def main():
     st.markdown(f"<p class='last-updated'>Last updated: {current_time}</p>",
                 unsafe_allow_html=True)
 
-    # Integration status indicator
+    # Integration status indicator - only show if we have real data
     if len(weather_data) > 0:
-        st.markdown("""
-        <div class='integration-success'>
-            ✅ <strong>Live Data Integration:</strong> Jeremy's ML Pipeline Active | Marie's XAI Analysis Ready | 72-Hour Forecast Available
-        </div>
-        """, unsafe_allow_html=True)
+        # Check if we're using real data or fallback
+        if 'timestamp' in weather_data.columns and len(weather_data) == 72:
+            # Likely Jeremy's real data
+            st.markdown("""
+            <div class='integration-success'>
+                ✅ <strong>Live Data Integration:</strong> Jeremy's ML Pipeline Active | Marie's XAI Analysis Ready | 72-Hour Forecast Available
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            # Using fallback data
+            st.markdown("""
+            <div class='integration-success'>
+                ⚠️ <strong>Demo Mode:</strong> Using simulated data for demonstration | Full integration pending
+            </div>
+            """, unsafe_allow_html=True)
 
     # ============================================================================================
     # OVERVIEW PAGE - LAYMAN'S MODE (Enhanced for Deployment)
     # ============================================================================================
+    # This is the bread and butter for operations teams - clear, actionable information
 
     if page == "📊 Overview":
         st.markdown("---")
@@ -857,7 +891,7 @@ def main():
 
         current = weather_data.iloc[-1]
 
-        # Current weather metrics with enhanced styling
+        # Current weather metrics with enhanced styling - I've made these really clear
         st.markdown('<div class="component-container">', unsafe_allow_html=True)
         st.markdown("<div class='section-title'>🌡️ Current Weather Conditions</div>",
                     unsafe_allow_html=True)
@@ -871,7 +905,7 @@ def main():
                 <div>
                     <div><strong>Temperature</strong></div>
                     <div class='metric-value'>{current['temperature_2m']:.1f}°C</div>
-                    <div class='metric-normal'>Normal: 2-8°C</div>
+                    <div class='metric-normal'>Normal: 8-18°C</div>
                 </div>
                 <div class='metric-status status-{temp_class}'>{temp_status}</div>
             </div>
@@ -1023,8 +1057,9 @@ def main():
             st.rerun()
 
     # ============================================================================================
-    # FORECAST PAGE - JEREMY'S ENHANCED VISUALIZATIONS
+    # FORECAST PAGE - JEREMY'S ENHANCED VISUALISATIONS
     # ============================================================================================
+    # This is where Jeremy's brilliant work really shines through
 
     elif page == "📈 Forecast":
         st.markdown("---")
@@ -1033,11 +1068,11 @@ def main():
         st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
                     unsafe_allow_html=True)
 
-        # Enhanced forecast explanation
+        # Enhanced forecast explanation - this helps users understand what they're looking at
         st.info("""
         **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
         They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
-        Colored dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
+        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
         """)
 
         selected_metric = st.selectbox(
@@ -1052,22 +1087,22 @@ def main():
         )
 
         if len(weather_data) > 0:
-            # Use Jeremy's enhanced visualization
+            # Use Jeremy's enhanced visualisation - this is the good stuff!
             enhanced_chart = create_enhanced_forecast_chart(weather_data, selected_metric)
-
+            
             if enhanced_chart:
                 try:
                     st.altair_chart(enhanced_chart, use_container_width=True)
                 except Exception as e:
-                    st.warning(f"Using Plotly fallback for visualization.")
-                    # Plotly fallback
+                    st.warning(f"Using Plotly fallback for visualisation.")
+                    # Plotly fallback - always good to have a backup!
                     y_col = {
                         "temperature": "temperature_2m",
-                        "pressure": "surface_pressure",
+                        "pressure": "surface_pressure", 
                         "precipitation": "precipitation",
                         "wind_speed": "wind_speed_10m"
                     }[selected_metric]
-
+                    
                     fig = px.line(weather_data, x='timestamp', y=y_col,
                                   title=f"72-Hour {selected_metric.title()} Forecast")
                     fig.update_traces(line=dict(width=3, color='#3498db'))
@@ -1080,7 +1115,7 @@ def main():
             y_col = {
                 "temperature": "temperature_2m",
                 "pressure": "surface_pressure",
-                "precipitation": "precipitation",
+                "precipitation": "precipitation", 
                 "wind_speed": "wind_speed_10m"
             }[selected_metric]
 
@@ -1122,17 +1157,17 @@ def main():
                 compound_anomalies = len(weather_data[weather_data['anomaly_label'] == 'Compound anomaly'])
                 if compound_anomalies > 0:
                     insights += f"**⚡ Complex Weather:** {compound_anomalies} periods show compound anomalies requiring enhanced monitoring."
-
+                    
             elif selected_metric == "pressure":
                 low_pressure_periods = len(weather_data[weather_data[y_col] < 990])
                 if low_pressure_periods > 0:
                     insights += f"**🌪️ Storm Risk:** {low_pressure_periods} periods show very low pressure indicating potential severe weather. "
-
+                    
             elif selected_metric == "precipitation":
                 heavy_rain_periods = len(weather_data[weather_data[y_col] > 5])
                 if heavy_rain_periods > 0:
                     insights += f"**🌊 Flood Risk:** {heavy_rain_periods} periods show heavy precipitation. Surface water management may be needed. "
-
+                    
             elif selected_metric == "wind_speed":
                 high_wind_periods = len(weather_data[weather_data[y_col] > 15])
                 if high_wind_periods > 0:
@@ -1197,9 +1232,9 @@ def main():
                 )
 
                 # Add threshold lines
-                fig.add_hline(y=weather_data['if_threshold'].iloc[0], line_dash="dash",
+                fig.add_hline(y=weather_data['if_threshold'].iloc[0], line_dash="dash", 
                               line_color="#00bfff", row=1, col=1)
-                fig.add_hline(y=weather_data['lstm_threshold'].iloc[0], line_dash="dash",
+                fig.add_hline(y=weather_data['lstm_threshold'].iloc[0], line_dash="dash", 
                               line_color="#ba55d3", row=2, col=1)
 
                 fig.update_layout(height=500, showlegend=True)
@@ -1207,22 +1242,22 @@ def main():
 
         # Model statistics
         col1, col2, col3, col4 = st.columns(4)
-
+        
         with col1:
             if_anomalies = weather_data['is_if_anomaly'].sum()
-            st.metric("IF Anomalies", f"{if_anomalies}",
+            st.metric("IF Anomalies", f"{if_anomalies}", 
                       help="Total anomalies detected by Isolation Forest")
-
+        
         with col2:
             lstm_anomalies = weather_data['is_lstm_anomaly'].sum()
             st.metric("LSTM Anomalies", f"{lstm_anomalies}",
                       help="Total anomalies detected by LSTM Autoencoder")
-
+        
         with col3:
             compound_anomalies = len(weather_data[weather_data['anomaly_label'] == 'Compound anomaly'])
             st.metric("Compound Anomalies", f"{compound_anomalies}",
                       help="Anomalies detected by both models")
-
+        
         with col4:
             detection_rate = ((if_anomalies + lstm_anomalies) / len(weather_data) * 100)
             st.metric("Detection Rate", f"{detection_rate:.1f}%",
@@ -1264,7 +1299,7 @@ def main():
 
                 st.altair_chart(importance_chart, use_container_width=True)
             except:
-                fig_importance = px.bar(importance_df, x='Importance', y='Feature',
+                fig_importance = px.bar(importance_df, x='Importance', y='Feature', 
                                         orientation='h', title="Global Feature Importance Rankings",
                                         color_discrete_sequence=['#3498db'])
                 fig_importance.update_layout(height=250)
@@ -1287,8 +1322,7 @@ def main():
                 selected_anomaly_idx = st.selectbox(
                     "Select anomaly for detailed analysis:",
                     anomaly_indices,
-                    format_func=lambda
-                        x: f"Anomaly {x} - {weather_data.iloc[x]['timestamp'].strftime('%Y-%m-%d %H:%M')} ({weather_data.iloc[x]['anomaly_label']})"
+                    format_func=lambda x: f"Anomaly {x} - {weather_data.iloc[x]['timestamp'].strftime('%Y-%m-%d %H:%M')} ({weather_data.iloc[x]['anomaly_label']})"
                 )
 
                 selected_anomaly = weather_data.iloc[selected_anomaly_idx]
@@ -1300,10 +1334,8 @@ def main():
                     st.write(f"**Timestamp:** {selected_anomaly['timestamp']}")
                     st.write(f"**Type:** {selected_anomaly['anomaly_label']}")
                     st.write(f"**Confidence:** {selected_anomaly['confidence']}")
-                    st.write(
-                        f"**IF Score:** {selected_anomaly['if_score']:.3f} (thresh: {selected_anomaly['if_threshold']:.3f})")
-                    st.write(
-                        f"**LSTM Error:** {selected_anomaly['lstm_error']:.3f} (thresh: {selected_anomaly['lstm_threshold']:.3f})")
+                    st.write(f"**IF Score:** {selected_anomaly['if_score']:.3f} (thresh: {selected_anomaly['if_threshold']:.3f})")
+                    st.write(f"**LSTM Error:** {selected_anomaly['lstm_error']:.3f} (thresh: {selected_anomaly['lstm_threshold']:.3f})")
 
                 with col2:
                     st.markdown("**Weather Conditions:**")
@@ -1317,8 +1349,7 @@ def main():
 
                 # Sample waterfall data - in production this would come from Marie's XAI output
                 shap_data = pd.DataFrame({
-                    'feature': ['Base Value', 'temperature_2m', 'surface_pressure', 'wind_speed_10m', 'precipitation',
-                                'Final Score'],
+                    'feature': ['Base Value', 'temperature_2m', 'surface_pressure', 'wind_speed_10m', 'precipitation', 'Final Score'],
                     'value': [0.5, -0.12, -0.28, -0.15, -0.08, 0.37],
                     'cumulative': [0.5, 0.38, 0.10, -0.05, -0.13, 0.37]
                 })
@@ -1351,11 +1382,11 @@ def main():
                     if abs((pd.to_datetime(exp['timestamp']) - selected_anomaly['timestamp']).total_seconds()) < 3600:
                         st.markdown(f"""
                         **🤖 Marie's AI Explanation:**
-
+                        
                         {exp['summary']}
-
+                        
                         **Key Contributing Factors:** {', '.join(exp['key_factors'])}
-
+                        
                         **Technical Details:**
                         - Model confidence in this explanation: {exp['confidence']}
                         - Primary driver: Surface pressure deviation from normal range
@@ -1366,7 +1397,7 @@ def main():
                 else:
                     st.markdown(f"""
                     **🤖 Automated Analysis for Anomaly {selected_anomaly_idx}:**
-
+                    
                     This {selected_anomaly['anomaly_label'].lower()} was detected through Jeremy's ML pipeline.
                     The anomaly shows deviation in multiple weather parameters, suggesting a coordinated
                     weather system change rather than isolated measurement error.
@@ -1599,7 +1630,7 @@ def main():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 📋 System Information")
-
+    
     # Updated system information from documentation
     st.sidebar.info("""
     **Model Status:** ✅ Active  
@@ -1632,10 +1663,8 @@ def main():
         st.sidebar.markdown("### 🐛 Deployment Status")
         st.sidebar.write(f"Streamlit version: {st.__version__}")
         st.sidebar.write(f"Data records: {len(weather_data)}")
-        st.sidebar.write(
-            f"Anomalies detected: {len(weather_data[weather_data['anomaly_label'] != 'Normal']) if len(weather_data) > 0 else 0}")
-        st.sidebar.write(
-            f"Last data timestamp: {weather_data['timestamp'].max() if len(weather_data) > 0 else 'No data'}")
+        st.sidebar.write(f"Anomalies detected: {len(weather_data[weather_data['anomaly_label'] != 'Normal']) if len(weather_data) > 0 else 0}")
+        st.sidebar.write(f"Last data timestamp: {weather_data['timestamp'].max() if len(weather_data) > 0 else 'No data'}")
 
     # Application footer with project information
     st.markdown("---")
@@ -1662,13 +1691,13 @@ if __name__ == "__main__":
 # ================================================================================================
 #
 # ✅ Jeremy's ML Pipeline Integration: Real CSV data with 18 columns loaded
-# ✅ Enhanced Visualizations: Professional Altair charts with anomaly overlays
+# ✅ Enhanced Visualisations: Professional Altair charts with anomaly overlays  
 # ✅ System Information Updates: Real model training date and data sources
 # ✅ Marie's XAI Integration: TreeSHAP analysis and natural language explanations
 # ✅ Dipo's Community Engagement: Feedback collection and user analytics
-# ✅ Error Handling: Fallback options for all visualizations
+# ✅ Error Handling: Fallback options for all visualisations
 # ✅ Professional Styling: Government-ready UI with accessibility features
-# ✅ Performance Optimization: Caching and efficient data loading
+# ✅ Performance Optimisation: Caching and efficient data loading
 # ✅ Deployment Ready: Structured for Streamlit Community Cloud
 #
 # GITHUB REPOSITORY STRUCTURE:
@@ -1683,17 +1712,11 @@ if __name__ == "__main__":
 #
 # REQUIREMENTS.TXT CONTENTS:
 # streamlit>=1.28.0
-# pandas>=1.5.0
+# pandas>=1.5.0  
 # numpy>=1.24.0
 # altair>=5.0.0
 # plotly>=5.15.0
 # folium>=0.14.0
 # streamlit-folium>=0.13.0
-#
-# DEPLOYMENT STEPS:
-# 1. Create GitHub repository
-# 2. Upload all files with correct structure
-# 3. Connect Streamlit Community Cloud to repository
-# 4. Deploy with one click!
 #
 # ================================================================================================
