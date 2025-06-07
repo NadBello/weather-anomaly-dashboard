@@ -1719,4 +1719,10 @@ if __name__ == "__main__":
 # folium>=0.14.0
 # streamlit-folium>=0.13.0
 #
+# DEPLOYMENT STEPS:
+# 1. Create GitHub repository
+# 2. Upload all files with correct structure
+# 3. Connect Streamlit Community Cloud to repository
+# 4. Deploy with one click!
+#
 # ================================================================================================
