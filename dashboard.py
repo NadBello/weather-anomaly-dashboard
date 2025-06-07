@@ -45,8 +45,6 @@ import os
 # ================================================================================================
 # STYLING AND PAGE CONFIGURATION
 # ================================================================================================
-# Enhanced professional styling for government dashboard deployment
-# CSS configured for operational use with professional colour schemes
 
 st.set_page_config(
     page_title="Weather Anomaly Detection Dashboard",
@@ -56,7 +54,6 @@ st.set_page_config(
 )
 
 # Professional CSS for deployment-ready styling
-# Configured for government operations with accessibility compliance
 st.markdown("""
 <style>
     /* Main dashboard styling */
@@ -207,25 +204,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ================================================================================================
-# DATA LOADING AND PROCESSING FUNCTIONS - JEREMY'S INTEGRATION COMPLETE
+# DATA LOADING AND PROCESSING FUNCTIONS
 # ================================================================================================
 
 @st.cache_data
 def load_sample_data():
-    """
-    *** JEREMY'S ML PIPELINE INTEGRATION - COMPLETE ***
-    
-    Loads Jeremy's ML pipeline output from dashboard_input_20250531_1700.csv.
-    Contains 72-hour forecast data with anomaly detection results from IF and LSTM models.
-    
-    Data structure includes:
-    - Weather variables: temperature_2m, surface_pressure, precipitation, wind_speed_10m
-    - Statistical bounds: temp_lower/upper, wind_lower/upper, press_lower/upper  
-    - Model scores: if_score, lstm_error
-    - Anomaly flags: is_if_anomaly, is_lstm_anomaly
-    - Thresholds: if_threshold, lstm_threshold
-    - Final labels: anomaly_label (Normal, IF anomaly, LSTM anomaly, Compound anomaly)
-    """
+    """Jeremy's ML Pipeline Integration - Complete"""
     try:
         # Try multiple potential paths for Jeremy's data
         possible_paths = [
@@ -270,7 +254,7 @@ def load_sample_data():
             elif row['anomaly_label'] in ['IF anomaly', 'LSTM anomaly']:
                 return 'Medium'
             else:
-                return 'High'  # Normal cases have high confidence
+                return 'High'
         
         data['confidence'] = data.apply(assign_confidence, axis=1)
         
@@ -299,11 +283,7 @@ def load_sample_data():
 
 
 def load_fallback_data():
-    """
-    Fallback data function for development/demo purposes.
-    Ensures dashboard functionality when Jeremy's CSV is unavailable.
-    Uses realistic UK weather patterns for testing.
-    """
+    """Fallback data function for development/demo purposes."""
     np.random.seed(42)
     
     current_time = datetime.datetime.now()
@@ -382,24 +362,7 @@ def load_fallback_data():
 
 
 def load_marie_xai_data():
-    """
-    *** MARIE'S XAI INTEGRATION POINT ***
-    
-    Loads Marie's explainable AI outputs including TreeSHAP summaries,
-    reconstruction error analysis, and natural language explanations.
-    
-    Currently uses structured sample data based on real ML model architecture.
-    Will be replaced with Marie's actual XAI files when available.
-    """
-    try:
-        # Try loading Marie's actual XAI outputs
-        # marie_data = pd.read_csv("data/dashboard_input_20250531_1700_merged.csv")
-        # return process_marie_xai_outputs(marie_data)
-        pass
-    except:
-        pass
-    
-    # Sample XAI explanations based on real model structure
+    """Marie's XAI Integration Point"""
     explanations = [
         {
             "sample_index": 67,
@@ -413,37 +376,17 @@ def load_marie_xai_data():
                 "temperature": -0.65,
                 "precipitation": -0.22
             }
-        },
-        {
-            "sample_index": 68,
-            "timestamp": "2025-06-03 07:00:00", 
-            "summary": "Pattern Anomaly: LSTM reconstruction error elevated due to temporal sequence disruption in precipitation patterns.",
-            "confidence": "Medium",
-            "key_factors": ["Precipitation Timing", "Wind Direction", "Pressure Trend"],
-            "shap_values": {
-                "precipitation": -1.45,
-                "wind_speed": -0.92,
-                "surface_pressure": -0.67,
-                "temperature": -0.31
-            }
         }
     ]
     return explanations
 
 
 # ================================================================================================
-# ENHANCED VISUALISATION FUNCTIONS - JEREMY'S PLOTTING INTEGRATION
+# ENHANCED VISUALISATION FUNCTIONS
 # ================================================================================================
 
 def create_enhanced_forecast_chart(data, selected_metric):
-    """
-    *** JEREMY'S ENHANCED ALTAIR VISUALISATION INTEGRATION ***
-    
-    Creates professional forecast charts using Jeremy's plotting methodology
-    with normal range bands, anomaly overlays, and interactive features.
-    
-    Adapted from Jeremy's Plotting_Script.py for dashboard integration.
-    """
+    """Jeremy's Enhanced Altair Visualisation Integration"""
     try:
         # Debug option for troubleshooting
         if st.sidebar.checkbox("Debug Column Names"):
@@ -469,7 +412,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
             
         elif selected_metric == "precipitation":
             y_col = "precipitation"
-            lower_col = None  # No normal range for precipitation
+            lower_col = None
             upper_col = None
             title = "72-Hour Precipitation Forecast: Anomalies and Rain Thresholds"
             y_title = "Precipitation (mm)"
@@ -518,7 +461,6 @@ def create_enhanced_forecast_chart(data, selected_metric):
         
         # Add precipitation thresholds if precipitation
         if selected_metric == "precipitation":
-            # Create threshold rules
             thresholds_df = pd.DataFrame({
                 'y': [0.5, 2.0, 5.0],
                 'label': ['Light Rain (0.5mm)', 'Moderate Rain (2mm)', 'Heavy Rain (5mm)']
@@ -575,14 +517,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
 
 
 def create_expert_model_scores_chart(data):
-    """
-    *** JEREMY'S MODEL SCORES VISUALISATION ***
-    
-    Creates expert mode chart showing LSTM error and IF scores
-    with threshold zones and anomaly markers.
-    
-    Uses Jeremy's expert visualisation methodology for technical users.
-    """
+    """Jeremy's Model Scores Visualisation"""
     try:
         # Y-axis bounds with padding
         y_min = data['if_score'].min() - 0.05
@@ -609,19 +544,6 @@ def create_expert_model_scores_chart(data):
                     title='Date & Time')
         )
         
-        # Threshold breach zones
-        top_band = alt.Chart(band_df).mark_area(opacity=0.15, color='red').encode(
-            x='timestamp:T',
-            y=alt.Y('lstm_threshold:Q', scale=alt.Scale(domain=[y_min, y_max])),
-            y2='lstm_top:Q'
-        )
-        
-        bottom_band = alt.Chart(band_df).mark_area(opacity=0.15, color='red').encode(
-            x='timestamp:T',
-            y=alt.Y('if_bottom:Q', scale=alt.Scale(domain=[y_min, y_max])),
-            y2='if_threshold:Q'
-        )
-        
         # Model score lines
         lstm_line = base.mark_line(color='#ba55d3', strokeWidth=2).encode(
             y=alt.Y('lstm_error:Q', title='Score', scale=alt.Scale(domain=[y_min, y_max]))
@@ -640,39 +562,12 @@ def create_expert_model_scores_chart(data):
             y='if_threshold:Q'
         )
         
-        # Anomaly dots
-        lstm_anomalies = base.mark_circle(size=60, color='#ba55d3').encode(
-            y='lstm_error:Q',
-            tooltip=[
-                alt.Tooltip('timestamp:T', title='Timestamp', format='%d %b %H:%M'),
-                alt.Tooltip('lstm_error:Q', title='LSTM Error', format='.3f'),
-                alt.Tooltip('anomaly_label:N', title='Anomaly Type')
-            ]
-        ).transform_filter(
-            alt.datum.is_lstm_anomaly == 1
-        )
-        
-        if_anomalies = base.mark_circle(size=60, color='#00bfff').encode(
-            y='if_score:Q',
-            tooltip=[
-                alt.Tooltip('timestamp:T', title='Timestamp', format='%d %b %H:%M'),
-                alt.Tooltip('if_score:Q', title='IF Score', format='.3f'),
-                alt.Tooltip('anomaly_label:N', title='Anomaly Type')
-            ]
-        ).transform_filter(
-            alt.datum.is_if_anomaly == 1
-        )
-        
         # Combine layers
         final_chart = alt.layer(
-            top_band,
-            bottom_band,
             lstm_line,
             if_line,
             lstm_thresh_line,
-            if_thresh_line,
-            lstm_anomalies,
-            if_anomalies
+            if_thresh_line
         ).properties(
             title='LSTM Error & IF Score with Threshold Zones and Anomalies',
             width=900,
@@ -687,18 +582,15 @@ def create_expert_model_scores_chart(data):
 
 
 # ================================================================================================
-# UTILITY FUNCTIONS FOR DASHBOARD LOGIC
+# UTILITY FUNCTIONS
 # ================================================================================================
 
 def get_metric_status(value, metric_type, season='summer'):
-    """Determine weather metric status and alert classification.
-    
-    Thresholds configured for UK weather patterns and local government operations."""
-    # Updated ranges for May/June UK weather
+    """Determine weather metric status and alert classification."""
     ranges = {
         'temperature': {
             'spring': {'min': 8, 'max': 18},
-            'summer': {'min': 12, 'max': 22},  # Use summer for May/June
+            'summer': {'min': 12, 'max': 22},
             'winter': {'min': 2, 'max': 8}
         },
         'pressure': {'min': 1000, 'max': 1025},
@@ -743,14 +635,7 @@ def get_metric_status(value, metric_type, season='summer'):
 
 
 def generate_natural_language_explanation(current_data, anomaly_explanations):
-    """
-    *** ENHANCED WITH MARIE'S NLG INTEGRATION ***
-    
-    Convert technical ML outputs into human-readable explanations.
-    Integrates Marie's TreeSHAP analysis and natural language generation.
-    
-    Designed for operations teams requiring actionable weather information.
-    """
+    """Enhanced with Marie's NLG Integration"""
     latest = current_data.iloc[-1]
 
     explanation = f"**Current Weather Assessment** (Updated: {latest['timestamp'].strftime('%d %B %Y, %H:%M')})<br><br>"
@@ -782,29 +667,12 @@ def generate_natural_language_explanation(current_data, anomaly_explanations):
         explanation += "**🔬 AI Model Analysis:**<br>"
         explanation += f"• Isolation Forest Score: {latest['if_score']:.3f} (threshold: {latest['if_threshold']:.3f})<br>"
         explanation += f"• LSTM Reconstruction Error: {latest['lstm_error']:.3f} (threshold: {latest['lstm_threshold']:.3f})<br><br>"
-        
-        # Add Marie's TreeSHAP explanation if available
-        for exp in anomaly_explanations:
-            if abs((pd.to_datetime(exp['timestamp']) - latest['timestamp']).total_seconds()) < 3600:  # Within 1 hour
-                explanation += f"**🎯 Key Contributing Factors:**<br>"
-                explanation += f"{exp['summary']}<br><br>"
-                break
-
-    # Operational risk assessment for decision support
-    temp_status, _ = get_metric_status(latest['temperature_2m'], 'temperature')
-    if temp_status in ['Freezing', 'Below Normal'] and latest['precipitation'] > 0:
-        explanation += "🧊 **ICE RISK**: Sub-zero temperatures with precipitation detected.<br>"
 
     return explanation
 
 
 def create_heathrow_map(needs_gritting=False):
-    """
-    Create interactive map of Heathrow area showing road network status.
-    Enhanced for operational deployment with realistic road network data.
-    
-    Focuses on key operational routes: M4, A4, and A30 corridors.
-    """
+    """Create interactive map of Heathrow area showing road network status."""
     m = folium.Map(location=[51.4700, -0.4543], zoom_start=12, tiles="OpenStreetMap")
 
     folium.Marker(
@@ -819,9 +687,7 @@ def create_heathrow_map(needs_gritting=False):
         "M4": [[51.4890, -0.4200], [51.4895, -0.4300], [51.4898, -0.4400],
                [51.4899, -0.4500], [51.4897, -0.4600], [51.4895, -0.4700]],
         "A4": [[51.4780, -0.4200], [51.4785, -0.4300], [51.4790, -0.4400],
-               [51.4792, -0.4500], [51.4793, -0.4600], [51.4791, -0.4700]],
-        "A30": [[51.4540, -0.4200], [51.4545, -0.4300], [51.4550, -0.4400],
-                [51.4552, -0.4500], [51.4553, -0.4600], [51.4551, -0.4700]]
+               [51.4792, -0.4500], [51.4793, -0.4600], [51.4791, -0.4700]]
     }
 
     for road_name, coordinates in roads.items():
@@ -841,17 +707,11 @@ def create_heathrow_map(needs_gritting=False):
 # ================================================================================================
 
 def main():
-    """
-    Main application function - Deployment Ready Version
-    Orchestrates the complete dashboard with all team integrations.
-    """
+    """Main application function - Deployment Ready Version"""
 
-    # ============================================================================================
-    # DATA LOADING - TEAM INTEGRATION COMPLETE
-    # ============================================================================================
-
-    weather_data = load_sample_data()  # Jeremy's real ML pipeline data
-    anomaly_explanations = load_marie_xai_data()  # Marie's XAI outputs
+    # Data loading
+    weather_data = load_sample_data()
+    anomaly_explanations = load_marie_xai_data()
 
     # Sidebar navigation
     st.sidebar.title("🌦️ Weather Dashboard")
@@ -871,7 +731,7 @@ def main():
     st.markdown(f"<p class='last-updated'>Last updated: {current_time}</p>",
                 unsafe_allow_html=True)
 
-    # Integration status indicator - only show if we have real data
+    # Integration status indicator
     if len(weather_data) > 0:
         st.markdown("""
         <div class='integration-success'>
@@ -880,7 +740,7 @@ def main():
         """, unsafe_allow_html=True)
 
     # ============================================================================================
-    # OVERVIEW PAGE - LAYMAN'S MODE (Enhanced for Deployment)
+    # OVERVIEW PAGE - LAYMAN'S MODE
     # ============================================================================================
 
     if page == "📊 Overview":
@@ -950,6 +810,273 @@ def main():
                 <div class='metric-status status-{wind_class}'>{wind_status}</div>
             </div>
             """, unsafe_allow_html=True)
+
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        # Enhanced Anomaly Detection and Recommendations
+        col1, col2 = st.columns([1, 1])
+
+        with col1:
+            st.markdown('<div class="component-container">', unsafe_allow_html=True)
+            st.markdown("<div class='section-title'>🔍 Anomaly Analysis</div>",
+                        unsafe_allow_html=True)
+
+            explanation = generate_natural_language_explanation(weather_data, anomaly_explanations)
+            st.markdown(f'<div class="explanation-text">{explanation}</div>',
+                        unsafe_allow_html=True)
+
+            st.markdown('</div>', unsafe_allow_html=True)
+
+        with col2:
+            st.markdown('<div class="component-container">', unsafe_allow_html=True)
+            st.markdown("<div class='section-title'>📋 Operational Recommendations</div>",
+                        unsafe_allow_html=True)
+
+            # Enhanced recommendations based on Jeremy's anomaly classifications
+            if current['pseudo_label'] in ['Point Anomaly', 'Pattern Anomaly']:
+                if current['temperature_2m'] < 2 and current['precipitation'] > 0:
+                    st.markdown("""
+                    <div class='anomaly-card'>
+                        <div class='anomaly-header anomaly-danger'>
+                            <span class='anomaly-icon'>🚨</span>
+                            <span>IMMEDIATE ACTION REQUIRED</span>
+                        </div>
+                        <ul>
+                            <li><strong>Deploy gritting crews</strong> to priority routes immediately</li>
+                            <li><strong>Issue black ice warning</strong> to public via all channels</li>
+                            <li><strong>Coordinate with Heathrow operations</strong> for runway management</li>
+                            <li><strong>Monitor temperature trend</strong> for next 2-4 hours</li>
+                            <li><strong>Activate emergency protocols</strong> if conditions worsen</li>
+                        </ul>
+                    </div>
+                    """, unsafe_allow_html=True)
+                elif current['anomaly_label'] == 'Compound anomaly':
+                    st.markdown("""
+                    <div class='anomaly-card'>
+                        <div class='anomaly-header anomaly-danger'>
+                            <span class='anomaly-icon'>⚡</span>
+                            <span>COMPOUND ANOMALY DETECTED</span>
+                        </div>
+                        <ul>
+                            <li><strong>Multi-system weather event</strong> in progress</li>
+                            <li><strong>Enhanced monitoring</strong> across all parameters</li>
+                            <li><strong>Coordinate response teams</strong> for complex scenario</li>
+                            <li><strong>Prepare contingency resources</strong> for escalation</li>
+                        </ul>
+                    </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.markdown("""
+                    <div class='anomaly-card'>
+                        <div class='anomaly-header anomaly-warning'>
+                            <span class='anomaly-icon'>⚠️</span>
+                            <span>INCREASED MONITORING</span>
+                        </div>
+                        <ul>
+                            <li><strong>Place crews on standby</strong> for rapid deployment</li>
+                            <li><strong>Check equipment readiness</strong> and resource availability</li>
+                            <li><strong>Monitor forecast updates</strong> every 30 minutes</li>
+                            <li><strong>Review contingency plans</strong> with team leads</li>
+                        </ul>
+                    </div>
+                    """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                <div class='anomaly-card'>
+                    <div class='anomaly-header anomaly-normal'>
+                        <span class='anomaly-icon'>✅</span>
+                        <span>STANDARD OPERATIONS</span>
+                    </div>
+                    <ul>
+                        <li><strong>Continue routine monitoring</strong> schedule</li>
+                        <li><strong>No immediate action required</strong></li>
+                        <li><strong>Maintain equipment readiness</strong> for rapid response</li>
+                        <li><strong>Review daily forecast</strong> for planning</li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+
+            st.markdown('</div>', unsafe_allow_html=True)
+
+        # Enhanced Heathrow Area Map
+        st.markdown('<div class="component-container">', unsafe_allow_html=True)
+        st.markdown("<div class='section-title'>🗺️ Heathrow Area - Road Network Status</div>",
+                    unsafe_allow_html=True)
+
+        needs_gritting = current['temperature_2m'] < 3 and current['precipitation'] > 0
+        heathrow_map = create_heathrow_map(needs_gritting)
+        folium_static(heathrow_map)
+
+        if needs_gritting:
+            st.warning("🧊 **Gritting Alert**: Road surface temperatures may reach freezing point. Monitor closely.")
+        else:
+            st.info("✅ **Road Conditions**: Normal operations expected. Continue standard monitoring.")
+
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        if st.button("🔄 Refresh Data", type="primary"):
+            st.rerun()
+
+    # ============================================================================================
+    # FORECAST PAGE - JEREMY'S ENHANCED VISUALISATIONS WITH COMBINED VIEW
+    # ============================================================================================
+
+    elif page == "📈 Forecast":
+        st.markdown("---")
+
+        st.markdown('<div class="component-container">', unsafe_allow_html=True)
+        st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
+                    unsafe_allow_html=True)
+
+        # Enhanced forecast explanation
+        st.info("""
+        **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
+        They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
+        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
+        """)
+
+        # Add the display option selector
+        display_option = st.radio(
+            "Display Options:",
+            ["Individual Chart", "Combined View (All 4 Metrics)"],
+            horizontal=True
+        )
+
+        if display_option == "Combined View (All 4 Metrics)":
+            st.markdown("### 📊 Combined 72-Hour Forecast - All Weather Parameters")
+            
+            # Create and display all 4 charts vertically
+            metrics = ["temperature", "pressure", "precipitation", "wind_speed"]
+            
+            for metric in metrics:
+                chart = create_enhanced_forecast_chart(weather_data, metric)
+                if chart:
+                    try:
+                        st.altair_chart(chart, use_container_width=True)
+                    except Exception as e:
+                        st.warning(f"Using Plotly fallback for {metric}")
+                        # Create simple Plotly fallback
+                        y_col_map = {
+                            "temperature": "temperature_2m",
+                            "pressure": "surface_pressure",
+                            "precipitation": "precipitation", 
+                            "wind_speed": "wind_speed_10m"
+                        }
+                        y_col = y_col_map[metric]
+                        fig = px.line(weather_data, x='timestamp', y=y_col, 
+                                     title=f"72-Hour {metric.title()} Forecast")
+                        fig.update_traces(line=dict(width=3, color='#3498db'))
+                        st.plotly_chart(fig, use_container_width=True)
+
+        else:
+            # Individual chart display
+            selected_metric = st.selectbox(
+                "Select weather parameter:",
+                ["temperature", "pressure", "precipitation", "wind_speed"],
+                format_func=lambda x: {
+                    "temperature": "🌡️ Temperature (°C)",
+                    "pressure": "🌊 Surface Pressure (hPa)",
+                    "precipitation": "🌧️ Precipitation (mm)",
+                    "wind_speed": "💨 Wind Speed (km/h)"
+                }[x]
+            )
+
+            if len(weather_data) > 0:
+                # Use Jeremy's enhanced visualisation
+                enhanced_chart = create_enhanced_forecast_chart(weather_data, selected_metric)
+                
+                if enhanced_chart:
+                    try:
+                        st.altair_chart(enhanced_chart, use_container_width=True)
+                    except Exception as e:
+                        st.warning(f"Using Plotly fallback for visualisation.")
+                        # Plotly fallback
+                        y_col = {
+                            "temperature": "temperature_2m",
+                            "pressure": "surface_pressure", 
+                            "precipitation": "precipitation",
+                            "wind_speed": "wind_speed_10m"
+                        }[selected_metric]
+                        
+                        fig = px.line(weather_data, x='timestamp', y=y_col,
+                                      title=f"72-Hour {selected_metric.title()} Forecast")
+                        fig.update_traces(line=dict(width=3, color='#3498db'))
+                        st.plotly_chart(fig, use_container_width=True)
+
+        # Enhanced forecast summary with operational insights
+        if len(weather_data) > 0:
+            st.markdown("### 📊 Forecast Summary & Risk Assessment")
+            
+            if display_option == "Individual Chart":
+                col1, col2, col3, col4 = st.columns(4)
+
+                y_col = {
+                    "temperature": "temperature_2m",
+                    "pressure": "surface_pressure",
+                    "precipitation": "precipitation", 
+                    "wind_speed": "wind_speed_10m"
+                }[selected_metric]
+
+                with col1:
+                    avg_val = weather_data[y_col].mean()
+                    st.metric("Average", f"{avg_val:.1f}",
+                              help=f"Average {selected_metric} over forecast period")
+
+                with col2:
+                    max_val = weather_data[y_col].max()
+                    max_time = weather_data.loc[weather_data[y_col].idxmax(), 'timestamp']
+                    st.metric("Maximum", f"{max_val:.1f}",
+                              help=f"Peak {selected_metric} expected at {max_time.strftime('%a %d %b, %H:%M')}")
+
+                with col3:
+                    min_val = weather_data[y_col].min()
+                    min_time = weather_data.loc[weather_data[y_col].idxmin(), 'timestamp']
+                    st.metric("Minimum", f"{min_val:.1f}",
+                              help=f"Lowest {selected_metric} expected at {min_time.strftime('%a %d %b, %H:%M')}")
+
+                with col4:
+                    anomaly_periods = len(weather_data[weather_data['anomaly_label'] != 'Normal'])
+                    st.metric("Anomaly Periods", f"{anomaly_periods}",
+                              help=f"Number of forecast periods showing anomalous conditions")
+
+                # Enhanced operational risk analysis
+                st.markdown("#### 🔍 Operational Risk Analysis")
+
+                first_half = weather_data[y_col][:len(weather_data) // 2].mean()
+                second_half = weather_data[y_col][len(weather_data) // 2:].mean()
+                trend = "increasing" if second_half > first_half else "decreasing" if second_half < first_half else "stable"
+
+                insights = f"**Trend Analysis:** {selected_metric.title()} shows a **{trend}** pattern over the forecast period. "
+
+                if selected_metric == "temperature":
+                    risk_periods = len(weather_data[weather_data[y_col] < 0])
+                    if risk_periods > 0:
+                        insights += f"**❄️ Ice Risk:** {risk_periods} forecast periods show sub-zero temperatures. Gritting operations may be required. "
+                    compound_anomalies = len(weather_data[weather_data['anomaly_label'] == 'Compound anomaly'])
+                    if compound_anomalies > 0:
+                        insights += f"**⚡ Complex Weather:** {compound_anomalies} periods show compound anomalies requiring enhanced monitoring."
+                        
+                elif selected_metric == "pressure":
+                    low_pressure_periods = len(weather_data[weather_data[y_col] < 990])
+                    if low_pressure_periods > 0:
+                        insights += f"**🌪️ Storm Risk:** {low_pressure_periods} periods show very low pressure indicating potential severe weather. "
+                        
+                elif selected_metric == "precipitation":
+                    heavy_rain_periods = len(weather_data[weather_data[y_col] > 5])
+                    if heavy_rain_periods > 0:
+                        insights += f"**🌊 Flood Risk:** {heavy_rain_periods} periods show heavy precipitation. Surface water management may be needed. "
+                        
+                elif selected_metric == "wind_speed":
+                    high_wind_periods = len(weather_data[weather_data[y_col] > 15])
+                    if high_wind_periods > 0:
+                        insights += f"**💨 Operations Risk:** {high_wind_periods} periods show strong winds affecting airport and road operations. "
+
+                st.info(insights)
+            else:
+                # For combined view, show overall summary
+                st.markdown("#### 🔍 Overall Forecast Summary")
+                total_anomalies = len(weather_data[weather_data['anomaly_label'] != 'Normal'])
+                st.info(f"**Combined View Analysis:** {total_anomalies} anomalous periods detected across all weather parameters. Review individual charts for detailed risk assessment.")
 
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -1120,65 +1247,6 @@ def main():
                     st.write(f"**Precipitation:** {selected_anomaly['precipitation']:.1f} mm")
                     st.write(f"**Wind Speed:** {selected_anomaly['wind_speed_10m']:.1f} km/h")
 
-                # Marie's SHAP Waterfall Plot
-                st.markdown("#### Marie's SHAP Explanation (Waterfall Plot)")
-
-                # Sample waterfall data - in production this would come from Marie's XAI output
-                shap_data = pd.DataFrame({
-                    'feature': ['Base Value', 'temperature_2m', 'surface_pressure', 'wind_speed_10m', 'precipitation', 'Final Score'],
-                    'value': [0.5, -0.12, -0.28, -0.15, -0.08, 0.37],
-                    'cumulative': [0.5, 0.38, 0.10, -0.05, -0.13, 0.37]
-                })
-
-                waterfall_fig = go.Figure(go.Waterfall(
-                    name="SHAP Values",
-                    orientation="v",
-                    measure=["absolute", "relative", "relative", "relative", "relative", "total"],
-                    x=shap_data['feature'],
-                    textposition="outside",
-                    text=[f"{val:+.3f}" for val in shap_data['value']],
-                    y=shap_data['value'],
-                    connector={"line": {"color": "rgb(63, 63, 63)"}},
-                    increasing={"marker": {"color": "#2ecc71"}},
-                    decreasing={"marker": {"color": "#e74c3c"}},
-                    totals={"marker": {"color": "#3498db"}}
-                ))
-
-                waterfall_fig.update_layout(
-                    title="SHAP Waterfall Plot - Feature Contributions to Anomaly Score",
-                    xaxis_title="Features",
-                    yaxis_title="Anomaly Score Contribution",
-                    height=400
-                )
-
-                st.plotly_chart(waterfall_fig, use_container_width=True)
-
-                # Marie's Natural Language Explanation
-                for exp in anomaly_explanations:
-                    if abs((pd.to_datetime(exp['timestamp']) - selected_anomaly['timestamp']).total_seconds()) < 3600:
-                        st.markdown(f"""
-                        **🤖 Marie's AI Explanation:**
-                        
-                        {exp['summary']}
-                        
-                        **Key Contributing Factors:** {', '.join(exp['key_factors'])}
-                        
-                        **Technical Details:**
-                        - Model confidence in this explanation: {exp['confidence']}
-                        - Primary driver: Surface pressure deviation from normal range
-                        - Secondary factors: Wind pattern disruption and temperature gradient
-                        - Temporal context: Part of larger weather system transition
-                        """)
-                        break
-                else:
-                    st.markdown(f"""
-                    **🤖 Automated Analysis for Anomaly {selected_anomaly_idx}:**
-                    
-                    This {selected_anomaly['anomaly_label'].lower()} was detected through Jeremy's ML pipeline.
-                    The anomaly shows deviation in multiple weather parameters, suggesting a coordinated
-                    weather system change rather than isolated measurement error.
-                    """)
-
         # Model Configuration
         with st.expander("⚙️ Model Configuration & Technical Details"):
             col1, col2 = st.columns(2)
@@ -1238,15 +1306,12 @@ def main():
             with col1_1:
                 if st.button("👍 Helpful", key="thumbs_up"):
                     st.success("Thank you for your positive feedback!")
-                    # In production: save_feedback_to_system("positive", timestamp, user_session)
             with col1_2:
                 if st.button("👎 Not Helpful", key="thumbs_down"):
                     st.error("We'll work to improve the system!")
-                    # In production: save_feedback_to_system("negative", timestamp, user_session)
             with col1_3:
                 if st.button("🤔 Neutral", key="neutral"):
                     st.info("Thanks for your feedback!")
-                    # In production: save_feedback_to_system("neutral", timestamp, user_session)
 
         with col2:
             feedback_text = st.text_area(
@@ -1263,142 +1328,10 @@ def main():
             if st.button("📤 Submit Feedback", type="primary"):
                 if feedback_text:
                     st.success("Thank you for your detailed feedback! Your input helps us improve the system.")
-                    # In production: process_with_dipo_nlp_analysis(feedback_text, feedback_category)
                 else:
                     st.warning("Please provide some feedback text before submitting.")
 
         st.markdown('</div>', unsafe_allow_html=True)
-
-        # Enhanced Feedback Analytics (Dipo's Integration)
-        st.markdown('<div class="component-container">', unsafe_allow_html=True)
-        st.markdown("<div class='section-title'>📊 Feedback Analytics</div>",
-                    unsafe_allow_html=True)
-
-        col1, col2, col3, col4 = st.columns(4)
-
-        # Sample analytics - in production these would come from Dipo's analysis
-        with col1:
-            st.metric("Total Responses", "127", delta="12 this week")
-        with col2:
-            st.metric("Satisfaction Rate", "82%", delta="5%")
-        with col3:
-            st.metric("Expert Mode Usage", "34%", delta="8%")
-        with col4:
-            st.metric("Avg. Session Time", "8.5 min", delta="-1.2 min")
-
-        # Feedback trends visualisation
-        feedback_trends = pd.DataFrame({
-            'date': pd.date_range(start='2025-05-01', end='2025-05-31', freq='D'),
-            'positive': np.random.poisson(3, 31),
-            'negative': np.random.poisson(1, 31),
-            'neutral': np.random.poisson(2, 31)
-        })
-
-        try:
-            feedback_chart = alt.Chart(feedback_trends).transform_fold(
-                ['positive', 'negative', 'neutral'],
-                as_=['feedback_type', 'count']
-            ).mark_line(point=True).encode(
-                x=alt.X('date:T', title='Date'),
-                y=alt.Y('count:Q', title='Number of Responses'),
-                color=alt.Color('feedback_type:N',
-                                scale=alt.Scale(domain=['positive', 'negative', 'neutral'],
-                                                range=['#2ecc71', '#e74c3c', '#95a5a6']),
-                                title='Feedback Type'),
-                tooltip=['date:T', 'feedback_type:N', 'count:Q']
-            ).properties(
-                height=300,
-                title="Daily Feedback Trends"
-            )
-
-            st.altair_chart(feedback_chart, use_container_width=True)
-        except:
-            # Plotly fallback
-            fig_feedback = go.Figure()
-
-            fig_feedback.add_trace(go.Scatter(
-                x=feedback_trends['date'],
-                y=feedback_trends['positive'],
-                mode='lines+markers',
-                name='Positive',
-                line=dict(color='#2ecc71')
-            ))
-
-            fig_feedback.add_trace(go.Scatter(
-                x=feedback_trends['date'],
-                y=feedback_trends['negative'],
-                mode='lines+markers',
-                name='Negative',
-                line=dict(color='#e74c3c')
-            ))
-
-            fig_feedback.add_trace(go.Scatter(
-                x=feedback_trends['date'],
-                y=feedback_trends['neutral'],
-                mode='lines+markers',
-                name='Neutral',
-                line=dict(color='#95a5a6')
-            ))
-
-            fig_feedback.update_layout(
-                title="Daily Feedback Trends",
-                xaxis_title="Date",
-                yaxis_title="Number of Responses",
-                height=300
-            )
-
-            st.plotly_chart(fig_feedback, use_container_width=True)
-
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        # Dipo's Community Insights
-        with st.expander("💡 Community Insights (Dipo's Analysis)"):
-            st.markdown("""
-            **📈 Recent User Engagement Patterns:**
-            - **Peak Usage**: 08:00-10:00 and 16:00-18:00 (operational shift changes)
-            - **Most Accessed Feature**: Current weather conditions (78% of sessions)
-            - **Expert Mode Adoption**: Growing amongst technical users (34% usage rate)
-            - **Mobile Access Requests**: 23% of users request mobile-optimised version
-
-            **🎯 Feature Requests (NLP Analysis):**
-            - **SMS/Email Alerts**: 45% of feature requests
-            - **Historical Comparison**: 32% of requests
-            - **Mobile App**: 28% of requests
-            - **API Access**: 18% of technical user requests
-
-            **📊 Sentiment Analysis Summary:**
-            - **Overall Sentiment**: Positive (78%)
-            - **Trust Level**: High confidence in anomaly detection (85%)
-            - **Usability**: Intuitive for non-technical users (82%)
-            - **Accuracy Perception**: High credibility in forecasts (87%)
-
-            **🏛️ Stakeholder Breakdown:**
-            - **Local Government Officials**: 45% of user base
-            - **Operations Teams**: 32% of user base  
-            - **Technical Staff**: 23% of user base
-            - **Academic/Research**: 12% of user base
-            """)
-
-        with st.expander("🔬 Advanced Analytics (Dipo's Research)"):
-            st.markdown("""
-            **👥 User Journey Analysis:**
-            - **New Users**: Spend 73% of time in Overview mode
-            - **Returning Users**: 67% access Expert Mode regularly
-            - **Power Users**: Average 15+ sessions per week
-            - **Drop-off Points**: 8% exit after first anomaly explanation
-
-            **📱 Platform Performance:**
-            - **Desktop Users**: 68% (prefer Expert Mode)
-            - **Tablet Users**: 24% (balanced usage)
-            - **Mobile Users**: 8% (primarily Overview mode)
-            - **Average Session**: 8.5 minutes
-
-            **🎯 Impact Metrics:**
-            - **Decision Support**: 89% find explanations helpful for decisions
-            - **Response Time**: 23% faster anomaly response with dashboard
-            - **Training Reduction**: 34% less training needed for new staff
-            - **Operational Efficiency**: 15% improvement in resource allocation
-            """)
 
     # ============================================================================================
     # SIDEBAR INFORMATION & SYSTEM STATUS
@@ -1407,7 +1340,6 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 📋 System Information")
     
-    # Updated system information from documentation
     st.sidebar.info("""
     **Model Status:** ✅ Active  
     **Last Training:** 30 May 2025  
@@ -1440,11 +1372,6 @@ def main():
         st.sidebar.write("Anomaly labels:", weather_data['anomaly_label'].unique() if len(weather_data) > 0 else "No data")
         st.sidebar.write("Data shape:", weather_data.shape if len(weather_data) > 0 else "No data")
         st.sidebar.write("File paths tested:", ["data/dashboard_input_20250531_1700.csv", "dashboard_input_20250531_1700.csv", "./data/dashboard_input_20250531_1700.csv"])
-        st.sidebar.markdown("### 🐛 Deployment Status")
-        st.sidebar.write(f"Streamlit version: {st.__version__}")
-        st.sidebar.write(f"Data records: {len(weather_data)}")
-        st.sidebar.write(f"Anomalies detected: {len(weather_data[weather_data['anomaly_label'] != 'Normal']) if len(weather_data) > 0 else 0}")
-        st.sidebar.write(f"Last data timestamp: {weather_data['timestamp'].max() if len(weather_data) > 0 else 'No data'}")
 
     # Application footer with project information
     st.markdown("---")
@@ -1511,270 +1438,3 @@ if __name__ == "__main__":
 # 4. Deploy with one click!
 #
 # ================================================================================================
-
-        # Enhanced Anomaly Detection and Recommendations
-        col1, col2 = st.columns([1, 1])
-
-        with col1:
-            st.markdown('<div class="component-container">', unsafe_allow_html=True)
-            st.markdown("<div class='section-title'>🔍 Anomaly Analysis</div>",
-                        unsafe_allow_html=True)
-
-            explanation = generate_natural_language_explanation(weather_data, anomaly_explanations)
-            st.markdown(f'<div class="explanation-text">{explanation}</div>',
-                        unsafe_allow_html=True)
-
-            st.markdown('</div>', unsafe_allow_html=True)
-
-        with col2:
-            st.markdown('<div class="component-container">', unsafe_allow_html=True)
-            st.markdown("<div class='section-title'>📋 Operational Recommendations</div>",
-                        unsafe_allow_html=True)
-
-            # Enhanced recommendations based on Jeremy's anomaly classifications
-            if current['pseudo_label'] in ['Point Anomaly', 'Pattern Anomaly']:
-                if current['temperature_2m'] < 2 and current['precipitation'] > 0:
-                    st.markdown("""
-                    <div class='anomaly-card'>
-                        <div class='anomaly-header anomaly-danger'>
-                            <span class='anomaly-icon'>🚨</span>
-                            <span>IMMEDIATE ACTION REQUIRED</span>
-                        </div>
-                        <ul>
-                            <li><strong>Deploy gritting crews</strong> to priority routes immediately</li>
-                            <li><strong>Issue black ice warning</strong> to public via all channels</li>
-                            <li><strong>Coordinate with Heathrow operations</strong> for runway management</li>
-                            <li><strong>Monitor temperature trend</strong> for next 2-4 hours</li>
-                            <li><strong>Activate emergency protocols</strong> if conditions worsen</li>
-                        </ul>
-                    </div>
-                    """, unsafe_allow_html=True)
-                elif current['anomaly_label'] == 'Compound anomaly':
-                    st.markdown("""
-                    <div class='anomaly-card'>
-                        <div class='anomaly-header anomaly-danger'>
-                            <span class='anomaly-icon'>⚡</span>
-                            <span>COMPOUND ANOMALY DETECTED</span>
-                        </div>
-                        <ul>
-                            <li><strong>Multi-system weather event</strong> in progress</li>
-                            <li><strong>Enhanced monitoring</strong> across all parameters</li>
-                            <li><strong>Coordinate response teams</strong> for complex scenario</li>
-                            <li><strong>Prepare contingency resources</strong> for escalation</li>
-                        </ul>
-                    </div>
-                    """, unsafe_allow_html=True)
-                else:
-                    st.markdown("""
-                    <div class='anomaly-card'>
-                        <div class='anomaly-header anomaly-warning'>
-                            <span class='anomaly-icon'>⚠️</span>
-                            <span>INCREASED MONITORING</span>
-                        </div>
-                        <ul>
-                            <li><strong>Place crews on standby</strong> for rapid deployment</li>
-                            <li><strong>Check equipment readiness</strong> and resource availability</li>
-                            <li><strong>Monitor forecast updates</strong> every 30 minutes</li>
-                            <li><strong>Review contingency plans</strong> with team leads</li>
-                        </ul>
-                    </div>
-                    """, unsafe_allow_html=True)
-            else:
-                st.markdown("""
-                <div class='anomaly-card'>
-                    <div class='anomaly-header anomaly-normal'>
-                        <span class='anomaly-icon'>✅</span>
-                        <span>STANDARD OPERATIONS</span>
-                    </div>
-                    <ul>
-                        <li><strong>Continue routine monitoring</strong> schedule</li>
-                        <li><strong>No immediate action required</strong></li>
-                        <li><strong>Maintain equipment readiness</strong> for rapid response</li>
-                        <li><strong>Review daily forecast</strong> for planning</li>
-                    </ul>
-                </div>
-                """, unsafe_allow_html=True)
-
-            st.markdown('</div>', unsafe_allow_html=True)
-
-        # Enhanced Heathrow Area Map
-        st.markdown('<div class="component-container">', unsafe_allow_html=True)
-        st.markdown("<div class='section-title'>🗺️ Heathrow Area - Road Network Status</div>",
-                    unsafe_allow_html=True)
-
-        needs_gritting = current['temperature_2m'] < 3 and current['precipitation'] > 0
-        heathrow_map = create_heathrow_map(needs_gritting)
-        folium_static(heathrow_map)
-
-        if needs_gritting:
-            st.warning("🧊 **Gritting Alert**: Road surface temperatures may reach freezing point. Monitor closely.")
-        else:
-            st.info("✅ **Road Conditions**: Normal operations expected. Continue standard monitoring.")
-
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        if st.button("🔄 Refresh Data", type="primary"):
-            st.rerun()
-
-    # ============================================================================================
-    # FORECAST PAGE - JEREMY'S ENHANCED VISUALISATIONS WITH COMBINED VIEW
-    # ============================================================================================
-
-    elif page == "📈 Forecast":
-        st.markdown("---")
-
-        st.markdown('<div class="component-container">', unsafe_allow_html=True)
-        st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
-                    unsafe_allow_html=True)
-
-        # Enhanced forecast explanation
-        st.info("""
-        **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
-        They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
-        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
-        """)
-
-        # Add the display option selector - this was missing!
-        display_option = st.radio(
-            "Display Options:",
-            ["Individual Chart", "Combined View (All 4 Metrics)"],
-            horizontal=True
-        )
-
-        if display_option == "Combined View (All 4 Metrics)":
-            st.markdown("### 📊 Combined 72-Hour Forecast - All Weather Parameters")
-            
-            # Create and display all 4 charts vertically
-            metrics = ["temperature", "pressure", "precipitation", "wind_speed"]
-            
-            for metric in metrics:
-                chart = create_enhanced_forecast_chart(weather_data, metric)
-                if chart:
-                    try:
-                        st.altair_chart(chart, use_container_width=True)
-                    except Exception as e:
-                        st.warning(f"Using Plotly fallback for {metric}")
-                        # Create simple Plotly fallback
-                        y_col_map = {
-                            "temperature": "temperature_2m",
-                            "pressure": "surface_pressure",
-                            "precipitation": "precipitation", 
-                            "wind_speed": "wind_speed_10m"
-                        }
-                        y_col = y_col_map[metric]
-                        fig = px.line(weather_data, x='timestamp', y=y_col, 
-                                     title=f"72-Hour {metric.title()} Forecast")
-                        fig.update_traces(line=dict(width=3, color='#3498db'))
-                        st.plotly_chart(fig, use_container_width=True)
-
-        else:
-            # Individual chart display
-            selected_metric = st.selectbox(
-                "Select weather parameter:",
-                ["temperature", "pressure", "precipitation", "wind_speed"],
-                format_func=lambda x: {
-                    "temperature": "🌡️ Temperature (°C)",
-                    "pressure": "🌊 Surface Pressure (hPa)",
-                    "precipitation": "🌧️ Precipitation (mm)",
-                    "wind_speed": "💨 Wind Speed (km/h)"
-                }[x]
-            )
-
-            if len(weather_data) > 0:
-                # Use Jeremy's enhanced visualisation
-                enhanced_chart = create_enhanced_forecast_chart(weather_data, selected_metric)
-                
-                if enhanced_chart:
-                    try:
-                        st.altair_chart(enhanced_chart, use_container_width=True)
-                    except Exception as e:
-                        st.warning(f"Using Plotly fallback for visualisation.")
-                        # Plotly fallback
-                        y_col = {
-                            "temperature": "temperature_2m",
-                            "pressure": "surface_pressure", 
-                            "precipitation": "precipitation",
-                            "wind_speed": "wind_speed_10m"
-                        }[selected_metric]
-                        
-                        fig = px.line(weather_data, x='timestamp', y=y_col,
-                                      title=f"72-Hour {selected_metric.title()} Forecast")
-                        fig.update_traces(line=dict(width=3, color='#3498db'))
-                        st.plotly_chart(fig, use_container_width=True)
-
-        # Enhanced forecast summary with operational insights
-        if len(weather_data) > 0:
-            st.markdown("### 📊 Forecast Summary & Risk Assessment")
-            
-            if display_option == "Individual Chart":
-                col1, col2, col3, col4 = st.columns(4)
-
-                y_col = {
-                    "temperature": "temperature_2m",
-                    "pressure": "surface_pressure",
-                    "precipitation": "precipitation", 
-                    "wind_speed": "wind_speed_10m"
-                }[selected_metric]
-
-                with col1:
-                    avg_val = weather_data[y_col].mean()
-                    st.metric("Average", f"{avg_val:.1f}",
-                              help=f"Average {selected_metric} over forecast period")
-
-                with col2:
-                    max_val = weather_data[y_col].max()
-                    max_time = weather_data.loc[weather_data[y_col].idxmax(), 'timestamp']
-                    st.metric("Maximum", f"{max_val:.1f}",
-                              help=f"Peak {selected_metric} expected at {max_time.strftime('%a %d %b, %H:%M')}")
-
-                with col3:
-                    min_val = weather_data[y_col].min()
-                    min_time = weather_data.loc[weather_data[y_col].idxmin(), 'timestamp']
-                    st.metric("Minimum", f"{min_val:.1f}",
-                              help=f"Lowest {selected_metric} expected at {min_time.strftime('%a %d %b, %H:%M')}")
-
-                with col4:
-                    anomaly_periods = len(weather_data[weather_data['anomaly_label'] != 'Normal'])
-                    st.metric("Anomaly Periods", f"{anomaly_periods}",
-                              help=f"Number of forecast periods showing anomalous conditions")
-
-                # Enhanced operational risk analysis
-                st.markdown("#### 🔍 Operational Risk Analysis")
-
-                first_half = weather_data[y_col][:len(weather_data) // 2].mean()
-                second_half = weather_data[y_col][len(weather_data) // 2:].mean()
-                trend = "increasing" if second_half > first_half else "decreasing" if second_half < first_half else "stable"
-
-                insights = f"**Trend Analysis:** {selected_metric.title()} shows a **{trend}** pattern over the forecast period. "
-
-                if selected_metric == "temperature":
-                    risk_periods = len(weather_data[weather_data[y_col] < 0])
-                    if risk_periods > 0:
-                        insights += f"**❄️ Ice Risk:** {risk_periods} forecast periods show sub-zero temperatures. Gritting operations may be required. "
-                    compound_anomalies = len(weather_data[weather_data['anomaly_label'] == 'Compound anomaly'])
-                    if compound_anomalies > 0:
-                        insights += f"**⚡ Complex Weather:** {compound_anomalies} periods show compound anomalies requiring enhanced monitoring."
-                        
-                elif selected_metric == "pressure":
-                    low_pressure_periods = len(weather_data[weather_data[y_col] < 990])
-                    if low_pressure_periods > 0:
-                        insights += f"**🌪️ Storm Risk:** {low_pressure_periods} periods show very low pressure indicating potential severe weather. "
-                        
-                elif selected_metric == "precipitation":
-                    heavy_rain_periods = len(weather_data[weather_data[y_col] > 5])
-                    if heavy_rain_periods > 0:
-                        insights += f"**🌊 Flood Risk:** {heavy_rain_periods} periods show heavy precipitation. Surface water management may be needed. "
-                        
-                elif selected_metric == "wind_speed":
-                    high_wind_periods = len(weather_data[weather_data[y_col] > 15])
-                    if high_wind_periods > 0:
-                        insights += f"**💨 Operations Risk:** {high_wind_periods} periods show strong winds affecting airport and road operations. "
-
-                st.info(insights)
-            else:
-                # For combined view, show overall summary
-                st.markdown("#### 🔍 Overall Forecast Summary")
-                total_anomalies = len(weather_data[weather_data['anomaly_label'] != 'Normal'])
-                st.info(f"**Combined View Analysis:** {total_anomalies} anomalous periods detected across all weather parameters. Review individual charts for detailed risk assessment.")
-
-        st.markdown('</div>', unsafe_allow_html=True)
