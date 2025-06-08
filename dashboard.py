@@ -1,32 +1,4 @@
 # ================================================================================================
-# WEATHER ANOMALY DETECTION DASHBOARD - MSc Data Science Group Project
-# University of Greenwich - 2025 - FINAL DEPLOYMENT VERSION WITH FULL INTEGRATION
-# ================================================================================================
-#
-# PROJECT: Explainable AI for Weather Anomaly Detection in Local Government Operations
-# AUTHORS: Nad (Dashboard Design), Jeremy (ETL & ML), Marie (XAI), Dipo (Community Engagement)
-#
-# TEAM RESPONSIBILITIES:
-# - Jeremy: ETL & ML - Data ingestion, preprocessing, ML training - FULLY INTEGRATED ✅
-# - Marie: XAI - Model explanation, SHAP/LIME/NLG - FULLY INTEGRATED ✅  
-# - Nad: Dashboard Design - Interactive visualisation of results - COMPLETE ✅
-# - Dipo: Community Engagement - Feedback collection, light NLP analysis - INTEGRATED ✅
-#
-# DASHBOARD OVERVIEW:
-# This Streamlit application provides a dual-mode interface for weather anomaly detection:
-# 1. Layman's Mode: Non-technical stakeholders (local government, operations teams)
-# 2. Expert Mode: Technical users (data scientists, meteorologists)
-#
-# LATEST UPDATES:
-# ✅ Jeremy's ML Pipeline: Integrated merged CSV with 22 columns including XAI data
-# ✅ Marie's XAI Integration: TreeSHAP summaries and reconstruction error analysis
-# ✅ Combined View: All 4 weather metrics displayed together as requested
-# ✅ Enhanced Visualisations: Professional Altair charts with improved error handling
-# ✅ Summer Temperature Ranges: Updated for May/June data (12-22°C)
-# ✅ Robust Data Loading: Multiple path checking with comprehensive fallbacks
-#
-# DEPLOYMENT: Ready for Streamlit Community Cloud via GitHub
-# ================================================================================================
 
 import streamlit as st
 import pandas as pd
@@ -1526,12 +1498,7 @@ def main():
         has_xai = 'TreeSHAP_natural_language_summary' in weather_data.columns if len(weather_data) > 0 else False
         st.sidebar.write("XAI Integration:", "✅ Active" if has_xai else "❌ Not detected")
         st.sidebar.write("Time column used:", "date")
-        st.sidebar.write("File path tested:", ["data/dashboard_input_20250531_1700_merged.csv"])Anomaly labels:", weather_data['anomaly_label'].unique() if len(weather_data) > 0 else "No data")
-        st.sidebar.write("Data shape:", weather_data.shape if len(weather_data) > 0 else "No data")
-        has_xai = 'TreeSHAP_natural_language_summary' in weather_data.columns if len(weather_data) > 0 else False
-        st.sidebar.write("XAI Integration:", "✅ Active" if has_xai else "❌ Not detected")
-        time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
-        st.sidebar.write("Time column used:", time_col)
+        st.sidebar.write("File path tested:", ["data/dashboard_input_20250531_1700_merged.csv"])
 
     # Application footer with project information
     st.markdown("---")
