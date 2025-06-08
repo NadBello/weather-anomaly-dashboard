@@ -250,8 +250,8 @@ def load_sample_data():
         ]
         has_xai = all(col in data.columns for col in xai_columns)
         
-        # Keep original column names - don't rename date to timestamp
-        # Add 'timestamp' as alias pointing to 'date' for compatibility
+        # Don't rename columns - keep original CSV structure
+        # Add 'timestamp' as alias pointing to 'date' for backward compatibility
         data['timestamp'] = data['date']
         
         # Add confidence levels based on Jeremy's anomaly classifications
@@ -293,7 +293,7 @@ def load_sample_data():
 
 
 def load_fallback_data():
-    """Enhanced fallback data function with XAI simulation."""
+    """Enhanced fallback data function with XAI simulation using correct column names."""
     np.random.seed(42)
     
     current_time = datetime.datetime.now()
@@ -354,7 +354,7 @@ def load_fallback_data():
             treeshap_summary = "TreeSHAP analysis confirms normal weather variable interactions."
         
         data.append({
-            'timestamp': ts,
+            'date': ts,  # Use 'date' column name to match CSV
             'temperature_2m': base_temp,
             'surface_pressure': base_pressure,
             'precipitation': base_precip,
@@ -381,7 +381,10 @@ def load_fallback_data():
             'local_contribution_plot_path': f"plots/shap_local_{i}.png"
         })
     
-    return pd.DataFrame(data)
+    df = pd.DataFrame(data)
+    # Add timestamp alias for compatibility but keep date as primary
+    df['timestamp'] = df['date']
+    return df
 
 
 def load_marie_xai_data():
@@ -457,7 +460,7 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             return None
         
         # Use 'date' column for timestamp (original CSV column name)
-        time_col = 'date' if 'date' in data.columns else 'timestamp'
+        time_col = 'date'
         
         # Add band label for legend
         if lower_col and upper_col and lower_col in data.columns and upper_col in data.columns:
@@ -559,8 +562,8 @@ def create_expert_model_scores_chart(data):
         lstm_thresh = data["lstm_threshold"].iloc[0]
         if_thresh = data["if_threshold"].iloc[0]
         
-        # Use correct time column
-        time_col = 'date' if 'date' in data.columns else 'timestamp'
+        # Use 'date' column (original CSV column name)
+        time_col = 'date'
         
         # Create threshold breach zones
         band_df = pd.DataFrame({
@@ -1070,7 +1073,7 @@ def main():
                             "wind_speed": "wind_speed_10m"
                         }
                         y_col = y_col_map[metric]
-                        time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+                        time_col = 'date'
                         fig = px.line(weather_data, x=time_col, y=y_col, 
                                      title=f"72-Hour {metric.title()} Forecast")
                         fig.update_traces(line=dict(width=3, color='#3498db'))
@@ -1106,7 +1109,7 @@ def main():
                             "wind_speed": "wind_speed_10m"
                         }[selected_metric]
                         
-                        time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+                        time_col = 'date'
                         fig = px.line(weather_data, x=time_col, y=y_col,
                                       title=f"72-Hour {selected_metric.title()} Forecast")
                         fig.update_traces(line=dict(width=3, color='#3498db'))
@@ -1222,7 +1225,7 @@ def main():
                     vertical_spacing=0.1
                 )
 
-                time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+                time_col = 'date'
 
                 fig.add_trace(
                     go.Scatter(
@@ -1337,7 +1340,7 @@ def main():
                 selected_anomaly_idx = st.selectbox(
                     "Select anomaly for detailed analysis:",
                     anomaly_indices,
-                    format_func=lambda x: f"Anomaly {x} - {weather_data.iloc[x]['date' if 'date' in weather_data.columns else 'timestamp'].strftime('%Y-%m-%d %H:%M')} ({weather_data.iloc[x]['anomaly_label']})"
+                    format_func=lambda x: f"Anomaly {x} - {weather_data.iloc[x]['date'].strftime('%Y-%m-%d %H:%M')} ({weather_data.iloc[x]['anomaly_label']})"
                 )
 
                 selected_anomaly = weather_data.iloc[selected_anomaly_idx]
@@ -1346,8 +1349,7 @@ def main():
 
                 with col1:
                     st.markdown("**Anomaly Details:**")
-                    time_col = 'date' if 'date' in selected_anomaly else 'timestamp'
-                    st.write(f"**Timestamp:** {selected_anomaly[time_col]}")
+                    st.write(f"**Timestamp:** {selected_anomaly['date']}")
                     st.write(f"**Type:** {selected_anomaly['anomaly_label']}")
                     st.write(f"**Confidence:** {selected_anomaly['confidence']}")
                     st.write(f"**IF Score:** {selected_anomaly['if_score']:.3f} (thresh: {selected_anomaly['if_threshold']:.3f})")
@@ -1521,6 +1523,11 @@ def main():
     if st.sidebar.checkbox("🔧 Debug Info", key="main_debug"):
         st.sidebar.write("Data columns:", list(weather_data.columns))
         st.sidebar.write("Anomaly labels:", weather_data['anomaly_label'].unique() if len(weather_data) > 0 else "No data")
+        st.sidebar.write("Data shape:", weather_data.shape if len(weather_data) > 0 else "No data")
+        has_xai = 'TreeSHAP_natural_language_summary' in weather_data.columns if len(weather_data) > 0 else False
+        st.sidebar.write("XAI Integration:", "✅ Active" if has_xai else "❌ Not detected")
+        st.sidebar.write("Time column used:", "date")
+        st.sidebar.write("File path tested:", ["data/dashboard_input_20250531_1700_merged.csv"])Anomaly labels:", weather_data['anomaly_label'].unique() if len(weather_data) > 0 else "No data")
         st.sidebar.write("Data shape:", weather_data.shape if len(weather_data) > 0 else "No data")
         has_xai = 'TreeSHAP_natural_language_summary' in weather_data.columns if len(weather_data) > 0 else False
         st.sidebar.write("XAI Integration:", "✅ Active" if has_xai else "❌ Not detected")
