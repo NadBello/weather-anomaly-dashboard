@@ -220,31 +220,17 @@ st.markdown("""
 def load_sample_data():
     """Enhanced Data Loading with Jeremy's ML Pipeline and Marie's XAI Integration"""
     try:
-        # Try multiple potential paths for the merged CSV file
-        possible_paths = [
-            "data/dashboard_input_20250531_1700_merged.csv",
-            "dashboard_input_20250531_1700_merged.csv",
-            "./data/dashboard_input_20250531_1700_merged.csv",
-            "data/dashboard_input_20250531_1700.csv",  # Fallback to original
-            "dashboard_input_20250531_1700.csv",
-            "./data/dashboard_input_20250531_1700.csv"
-        ]
+        # Use exact GitHub path for the merged CSV file
+        file_path = "data/dashboard_input_20250531_1700_merged.csv"
         
-        data = None
-        loaded_file = None
-        for path in possible_paths:
-            try:
-                data = pd.read_csv(path, parse_dates=['date'])
-                loaded_file = path
-                break
-            except FileNotFoundError:
-                continue
-        
-        if data is None:
-            st.sidebar.warning("⚠️ CSV files not found - using demo data for development")
+        try:
+            data = pd.read_csv(file_path, parse_dates=['date'])
+            loaded_file = file_path
+        except FileNotFoundError:
+            st.sidebar.warning("⚠️ Merged CSV not found - using demo data for development")
             return load_fallback_data()
         
-        # Validate required columns structure
+        # Validate required columns structure (using actual CSV column names)
         required_columns = [
             'date', 'temperature_2m', 'surface_pressure', 'precipitation', 'wind_speed_10m',
             'temp_lower', 'temp_upper', 'wind_lower', 'wind_upper', 'press_lower', 'press_upper',
@@ -264,8 +250,9 @@ def load_sample_data():
         ]
         has_xai = all(col in data.columns for col in xai_columns)
         
-        # Rename for compatibility with existing dashboard code
-        data = data.rename(columns={'date': 'timestamp'})
+        # Keep original column names - don't rename date to timestamp
+        # Add 'timestamp' as alias pointing to 'date' for compatibility
+        data['timestamp'] = data['date']
         
         # Add confidence levels based on Jeremy's anomaly classifications
         def assign_confidence(row):
@@ -421,11 +408,12 @@ def load_marie_xai_data():
 # ENHANCED VISUALISATION FUNCTIONS - JEREMY'S ALTAIR INTEGRATION
 # ================================================================================================
 
-def create_enhanced_forecast_chart(data, selected_metric):
-    """Jeremy's Enhanced Altair Visualisation with Improved Error Handling"""
+def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
+    """Jeremy's Enhanced Altair Visualisation with Improved Error Handling and Unique Keys"""
     try:
-        # Debug option for troubleshooting
-        if st.sidebar.checkbox("🔧 Debug Column Names"):
+        # Debug option for troubleshooting with unique key
+        debug_enabled = st.sidebar.checkbox("🔧 Debug Column Names", key=f"debug_{chart_key}")
+        if debug_enabled:
             st.sidebar.write("Available columns:", list(data.columns))
             st.sidebar.write("Sample anomaly labels:", data['anomaly_label'].unique())
             st.sidebar.write("Data shape:", data.shape)
@@ -468,6 +456,9 @@ def create_enhanced_forecast_chart(data, selected_metric):
             st.error(f"Column {y_col} not found in data")
             return None
         
+        # Use 'date' column for timestamp (original CSV column name)
+        time_col = 'date' if 'date' in data.columns else 'timestamp'
+        
         # Add band label for legend
         if lower_col and upper_col and lower_col in data.columns and upper_col in data.columns:
             data_copy = data.copy()
@@ -475,9 +466,9 @@ def create_enhanced_forecast_chart(data, selected_metric):
         else:
             data_copy = data.copy()
         
-        # Base chart configuration
+        # Base chart configuration using correct time column
         base = alt.Chart(data_copy).encode(
-            x=alt.X('timestamp:T',
+            x=alt.X(f'{time_col}:T',
                     title='Date & Time',
                     axis=alt.Axis(format='%d %b %H:%M', labelAngle=-45, tickCount=12, grid=False))
         )
@@ -528,7 +519,7 @@ def create_enhanced_forecast_chart(data, selected_metric):
                                range=['#00bfff', '#ba55d3', '#27408b']),
                            title='Anomaly Type'),
             tooltip=[
-                alt.Tooltip('timestamp:T', title='Timestamp', format='%d %b %H:%M'),
+                alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
                 alt.Tooltip(f'{y_col}:Q', title=y_title, format='.1f'),
                 alt.Tooltip('anomaly_label:N', title='Anomaly Type'),
                 alt.Tooltip('confidence:N', title='Confidence')
@@ -551,6 +542,9 @@ def create_enhanced_forecast_chart(data, selected_metric):
         
     except Exception as e:
         st.error(f"Error creating enhanced chart: {e}")
+        if debug_enabled:
+            st.error(f"Detailed error: {str(e)}")
+            st.write("Data columns available:", list(data.columns))
         return None
 
 
@@ -565,9 +559,12 @@ def create_expert_model_scores_chart(data):
         lstm_thresh = data["lstm_threshold"].iloc[0]
         if_thresh = data["if_threshold"].iloc[0]
         
+        # Use correct time column
+        time_col = 'date' if 'date' in data.columns else 'timestamp'
+        
         # Create threshold breach zones
         band_df = pd.DataFrame({
-            "timestamp": [data["timestamp"].min(), data["timestamp"].max()],
+            time_col: [data[time_col].min(), data[time_col].max()],
             "lstm_threshold": [lstm_thresh] * 2,
             "lstm_top": [y_max] * 2,
             "if_threshold": [if_thresh] * 2,
@@ -577,7 +574,7 @@ def create_expert_model_scores_chart(data):
         
         # Top band for LSTM
         top_band = alt.Chart(band_df).mark_area(opacity=0.15).encode(
-            x='timestamp:T',
+            x=f'{time_col}:T',
             y='lstm_threshold:Q',
             y2='lstm_top:Q',
             color=alt.Color('zone_type:N',
@@ -587,7 +584,7 @@ def create_expert_model_scores_chart(data):
         
         # Bottom band for IF
         bottom_band = alt.Chart(band_df).mark_area(opacity=0.15).encode(
-            x='timestamp:T',
+            x=f'{time_col}:T',
             y='if_bottom:Q',
             y2='if_threshold:Q',
             color=alt.Color('zone_type:N',
@@ -597,7 +594,7 @@ def create_expert_model_scores_chart(data):
         
         # Base chart
         base = alt.Chart(data).encode(
-            x=alt.X('timestamp:T',
+            x=alt.X(f'{time_col}:T',
                     axis=alt.Axis(format='%d %b %H:%M', tickCount=12, labelAngle=-45, grid=False),
                     title='Date & Time')
         )
@@ -634,13 +631,13 @@ def create_expert_model_scores_chart(data):
         # Plot anomaly dots with unified legend
         if len(df_dots) > 0:
             dots_combined = alt.Chart(df_dots).mark_circle(size=60).encode(
-                x='timestamp:T',
+                x=f'{time_col}:T',
                 y='y_val:Q',
                 color=alt.Color('source:N',
                     scale=alt.Scale(domain=["LSTM Anomaly", "IF Anomaly"], range=['#ba55d3', '#00bfff']),
                     legend=alt.Legend(title='Anomaly Type')),
                 tooltip=[
-                    alt.Tooltip('timestamp:T', title='Timestamp', format='%d %b %H:%M'),
+                    alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
                     alt.Tooltip('y_val:Q', title='Score'),
                     alt.Tooltip('anomaly_label:N', title='Anomaly Label')
                 ]
@@ -669,6 +666,7 @@ def create_expert_model_scores_chart(data):
         
     except Exception as e:
         st.error(f"Error creating model scores chart: {e}")
+        return None: {e}")
         return None
 
 
@@ -1056,8 +1054,9 @@ def main():
             # Create and display all 4 charts vertically as requested by Jeremy
             metrics = ["temperature", "pressure", "precipitation", "wind_speed"]
             
-            for metric in metrics:
-                chart = create_enhanced_forecast_chart(weather_data, metric)
+            for i, metric in enumerate(metrics):
+                # Use unique key for each chart to avoid checkbox ID conflicts
+                chart = create_enhanced_forecast_chart(weather_data, metric, chart_key=f"combined_{metric}_{i}")
                 if chart:
                     try:
                         st.altair_chart(chart, use_container_width=True)
@@ -1071,7 +1070,8 @@ def main():
                             "wind_speed": "wind_speed_10m"
                         }
                         y_col = y_col_map[metric]
-                        fig = px.line(weather_data, x='timestamp', y=y_col, 
+                        time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+                        fig = px.line(weather_data, x=time_col, y=y_col, 
                                      title=f"72-Hour {metric.title()} Forecast")
                         fig.update_traces(line=dict(width=3, color='#3498db'))
                         st.plotly_chart(fig, use_container_width=True)
@@ -1090,14 +1090,14 @@ def main():
             )
 
             if len(weather_data) > 0:
-                # Use Jeremy's enhanced visualisation
-                enhanced_chart = create_enhanced_forecast_chart(weather_data, selected_metric)
+                # Use Jeremy's enhanced visualisation with unique key
+                enhanced_chart = create_enhanced_forecast_chart(weather_data, selected_metric, chart_key=f"individual_{selected_metric}")
                 
                 if enhanced_chart:
                     try:
                         st.altair_chart(enhanced_chart, use_container_width=True)
                     except Exception as e:
-                        st.warning(f"Using Plotly fallback for visualisation.")
+                        st.warning(f"Using Plotly fallback for visualisation: {e}")
                         # Plotly fallback
                         y_col = {
                             "temperature": "temperature_2m",
@@ -1106,7 +1106,8 @@ def main():
                             "wind_speed": "wind_speed_10m"
                         }[selected_metric]
                         
-                        fig = px.line(weather_data, x='timestamp', y=y_col,
+                        time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+                        fig = px.line(weather_data, x=time_col, y=y_col,
                                       title=f"72-Hour {selected_metric.title()} Forecast")
                         fig.update_traces(line=dict(width=3, color='#3498db'))
                         st.plotly_chart(fig, use_container_width=True)
@@ -1221,9 +1222,11 @@ def main():
                     vertical_spacing=0.1
                 )
 
+                time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+
                 fig.add_trace(
                     go.Scatter(
-                        x=weather_data['timestamp'],
+                        x=weather_data[time_col],
                         y=weather_data['if_score'],
                         mode='lines+markers',
                         name='IF Score',
@@ -1234,7 +1237,7 @@ def main():
 
                 fig.add_trace(
                     go.Scatter(
-                        x=weather_data['timestamp'],
+                        x=weather_data[time_col],
                         y=weather_data['lstm_error'],
                         mode='lines+markers',
                         name='LSTM Error',
@@ -1334,7 +1337,7 @@ def main():
                 selected_anomaly_idx = st.selectbox(
                     "Select anomaly for detailed analysis:",
                     anomaly_indices,
-                    format_func=lambda x: f"Anomaly {x} - {weather_data.iloc[x]['timestamp'].strftime('%Y-%m-%d %H:%M')} ({weather_data.iloc[x]['anomaly_label']})"
+                    format_func=lambda x: f"Anomaly {x} - {weather_data.iloc[x]['date' if 'date' in weather_data.columns else 'timestamp'].strftime('%Y-%m-%d %H:%M')} ({weather_data.iloc[x]['anomaly_label']})"
                 )
 
                 selected_anomaly = weather_data.iloc[selected_anomaly_idx]
@@ -1343,7 +1346,8 @@ def main():
 
                 with col1:
                     st.markdown("**Anomaly Details:**")
-                    st.write(f"**Timestamp:** {selected_anomaly['timestamp']}")
+                    time_col = 'date' if 'date' in selected_anomaly else 'timestamp'
+                    st.write(f"**Timestamp:** {selected_anomaly[time_col]}")
                     st.write(f"**Type:** {selected_anomaly['anomaly_label']}")
                     st.write(f"**Confidence:** {selected_anomaly['confidence']}")
                     st.write(f"**IF Score:** {selected_anomaly['if_score']:.3f} (thresh: {selected_anomaly['if_threshold']:.3f})")
@@ -1514,12 +1518,14 @@ def main():
         """)
 
     # Debug information for deployment monitoring
-    if st.sidebar.checkbox("🔧 Debug Info"):
+    if st.sidebar.checkbox("🔧 Debug Info", key="main_debug"):
         st.sidebar.write("Data columns:", list(weather_data.columns))
         st.sidebar.write("Anomaly labels:", weather_data['anomaly_label'].unique() if len(weather_data) > 0 else "No data")
         st.sidebar.write("Data shape:", weather_data.shape if len(weather_data) > 0 else "No data")
         has_xai = 'TreeSHAP_natural_language_summary' in weather_data.columns if len(weather_data) > 0 else False
         st.sidebar.write("XAI Integration:", "✅ Active" if has_xai else "❌ Not detected")
+        time_col = 'date' if 'date' in weather_data.columns else 'timestamp'
+        st.sidebar.write("Time column used:", time_col)
 
     # Application footer with project information
     st.markdown("---")
