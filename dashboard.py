@@ -1,4 +1,10 @@
 # ================================================================================================
+# WEATHER ANOMALY DETECTION DASHBOARD - FULLY INTEGRATED VERSION
+# ================================================================================================
+# University of Greenwich - MSc Data Science Group Project
+# Team: Nad (Dashboard), Jeremy (ML), Marie (XAI), Dipo (Community)
+# Integration Status: Complete - Jeremy's ML + Marie's XAI + All Fixes Applied
+# ================================================================================================
 
 import streamlit as st
 import pandas as pd
@@ -185,14 +191,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ================================================================================================
-# DATA LOADING AND PROCESSING FUNCTIONS - ENHANCED WITH FULL INTEGRATION
+# DATA LOADING AND PROCESSING FUNCTIONS - FIXED VERSION
 # ================================================================================================
 
 @st.cache_data
 def load_sample_data():
-    """Enhanced Data Loading with Jeremy's ML Pipeline and Marie's XAI Integration"""
+    """Fixed Data Loading with Exact Path and Column Structure Preservation"""
     try:
-        # Use exact GitHub path for the merged CSV file
+        # Use exact GitHub path for the merged CSV file (FIXED)
         file_path = "data/dashboard_input_20250531_1700_merged.csv"
         
         try:
@@ -222,7 +228,7 @@ def load_sample_data():
         ]
         has_xai = all(col in data.columns for col in xai_columns)
         
-        # Don't rename columns - keep original CSV structure
+        # FIXED: Don't rename columns - keep original CSV structure
         # Add 'timestamp' as alias pointing to 'date' for backward compatibility
         data['timestamp'] = data['date']
         
@@ -326,7 +332,7 @@ def load_fallback_data():
             treeshap_summary = "TreeSHAP analysis confirms normal weather variable interactions."
         
         data.append({
-            'date': ts,  # Use 'date' column name to match CSV
+            'date': ts,  # FIXED: Use 'date' column name to match CSV
             'temperature_2m': base_temp,
             'surface_pressure': base_pressure,
             'precipitation': base_precip,
@@ -380,13 +386,13 @@ def load_marie_xai_data():
 
 
 # ================================================================================================
-# ENHANCED VISUALISATION FUNCTIONS - JEREMY'S ALTAIR INTEGRATION
+# ENHANCED VISUALISATION FUNCTIONS - JEREMY'S ALTAIR INTEGRATION WITH FIXES
 # ================================================================================================
 
 def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
-    """Jeremy's Enhanced Altair Visualisation with Improved Error Handling and Unique Keys"""
+    """FIXED: Jeremy's Enhanced Altair Visualisation with Unique Keys and Proper Column Usage"""
     try:
-        # Debug option for troubleshooting with unique key
+        # Debug option for troubleshooting with unique key (FIXED)
         debug_enabled = st.sidebar.checkbox("🔧 Debug Column Names", key=f"debug_{chart_key}")
         if debug_enabled:
             st.sidebar.write("Available columns:", list(data.columns))
@@ -431,7 +437,7 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             st.error(f"Column {y_col} not found in data")
             return None
         
-        # Use 'date' column for timestamp (original CSV column name)
+        # FIXED: Use 'date' column for timestamp (original CSV column name)
         time_col = 'date'
         
         # Add band label for legend
@@ -534,7 +540,7 @@ def create_expert_model_scores_chart(data):
         lstm_thresh = data["lstm_threshold"].iloc[0]
         if_thresh = data["if_threshold"].iloc[0]
         
-        # Use 'date' column (original CSV column name)
+        # FIXED: Use 'date' column (original CSV column name)
         time_col = 'date'
         
         # Create threshold breach zones
@@ -645,16 +651,16 @@ def create_expert_model_scores_chart(data):
 
 
 # ================================================================================================
-# UTILITY FUNCTIONS - ENHANCED FOR SUMMER CONDITIONS
+# UTILITY FUNCTIONS - ENHANCED FOR SUMMER CONDITIONS (FIXED)
 # ================================================================================================
 
 def get_metric_status(value, metric_type, season='summer'):
-    """Enhanced metric status with proper summer temperature ranges."""
+    """FIXED: Enhanced metric status with proper summer temperature ranges."""
     ranges = {
         'temperature': {
             'winter': {'min': 2, 'max': 8},
             'spring': {'min': 8, 'max': 15},
-            'summer': {'min': 12, 'max': 22},  # Updated for May/June data
+            'summer': {'min': 12, 'max': 22},  # FIXED: Updated for May/June data
             'autumn': {'min': 6, 'max': 14}
         },
         'pressure': {'min': 1000, 'max': 1025},
@@ -998,7 +1004,7 @@ def main():
             st.rerun()
 
     # ============================================================================================
-    # FORECAST PAGE - JEREMY'S ENHANCED VISUALISATIONS WITH COMBINED VIEW
+    # FORECAST PAGE - JEREMY'S ENHANCED VISUALISATIONS WITH COMBINED VIEW (FIXED)
     # ============================================================================================
 
     elif page == "📈 Forecast":
@@ -1015,7 +1021,7 @@ def main():
         Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
         """)
 
-        # Add Jeremy's requested combined view option
+        # FIXED: Add Jeremy's requested combined view option
         display_option = st.radio(
             "Display Options:",
             ["Individual Chart", "Combined View (All 4 Metrics)"],
@@ -1025,11 +1031,11 @@ def main():
         if display_option == "Combined View (All 4 Metrics)":
             st.markdown("### 📊 Combined 72-Hour Forecast - All Weather Parameters")
             
-            # Create and display all 4 charts vertically as requested by Jeremy
+            # FIXED: Create and display all 4 charts vertically as requested by Jeremy
             metrics = ["temperature", "pressure", "precipitation", "wind_speed"]
             
             for i, metric in enumerate(metrics):
-                # Use unique key for each chart to avoid checkbox ID conflicts
+                # FIXED: Use unique key for each chart to avoid checkbox ID conflicts
                 chart = create_enhanced_forecast_chart(weather_data, metric, chart_key=f"combined_{metric}_{i}")
                 if chart:
                     try:
@@ -1044,7 +1050,7 @@ def main():
                             "wind_speed": "wind_speed_10m"
                         }
                         y_col = y_col_map[metric]
-                        time_col = 'date'
+                        time_col = 'date'  # FIXED: Use correct column name
                         fig = px.line(weather_data, x=time_col, y=y_col, 
                                      title=f"72-Hour {metric.title()} Forecast")
                         fig.update_traces(line=dict(width=3, color='#3498db'))
@@ -1064,7 +1070,7 @@ def main():
             )
 
             if len(weather_data) > 0:
-                # Use Jeremy's enhanced visualisation with unique key
+                # FIXED: Use Jeremy's enhanced visualisation with unique key
                 enhanced_chart = create_enhanced_forecast_chart(weather_data, selected_metric, chart_key=f"individual_{selected_metric}")
                 
                 if enhanced_chart:
@@ -1080,7 +1086,7 @@ def main():
                             "wind_speed": "wind_speed_10m"
                         }[selected_metric]
                         
-                        time_col = 'date'
+                        time_col = 'date'  # FIXED: Use correct column name
                         fig = px.line(weather_data, x=time_col, y=y_col,
                                       title=f"72-Hour {selected_metric.title()} Forecast")
                         fig.update_traces(line=dict(width=3, color='#3498db'))
@@ -1196,7 +1202,7 @@ def main():
                     vertical_spacing=0.1
                 )
 
-                time_col = 'date'
+                time_col = 'date'  # FIXED: Use correct column name
 
                 fig.add_trace(
                     go.Scatter(
@@ -1530,7 +1536,7 @@ if __name__ == "__main__":
 # ✅ Enhanced Visualisations: Professional Altair charts with comprehensive error handling
 # ✅ Combined View Feature: All 4 metrics displayed together as requested by Jeremy
 # ✅ Summer Temperature Ranges: Updated for May/June data (12-22°C)
-# ✅ Robust Data Loading: Multiple path checking with comprehensive fallbacks
+# ✅ Robust Data Loading: Exact path checking with comprehensive fallbacks
 # ✅ System Information Updates: Real model training details with XAI integration noted
 # ✅ Dipo's Community Engagement: Enhanced feedback collection and user analytics
 # ✅ Error Handling: Comprehensive fallback options for all visualisations
@@ -1540,6 +1546,15 @@ if __name__ == "__main__":
 # ✅ UK Spelling/Grammar: Consistent throughout (visualisations, colour, optimisation)
 # ✅ Expert Mode Enhancements: Model score plots and individual anomaly analysis
 # ✅ XAI Deep Dive: Individual anomaly explanations with Marie's analysis
+#
+# FIXED ISSUES:
+# ✅ Data Loading: Single exact path instead of multiple fallbacks
+# ✅ Column Naming: Keep original 'date' column, add 'timestamp' alias only
+# ✅ Checkbox Conflicts: Unique keys for all interactive elements
+# ✅ Temperature Ranges: Summer ranges (12-22°C) for May/June data
+# ✅ Combined View: All 4 metrics displayed with unique chart keys
+# ✅ Altair Charts: Enhanced error handling and fallback to Plotly
+# ✅ Code Structure: Proper flow and complete implementation
 #
 # GITHUB REPOSITORY STRUCTURE:
 # weather-dashboard/
