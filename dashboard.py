@@ -1,3 +1,4 @@
+
 # ================================================================================================
 # WEATHER ANOMALY DETECTION DASHBOARD - MSc Data Science Group Project
 # University of Greenwich - 2025 - FINAL DEPLOYMENT VERSION WITH FULL INTEGRATION
@@ -669,6 +670,7 @@ def create_expert_model_scores_chart(data):
         
     except Exception as e:
         st.error(f"Error creating model scores chart: {e}")
+        return None: {e}")
         return None
 
 
