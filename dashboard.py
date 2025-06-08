@@ -456,7 +456,7 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             if lower_col in data.columns and upper_col in data.columns:
                 band = base.mark_area(opacity=0.3).encode(
                     y=alt.Y(f'{lower_col}:Q'),
-                    y2=alt.Y(f'{upper_col}:Q'),
+                    y2=f'{upper_col}:Q',
                     color=alt.Color('band_label:N',
                                    scale=alt.Scale(domain=[band_label], range=['lightgrey']),
                                    legend=alt.Legend(title=f'{selected_metric.title()} Band (last 60 days)'))
