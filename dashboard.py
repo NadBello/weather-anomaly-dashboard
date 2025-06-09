@@ -499,8 +499,15 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
         )
         layers.append(line)
         
-        # FIXED: Anomaly points with standardised colours to match header descriptions
+        # FIXED: Anomaly points with standardised colours and improved filtering
         # 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies
+        
+        # Debug: Check what anomaly types are in the data
+        if debug_enabled:
+            st.sidebar.write("Anomaly label counts:", data['anomaly_label'].value_counts())
+            st.sidebar.write("IF anomaly count:", data['is_if_anomaly'].sum())
+            st.sidebar.write("LSTM anomaly count:", data['is_lstm_anomaly'].sum())
+        
         anomalies = base.mark_circle(size=80).encode(
             y=alt.Y(f'{y_col}:Q', scale=alt.Scale(domain=[y_min, y_max])),
             color=alt.Color('anomaly_label:N',
@@ -512,10 +519,14 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
                 alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
                 alt.Tooltip(f'{y_col}:Q', title=y_title, format='.1f'),
                 alt.Tooltip('anomaly_label:N', title='Anomaly Type'),
-                alt.Tooltip('confidence:N', title='Confidence')
+                alt.Tooltip('confidence:N', title='Confidence'),
+                alt.Tooltip('is_if_anomaly:O', title='IF Flag'),
+                alt.Tooltip('is_lstm_anomaly:O', title='LSTM Flag')
             ]
         ).transform_filter(
-            alt.datum.anomaly_label != 'Normal'
+            (alt.datum.anomaly_label == 'IF anomaly') | 
+            (alt.datum.anomaly_label == 'LSTM anomaly') | 
+            (alt.datum.anomaly_label == 'Compound anomaly')
         )
         layers.append(anomalies)
         
