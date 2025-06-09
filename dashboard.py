@@ -920,28 +920,28 @@ def main():
             st.markdown(f'<div class="explanation-text">{explanation}</div>',
                         unsafe_allow_html=True)
 
-            # Add Marie's XAI explanation if available and anomaly detected
+        with col2:
+            st.markdown('<div class="component-container">', unsafe_allow_html=True)
+            st.markdown("<div class='section-title'>📋 Analysis & Recommendations</div>",
+                        unsafe_allow_html=True)
+
+            # Marie's XAI explanation if available and anomaly detected
             if (current['pseudo_label'] != 'Normal' and 
                 'reconstruction_error_summary' in current and 
                 pd.notna(current['reconstruction_error_summary'])):
                 st.markdown(f'<div class="xai-explanation"><strong>🧠 Marie\'s Detailed Analysis:</strong><br>{current["reconstruction_error_summary"]}</div>',
                             unsafe_allow_html=True)
 
-            st.markdown('</div>', unsafe_allow_html=True)
-
-        with col2:
-            st.markdown('<div class="component-container">', unsafe_allow_html=True)
-            st.markdown("<div class='section-title'>📋 Operational Recommendations</div>",
-                        unsafe_allow_html=True)
-
-            # Enhanced recommendations based on Jeremy's anomaly classifications - UPDATED per Marie's feedback
+            # Investigation recommendations based on Jeremy's anomaly classifications - UPDATED per Marie's feedback
+            st.markdown("#### 🔬 Investigation Recommendations")
+            
             if current['pseudo_label'] in ['Point Anomaly', 'Pattern Anomaly']:
                 if current['anomaly_label'] == 'Compound anomaly':
                     st.markdown("""
                     <div class='anomaly-card'>
                         <div class='anomaly-header anomaly-danger'>
                             <span class='anomaly-icon'>⚡</span>
-                            <span>COMPOUND ANOMALY DETECTED</span>
+                            <span>COMPOUND ANOMALY FLAGGED</span>
                         </div>
                         <ul>
                             <li><strong>Status:</strong> Anomaly flagged by both detection models</li>
@@ -956,7 +956,7 @@ def main():
                     <div class='anomaly-card'>
                         <div class='anomaly-header anomaly-warning'>
                             <span class='anomaly-icon'>🔍</span>
-                            <span>PATTERN ANOMALY DETECTED</span>
+                            <span>PATTERN ANOMALY FLAGGED</span>
                         </div>
                         <ul>
                             <li><strong>Status:</strong> Unusual pattern flagged by LSTM model</li>
