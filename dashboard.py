@@ -263,12 +263,6 @@ def load_sample_data():
         st.sidebar.info(f"📊 {len(data)} records, {anomaly_count} anomalies detected {xai_status}")
         st.sidebar.info(f"🟣 Pattern: {pattern_count}, 🔴 Compound: {compound_count}")
         
-        # Debug: Show first few dates and anomaly labels
-        if len(data) > 0:
-            st.sidebar.write("📅 First few dates:")
-            for i in range(min(3, len(data))):
-                st.sidebar.write(f"  {data.iloc[i]['date']} - {data.iloc[i]['anomaly_label']}")
-        
         return data
         
     except Exception as e:
@@ -511,10 +505,10 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
         )
         layers.append(line)
         
-        # FIXED: Anomaly points to match the ACTUAL data structure
+        # FIXED: Anomaly points with complete anomaly type support
         # Real data has: "Pattern anomaly", "Compound anomaly", "Normal"
-        # No standalone "IF anomaly" or "Point anomaly" in the real dataset
-        # 🟣 Pattern anomalies (LSTM-only), 🔴 Compound anomalies (IF+LSTM)
+        # But include IF anomaly support for future data
+        # 🔵 IF anomalies, 🟣 Pattern anomalies (LSTM-only), 🔴 Compound anomalies (IF+LSTM)
         
         # Debug: Check what anomaly types are in the data
         if debug_enabled:
@@ -526,8 +520,8 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             y=alt.Y(f'{y_col}:Q', scale=alt.Scale(domain=[y_min, y_max])),
             color=alt.Color('anomaly_label:N',
                            scale=alt.Scale(
-                               domain=['Pattern anomaly', 'Compound anomaly'],
-                               range=['#ba55d3', '#dc143c']),  # Purple for Pattern, Red for Compound
+                               domain=['IF anomaly', 'Pattern anomaly', 'Compound anomaly'],
+                               range=['#00bfff', '#ba55d3', '#dc143c']),  # Blue, Purple, Red
                            title='Anomaly Type'),
             tooltip=[
                 alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
@@ -1036,11 +1030,11 @@ def main():
         st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
                     unsafe_allow_html=True)
 
-        # Enhanced forecast explanation to match ACTUAL data structure
+        # Enhanced forecast explanation with complete anomaly key including IF anomalies
         st.info("""
         **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
         They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
-        Coloured dots indicate detected anomalies: 🟣 Pattern anomalies (LSTM), 🔴 Compound anomalies (IF+LSTM).
+        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 Pattern anomalies (LSTM), 🔴 Compound anomalies (IF+LSTM).
         """)
 
         # Add Jeremy's requested combined view option
