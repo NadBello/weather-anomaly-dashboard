@@ -934,25 +934,9 @@ def main():
             st.markdown("<div class='section-title'>📋 Operational Recommendations</div>",
                         unsafe_allow_html=True)
 
-            # Enhanced recommendations based on Jeremy's anomaly classifications
+            # Enhanced recommendations based on Jeremy's anomaly classifications - UPDATED per Marie's feedback
             if current['pseudo_label'] in ['Point Anomaly', 'Pattern Anomaly']:
-                if current['temperature_2m'] < 2 and current['precipitation'] > 0:
-                    st.markdown("""
-                    <div class='anomaly-card'>
-                        <div class='anomaly-header anomaly-danger'>
-                            <span class='anomaly-icon'>🚨</span>
-                            <span>IMMEDIATE ACTION REQUIRED</span>
-                        </div>
-                        <ul>
-                            <li><strong>Deploy gritting crews</strong> to priority routes immediately</li>
-                            <li><strong>Issue black ice warning</strong> to public via all channels</li>
-                            <li><strong>Coordinate with Heathrow operations</strong> for runway management</li>
-                            <li><strong>Monitor temperature trend</strong> for next 2-4 hours</li>
-                            <li><strong>Activate emergency protocols</strong> if conditions worsen</li>
-                        </ul>
-                    </div>
-                    """, unsafe_allow_html=True)
-                elif current['anomaly_label'] == 'Compound anomaly':
+                if current['anomaly_label'] == 'Compound anomaly':
                     st.markdown("""
                     <div class='anomaly-card'>
                         <div class='anomaly-header anomaly-danger'>
@@ -960,10 +944,25 @@ def main():
                             <span>COMPOUND ANOMALY DETECTED</span>
                         </div>
                         <ul>
-                            <li><strong>Multi-system weather event</strong> in progress</li>
-                            <li><strong>Enhanced monitoring</strong> across all parameters</li>
-                            <li><strong>Coordinate response teams</strong> for complex scenario</li>
-                            <li><strong>Prepare contingency resources</strong> for escalation</li>
+                            <li><strong>Status:</strong> Anomaly flagged by both detection models</li>
+                            <li><strong>Recommendation:</strong> Further investigation recommended</li>
+                            <li><strong>Next steps:</strong> Review meteorological patterns and data quality</li>
+                            <li><strong>Note:</strong> Anomaly detection does not indicate emergency conditions</li>
+                        </ul>
+                    </div>
+                    """, unsafe_allow_html=True)
+                elif current['anomaly_label'] == 'Pattern anomaly':
+                    st.markdown("""
+                    <div class='anomaly-card'>
+                        <div class='anomaly-header anomaly-warning'>
+                            <span class='anomaly-icon'>🔍</span>
+                            <span>PATTERN ANOMALY DETECTED</span>
+                        </div>
+                        <ul>
+                            <li><strong>Status:</strong> Unusual pattern flagged by LSTM model</li>
+                            <li><strong>Recommendation:</strong> Monitor for developing conditions</li>
+                            <li><strong>Next steps:</strong> Review recent weather trends and model performance</li>
+                            <li><strong>Note:</strong> Requires further analysis to determine significance</li>
                         </ul>
                     </div>
                     """, unsafe_allow_html=True)
@@ -972,13 +971,13 @@ def main():
                     <div class='anomaly-card'>
                         <div class='anomaly-header anomaly-warning'>
                             <span class='anomaly-icon'>⚠️</span>
-                            <span>INCREASED MONITORING</span>
+                            <span>ANOMALY FLAGGED</span>
                         </div>
                         <ul>
-                            <li><strong>Place crews on standby</strong> for rapid deployment</li>
-                            <li><strong>Check equipment readiness</strong> and resource availability</li>
-                            <li><strong>Monitor forecast updates</strong> every 30 minutes</li>
-                            <li><strong>Review contingency plans</strong> with team leads</li>
+                            <li><strong>Status:</strong> Unusual conditions detected by anomaly detection system</li>
+                            <li><strong>Recommendation:</strong> Further investigation recommended</li>
+                            <li><strong>Next steps:</strong> Review data quality and meteorological context</li>
+                            <li><strong>Note:</strong> Significance of anomaly requires domain expert assessment</li>
                         </ul>
                     </div>
                     """, unsafe_allow_html=True)
@@ -987,13 +986,13 @@ def main():
                 <div class='anomaly-card'>
                     <div class='anomaly-header anomaly-normal'>
                         <span class='anomaly-icon'>✅</span>
-                        <span>STANDARD OPERATIONS</span>
+                        <span>NORMAL CONDITIONS</span>
                     </div>
                     <ul>
-                        <li><strong>Continue routine monitoring</strong> schedule</li>
-                        <li><strong>No immediate action required</strong></li>
-                        <li><strong>Maintain equipment readiness</strong> for rapid response</li>
-                        <li><strong>Review daily forecast</strong> for planning</li>
+                        <li><strong>Status:</strong> No anomalies detected by either model</li>
+                        <li><strong>Recommendation:</strong> Continue routine monitoring</li>
+                        <li><strong>Next steps:</strong> Regular system health checks</li>
+                        <li><strong>Note:</strong> Weather parameters within expected ranges</li>
                     </ul>
                 </div>
                 """, unsafe_allow_html=True)
