@@ -520,7 +520,7 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             y=alt.Y(f'{y_col}:Q', scale=alt.Scale(domain=[y_min, y_max])),
             color=alt.Color('anomaly_label:N',
                            scale=alt.Scale(
-                               domain=['IF anomaly', 'Pattern anomaly', 'Compound anomaly'],
+                               domain=['Point anomaly', 'Pattern anomaly', 'Compound anomaly'],
                                range=['#00bfff', '#ba55d3', '#dc143c']),  # Blue, Purple, Red
                            title='Anomaly Type'),
             tooltip=[
@@ -1029,11 +1029,11 @@ def main():
         st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
                     unsafe_allow_html=True)
 
-        # Enhanced forecast explanation with complete anomaly key including IF anomalies
+        # Enhanced forecast explanation with complete anomaly key including Point anomalies
         st.info("""
         **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
         They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
-        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 Pattern anomalies (LSTM), 🔴 Compound anomalies (IF+LSTM).
+        Coloured dots indicate detected anomalies: 🔵 Point anomalies, 🟣 Pattern anomalies (LSTM), 🔴 Compound anomalies (IF+LSTM).
         """)
 
         # Add Jeremy's requested combined view option
