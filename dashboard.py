@@ -237,14 +237,14 @@ def load_sample_data():
         
         data['confidence'] = data.apply(assign_confidence, axis=1)
         
-        # Map Jeremy's labels to dashboard display format
+        # Map Jeremy's labels to dashboard display format - FIXED for real data
         def map_pseudo_label(label):
             if label == 'Normal':
                 return 'Normal'
+            elif label == 'Pattern anomaly':
+                return 'Pattern Anomaly'  # LSTM-only anomalies
             elif label == 'Compound anomaly':
-                return 'Pattern Anomaly'
-            elif label in ['IF anomaly', 'LSTM anomaly']:
-                return 'Point Anomaly'
+                return 'Compound Anomaly'  # Both IF+LSTM anomalies
             else:
                 return 'Uncertain'
         
@@ -499,9 +499,10 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
         )
         layers.append(line)
         
-        # FIXED: Anomaly points with correct filtering - back to working version
-        # The issue is likely that the fallback data isn't generating enough individual anomalies
-        # 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies
+        # FIXED: Anomaly points to match the ACTUAL data structure
+        # Real data has: "Pattern anomaly", "Compound anomaly", "Normal"
+        # No standalone "IF anomaly" or "Point anomaly" in the real dataset
+        # 🟣 Pattern anomalies (LSTM-only), 🔴 Compound anomalies (IF+LSTM)
         
         # Debug: Check what anomaly types are in the data
         if debug_enabled:
@@ -513,8 +514,8 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             y=alt.Y(f'{y_col}:Q', scale=alt.Scale(domain=[y_min, y_max])),
             color=alt.Color('anomaly_label:N',
                            scale=alt.Scale(
-                               domain=['IF anomaly', 'LSTM anomaly', 'Compound anomaly'],
-                               range=['#00bfff', '#ba55d3', '#dc143c']),  # Blue, Purple, Red
+                               domain=['Pattern anomaly', 'Compound anomaly'],
+                               range=['#ba55d3', '#dc143c']),  # Purple for Pattern, Red for Compound
                            title='Anomaly Type'),
             tooltip=[
                 alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
@@ -1023,11 +1024,11 @@ def main():
         st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
                     unsafe_allow_html=True)
 
-        # Enhanced forecast explanation with ORIGINAL colour references
+        # Enhanced forecast explanation to match ACTUAL data structure
         st.info("""
         **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
         They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
-        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
+        Coloured dots indicate detected anomalies: 🟣 Pattern anomalies (LSTM), 🔴 Compound anomalies (IF+LSTM).
         """)
 
         # Add Jeremy's requested combined view option
