@@ -499,34 +499,52 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
         )
         layers.append(line)
         
-        # FIXED: Anomaly points with standardised colours and improved filtering
-        # 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies
+        # FIXED: Anomaly points with correct label matching
+        # The data uses 'Point anomaly' and 'Pattern anomaly', not 'IF anomaly' and 'LSTM anomaly'
+        # 🔵 Point anomaly (IF-based), 🟣 Pattern anomaly (LSTM-based), 🔴 Compound anomaly
         
         # Debug: Check what anomaly types are in the data
         if debug_enabled:
             st.sidebar.write("Anomaly label counts:", data['anomaly_label'].value_counts())
+            st.sidebar.write("Pseudo label counts:", data['pseudo_label'].value_counts())
             st.sidebar.write("IF anomaly count:", data['is_if_anomaly'].sum())
             st.sidebar.write("LSTM anomaly count:", data['is_lstm_anomaly'].sum())
         
         anomalies = base.mark_circle(size=80).encode(
             y=alt.Y(f'{y_col}:Q', scale=alt.Scale(domain=[y_min, y_max])),
-            color=alt.Color('anomaly_label:N',
+            color=alt.Color('pseudo_label:N',
                            scale=alt.Scale(
-                               domain=['IF anomaly', 'LSTM anomaly', 'Compound anomaly'],
-                               range=['#00bfff', '#ba55d3', '#dc143c']),  # Blue, Purple, Red
+                               domain=['Point Anomaly', 'Pattern Anomaly'],
+                               range=['#00bfff', '#ba55d3']),  # Blue for Point, Purple for Pattern
                            title='Anomaly Type'),
             tooltip=[
                 alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
                 alt.Tooltip(f'{y_col}:Q', title=y_title, format='.1f'),
-                alt.Tooltip('anomaly_label:N', title='Anomaly Type'),
+                alt.Tooltip('anomaly_label:N', title='Original Label'),
+                alt.Tooltip('pseudo_label:N', title='Anomaly Type'),
                 alt.Tooltip('confidence:N', title='Confidence'),
                 alt.Tooltip('is_if_anomaly:O', title='IF Flag'),
                 alt.Tooltip('is_lstm_anomaly:O', title='LSTM Flag')
             ]
         ).transform_filter(
-            (alt.datum.anomaly_label == 'IF anomaly') | 
-            (alt.datum.anomaly_label == 'LSTM anomaly') | 
-            (alt.datum.anomaly_label == 'Compound anomaly')
+            (alt.datum.pseudo_label == 'Point Anomaly') | 
+            (alt.datum.pseudo_label == 'Pattern Anomaly')
+        )
+        layers.append(anomalies)
+        
+        # Add compound anomalies separately with red color
+        compound_anomalies = base.mark_circle(size=80).encode(
+            y=alt.Y(f'{y_col}:Q', scale=alt.Scale(domain=[y_min, y_max])),
+            color=alt.value('#dc143c'),  # Red for compound
+            tooltip=[
+                alt.Tooltip(f'{time_col}:T', title='Timestamp', format='%d %b %H:%M'),
+                alt.Tooltip(f'{y_col}:Q', title=y_title, format='.1f'),
+                alt.Tooltip('anomaly_label:N', title='Original Label'),
+                alt.Tooltip('pseudo_label:N', title='Anomaly Type'),
+                alt.Tooltip('confidence:N', title='Confidence')
+            ]
+        ).transform_filter(
+            alt.datum.anomaly_label == 'Compound anomaly'
         )
         layers.append(anomalies)
         
@@ -1026,11 +1044,11 @@ def main():
         st.markdown("<div class='section-title'>📈 72-Hour Weather Forecast</div>",
                     unsafe_allow_html=True)
 
-        # Enhanced forecast explanation with FIXED colour references
+        # Enhanced forecast explanation with CORRECTED colour references
         st.info("""
         **📊 Forecast Guide:** Shaded bands show an approximate "normal range" for each variable based on the last 60 days. 
         They offer context, but do not define anomalies — unusual combinations may still appear within these ranges.
-        Coloured dots indicate detected anomalies: 🔵 IF anomalies, 🟣 LSTM anomalies, 🔴 Compound anomalies.
+        Coloured dots indicate detected anomalies: 🔵 Point anomalies, 🟣 Pattern anomalies, 🔴 Compound anomalies.
         """)
 
         # Add Jeremy's requested combined view option
