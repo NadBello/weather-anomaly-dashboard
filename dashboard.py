@@ -196,7 +196,10 @@ def load_sample_data():
         file_path = "data/dashboard_input_20250531_1700_merged.csv"
         
         try:
-            data = pd.read_csv(file_path, parse_dates=['date'])
+            # FIXED: Custom date parsing for DD/MM/YYYY HH:MM format
+            data = pd.read_csv(file_path)
+            # Convert date column with correct format
+            data['date'] = pd.to_datetime(data['date'], format='%d/%m/%Y %H:%M')
             loaded_file = file_path
         except FileNotFoundError:
             st.sidebar.warning("⚠️ Merged CSV not found - using demo data for development")
@@ -226,11 +229,11 @@ def load_sample_data():
         # Add 'timestamp' as alias pointing to 'date' for backward compatibility
         data['timestamp'] = data['date']
         
-        # Add confidence levels based on Jeremy's anomaly classifications
+        # Add confidence levels based on Jeremy's anomaly classifications - FIXED for real data
         def assign_confidence(row):
             if row['anomaly_label'] == 'Compound anomaly':
                 return 'High'
-            elif row['anomaly_label'] in ['IF anomaly', 'LSTM anomaly']:
+            elif row['anomaly_label'] == 'Pattern anomaly':
                 return 'Medium'
             else:
                 return 'High'
@@ -250,12 +253,21 @@ def load_sample_data():
         
         data['pseudo_label'] = data['anomaly_label'].apply(map_pseudo_label)
         
-        # Success message for deployment monitoring
+        # Success message for deployment monitoring with ENHANCED debugging
         anomaly_count = len(data[data['anomaly_label'] != 'Normal'])
+        pattern_count = len(data[data['anomaly_label'] == 'Pattern anomaly'])
+        compound_count = len(data[data['anomaly_label'] == 'Compound anomaly'])
         xai_status = "with XAI integration" if has_xai else "base ML data"
         
         st.sidebar.success(f"✅ Data Loaded: {loaded_file}")
         st.sidebar.info(f"📊 {len(data)} records, {anomaly_count} anomalies detected {xai_status}")
+        st.sidebar.info(f"🟣 Pattern: {pattern_count}, 🔴 Compound: {compound_count}")
+        
+        # Debug: Show first few dates and anomaly labels
+        if len(data) > 0:
+            st.sidebar.write("📅 First few dates:")
+            for i in range(min(3, len(data))):
+                st.sidebar.write(f"  {data.iloc[i]['date']} - {data.iloc[i]['anomaly_label']}")
         
         return data
         
