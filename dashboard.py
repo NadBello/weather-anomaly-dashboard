@@ -999,14 +999,18 @@ def main():
 
             st.markdown('</div>', unsafe_allow_html=True)
 
-        # Enhanced Heathrow Area Map
+        # Enhanced Heathrow Area Map - FULL WIDTH AND CENTERED
         st.markdown('<div class="component-container">', unsafe_allow_html=True)
         st.markdown("<div class='section-title'>🗺️ Heathrow Area - Road Network Status</div>",
                     unsafe_allow_html=True)
 
         needs_gritting = current['temperature_2m'] < 3 and current['precipitation'] > 0
         heathrow_map = create_heathrow_map(needs_gritting)
-        folium_static(heathrow_map)
+        
+        # Center the map and make it full width
+        col1, col2, col3 = st.columns([0.05, 0.9, 0.05])  # Small margins on sides
+        with col2:
+            folium_static(heathrow_map, width=None, height=400)  # Full width, fixed height
 
         if needs_gritting:
             st.warning("🧊 **Gritting Alert**: Road surface temperatures may reach freezing point. Monitor closely.")
