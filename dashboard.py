@@ -196,10 +196,19 @@ def load_sample_data():
         file_path = "data/master_file_dashboard_input_20250531_1700_shap_rea.csv"
         
         try:
-            # FIXED: Custom date parsing for DD/MM/YYYY HH:MM format
+            # Load the CSV file
             data = pd.read_csv(file_path)
-            # Convert date column with correct format
-            data['date'] = pd.to_datetime(data['date'], format='%d/%m/%Y %H:%M')
+            # Try different date formats - first try ISO format, then DD/MM/YYYY format
+            try:
+                # Try ISO format first (YYYY-MM-DD HH:MM:SS)
+                data['date'] = pd.to_datetime(data['date'], format='%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                try:
+                    # Try ISO format without seconds (YYYY-MM-DD HH:MM)
+                    data['date'] = pd.to_datetime(data['date'], format='%Y-%m-%d %H:%M')
+                except ValueError:
+                    # Fall back to DD/MM/YYYY format
+                    data['date'] = pd.to_datetime(data['date'], format='%d/%m/%Y %H:%M')
             loaded_file = file_path
         except FileNotFoundError:
             st.sidebar.warning("⚠️ Merged CSV not found - using demo data for development")
