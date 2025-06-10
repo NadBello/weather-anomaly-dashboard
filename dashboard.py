@@ -407,9 +407,9 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             title = "72-Hour Temperature Forecast: Anomalies and Confidence Band"
             y_title = "Temperature (°C)"
             band_label = "Normal Range (Q1 to Q3 + 1.5×IQR)"
-            # Fixed Y-axis range as requested: Min 0°C, Max 28°C for more whitespace
+            # Fixed Y-axis range as requested: Min 0°C, Max 30°C for clean increments of 5
             y_min = 0
-            y_max = 28
+            y_max = 30
             
         elif selected_metric == "pressure":
             y_col = "surface_pressure"
