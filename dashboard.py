@@ -192,7 +192,7 @@ st.markdown("""
 def load_sample_data():
     """Enhanced Data Loading with Jeremy's ML Pipeline and Marie's XAI Integration"""
     try:
-        # Use the new CSV file path
+        # CSV file path - Note for Jeremy: Update this when shared on your github repo
         file_path = "data/master_file_dashboard_input_20250531_1700_shap_rea.csv"
         
         try:
@@ -1197,7 +1197,7 @@ def main():
         st.markdown('</div>', unsafe_allow_html=True)
 
     # ============================================================================================
-    # EXPERT MODE PAGE - SIMPLIFIED (TREESHAP GLOBAL CHART REMOVED)
+    # EXPERT MODE PAGE - SIMPLIFIED (TREESHAP CHART REMOVED)
     # ============================================================================================
 
     elif page == "🔬 Expert Mode":
