@@ -407,10 +407,9 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             title = "72-Hour Temperature Forecast: Anomalies and Confidence Band"
             y_title = "Temperature (°C)"
             band_label = "Normal Range (Q1 to Q3 + 1.5×IQR)"
-            # Extended Y-axis range for better confidence band visibility
-            y_min = data[y_col].min() - 2
-            y_max = max(data[upper_col].max() if upper_col in data.columns else data[y_col].max(), 
-                       data[y_col].max()) + 2
+            # Fixed Y-axis range as requested: Min 8°C, Max 28°C
+            y_min = 8
+            y_max = 28
             
         elif selected_metric == "pressure":
             y_col = "surface_pressure"
@@ -419,7 +418,7 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             title = "72-Hour Surface Pressure Forecast: Anomalies and Confidence Band"
             y_title = "Surface Pressure (hPa)"
             band_label = "Normal Range (±2×std)"
-            # Fixed range for better point visibility as requested
+            # Fixed range for better point visibility as requested - PERFECT AS IS
             y_min = 980
             y_max = 1050
             
@@ -430,7 +429,7 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             title = "72-Hour Precipitation Forecast: Anomalies and Rain Thresholds"
             y_title = "Precipitation (mm)"
             band_label = None
-            # Extended Y-axis for precipitation
+            # Extended Y-axis for precipitation - PERFECT AS IS
             y_min = 0
             y_max = max(data[y_col].max() + 1, 6)  # At least show up to 6mm
             
@@ -441,10 +440,9 @@ def create_enhanced_forecast_chart(data, selected_metric, chart_key="default"):
             title = "72-Hour Wind Speed Forecast: Anomalies and Confidence Band"
             y_title = "Wind Speed (km/h)"
             band_label = "Normal Range (10th to Q3 + 1.5×IQR)"
-            # Extended Y-axis range for wind speed
-            y_min = max(0, data[y_col].min() - 2)
-            y_max = max(data[upper_col].max() if upper_col in data.columns else data[y_col].max(), 
-                       data[y_col].max()) + 3
+            # Fixed Y-axis range as requested: Min 0, Max 30 km/h
+            y_min = 0
+            y_max = 30
         
         # Check if required columns exist
         if y_col not in data.columns:
