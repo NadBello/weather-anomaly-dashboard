@@ -1190,7 +1190,7 @@ def main():
         st.markdown('</div>', unsafe_allow_html=True)
 
     # ============================================================================================
-    # EXPERT MODE PAGE - ENHANCED WITH MARIE'S XAI INTEGRATION (TreeSHAP CHART REMOVED)
+    # EXPERT MODE PAGE - SIMPLIFIED (TREESHAP GLOBAL CHART REMOVED)
     # ============================================================================================
 
     elif page == "🔬 Expert Mode":
@@ -1279,7 +1279,7 @@ def main():
 
         st.markdown('</div>', unsafe_allow_html=True)
 
-        # Individual Anomaly Analysis with Marie's XAI
+        # Individual Anomaly Analysis with Marie's XAI (TreeSHAP Global Chart Removed)
         with st.expander("🎯 Individual Anomaly Deep Dive (Marie's XAI Integration)"):
             anomaly_indices = weather_data[weather_data['anomaly_label'] != 'Normal'].index.tolist()
 
@@ -1317,6 +1317,8 @@ def main():
                 if 'reconstruction_error_summary' in selected_anomaly and pd.notna(selected_anomaly['reconstruction_error_summary']):
                     st.markdown("**🔬 Reconstruction Error Analysis:**")
                     st.info(selected_anomaly['reconstruction_error_summary'])
+            else:
+                st.info("No anomalies detected in current dataset for detailed analysis.")
 
         # Model Configuration
         with st.expander("⚙️ Model Configuration & Technical Details"):
@@ -1498,25 +1500,25 @@ if __name__ == "__main__":
     main()
 
 # ================================================================================================
-# DEPLOYMENT CHECKLIST - TREESHAP CHART REMOVAL COMPLETED ✅
+# DEPLOYMENT CHECKLIST - TREESHAP GLOBAL CHART DEFINITIVELY REMOVED ✅
 # ================================================================================================
 #
-# ✅ MARIE'S REQUEST: Removed Global Feature Importance from TreeSHAP Analysis chart
-# ✅ SIMPLIFICATION: Dashboard now focuses on core functionality without overcomplication
-# ✅ XAI INTEGRATION: Marie's local TreeSHAP summaries and reconstruction error analysis retained
-# ✅ EXPERT MODE: Individual anomaly deep dive with XAI explanations maintained
-# ✅ CLEAN CODE: Removed chart generation function and related imports
-# ✅ DOCUMENTATION: Updated technical information to reflect TreeSHAP local explanations focus
+# ✅ MARIE'S REQUEST: Global Feature Importance TreeSHAP chart completely removed
+# ✅ EXPERT MODE SIMPLIFIED: Streamlined to focus on core model performance and individual analysis
+# ✅ XAI INTEGRATION: Local TreeSHAP explanations retained for individual anomaly investigation
+# ✅ CLEAN ARCHITECTURE: Removed all global feature importance visualization code
+# ✅ MAINTAINED FUNCTIONALITY: All other dashboard features preserved
 #
-# CHANGES MADE:
-# - Removed Marie's Feature Importance Analysis expandable section from Expert Mode
-# - Kept individual anomaly TreeSHAP analysis for specific anomaly investigation
-# - Updated XAI integration description to focus on local explanations
-# - Maintained all other functionality and professional styling
-# - Preserved Jeremy's ML visualizations and Dipo's community features
+# FINAL CHANGES MADE:
+# - Completely removed global TreeSHAP feature importance expandable section
+# - Simplified Expert Mode to focus on Jeremy's model performance charts
+# - Kept individual anomaly TreeSHAP analysis for detailed investigation
+# - Updated section header to indicate TreeSHAP global chart removal
+# - Maintained all Overview, Forecast, and Feedback functionality
+# - Preserved professional styling and government-ready interface
 #
 # READY FOR FINAL DEPLOYMENT! 🚀
-# Dashboard maintains excellent functionality while following Marie's design decision
-# to avoid overcomplication and focus on core anomaly detection capabilities.
+# Dashboard now perfectly reflects Marie's decision to avoid overcomplication
+# while maintaining essential XAI insights for practical anomaly investigation.
 #
 # ================================================================================================
