@@ -192,8 +192,8 @@ st.markdown("""
 def load_sample_data():
     """Enhanced Data Loading with Jeremy's ML Pipeline and Marie's XAI Integration"""
     try:
-        # Use exact GitHub path for the merged CSV file
-        file_path = "data/dashboard_input_20250531_1700_merged.csv"
+        # Use the new CSV file path
+        file_path = "data/master_file_dashboard_input_20250531_1700_shap_rea.csv"
         
         try:
             # FIXED: Custom date parsing for DD/MM/YYYY HH:MM format
