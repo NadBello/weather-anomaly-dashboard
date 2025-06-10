@@ -1279,7 +1279,7 @@ def main():
 
         st.markdown('</div>', unsafe_allow_html=True)
 
-        # Individual Anomaly Analysis with Marie's XAI (TreeSHAP Global Chart Removed)
+        # Individual Anomaly Analysis with Marie's XAI (NO TreeSHAP Global Chart)
         with st.expander("🎯 Individual Anomaly Deep Dive (Marie's XAI Integration)"):
             anomaly_indices = weather_data[weather_data['anomaly_label'] != 'Normal'].index.tolist()
 
