@@ -1366,7 +1366,7 @@ def main():
             """)
 
     # ============================================================================================
-    # FEEDBACK PAGE - ENHANCED WITH DIPO'S COMMUNITY ENGAGEMENT
+    # FEEDBACK PAGE - OPPORTUNITY FOR DIPO TO ENHANCE WITH COMMUNITY FEEDBACK
     # ============================================================================================
 
     elif page == "💬 Feedback":
@@ -1507,25 +1507,9 @@ if __name__ == "__main__":
     main()
 
 # ================================================================================================
-# DEPLOYMENT CHECKLIST - TREESHAP GLOBAL CHART DEFINITIVELY REMOVED ✅
+# DEPLOYMENT CHECKLIST
 # ================================================================================================
 #
-# ✅ MARIE'S REQUEST: Global Feature Importance TreeSHAP chart completely removed
-# ✅ EXPERT MODE SIMPLIFIED: Streamlined to focus on core model performance and individual analysis
-# ✅ XAI INTEGRATION: Local TreeSHAP explanations retained for individual anomaly investigation
-# ✅ CLEAN ARCHITECTURE: Removed all global feature importance visualization code
-# ✅ MAINTAINED FUNCTIONALITY: All other dashboard features preserved
-#
-# FINAL CHANGES MADE:
-# - Completely removed global TreeSHAP feature importance expandable section
-# - Simplified Expert Mode to focus on Jeremy's model performance charts
-# - Kept individual anomaly TreeSHAP analysis for detailed investigation
-# - Updated section header to indicate TreeSHAP global chart removal
-# - Maintained all Overview, Forecast, and Feedback functionality
-# - Preserved professional styling and government-ready interface
-#
 # READY FOR FINAL DEPLOYMENT! 🚀
-# Dashboard now perfectly reflects Marie's decision to avoid overcomplication
-# while maintaining essential XAI insights for practical anomaly investigation.
 #
 # ================================================================================================
