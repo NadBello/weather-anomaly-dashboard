@@ -1,0 +1,2289 @@
+date,temperature_2m,surface_pressure,precipitation,wind_speed_10m,precip_log,wind_smoothed,temperature_2m_z,surface_pressure_z,wind_r,precip_z_12h,precip_z_24h,temp_lower,temp_upper,wind_lower,wind_upper,press_lower,press_upper,hour,month,hour_sin,hour_cos,month_sin,month_cos,if_score,is_if_anomaly,lstm_error,is_lstm_anomaly,if_threshold,lstm_threshold,anomaly_label,tpa_summary,tpa_plot_path,treeshap_summary,treeshap_plot_path,rea_summary,rea_plot_path
+2025-05-31 17:00:00,23.0,1011.4,0.0,24.1,0.0,24.1,1.9814131714345515,-0.4401850105079363,1.7274675887380784,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,17,5,-0.9659258262890684,-0.2588190451025206,0.4999999999999999,-0.8660254037844387,0.16266933138685774,0,0.680834913439075,1,0.0330438584870278,0.6425,Pattern anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Precip z 24h** (importance: 1.54)
+- **Temperature 2m z** (importance: 1.53)
+
+What happened?
+The model identified some unusual patterns but only from a single perspective.
+
+Why did it happen?
+This could be due to isolated irregularities or potential model sensitivity.
+
+What can we do about it?
+Further review is advised to confirm whether this is a true anomaly.
+
+⚠️ This sample was labeled as **Pattern anomaly**, flagged by only one detection model.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_0.png,"⚠️ **Pattern anomaly**: Flagged by one detection model.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.7876
+
+Key features contributing to the score:
+- **Wind r** (value: 1.73)  contributed to the score with a SHAP value of -1.9199.
+- **Temperature 2m z** (value: 1.98)  contributed to the score with a SHAP value of -1.0745.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4811.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4227.
+- **Surface pressure z** (value: -0.44)  contributed to the score with a SHAP value of 0.3030.
+
+Interpretation:
+While flagged by one model, the SHAP values show which features pushed the score away from the baseline. Review these features to understand the potential anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_0.png,"🔍 **Anomaly Severity**: Unusual behavior (pattern-level issue)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_170000.png
+2025-05-31 18:00:00,21.9,1011.2,0.0,24.8,0.0,24.450000000000003,1.7485375082092756,-0.4679399108990036,1.7725319606182022,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,18,5,-1.0,-1.8369701987210294e-16,0.4999999999999999,-0.8660254037844387,0.16919320727921128,0,0.6443278947769518,1,0.0330438584870278,0.6425,Pattern anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Precip z 24h** (importance: 1.54)
+- **Temperature 2m z** (importance: 1.53)
+
+What happened?
+The model identified some unusual patterns but only from a single perspective.
+
+Why did it happen?
+This could be due to isolated irregularities or potential model sensitivity.
+
+What can we do about it?
+Further review is advised to confirm whether this is a true anomaly.
+
+⚠️ This sample was labeled as **Pattern anomaly**, flagged by only one detection model.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_1.png,"⚠️ **Pattern anomaly**: Flagged by one detection model.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.5845
+
+Key features contributing to the score:
+- **Wind r** (value: 1.77)  contributed to the score with a SHAP value of -2.0225.
+- **Temperature 2m z** (value: 1.75)  contributed to the score with a SHAP value of -0.8187.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4776.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4627.
+- **Surface pressure z** (value: -0.47)  contributed to the score with a SHAP value of 0.3164.
+
+Interpretation:
+While flagged by one model, the SHAP values show which features pushed the score away from the baseline. Review these features to understand the potential anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_1.png,"🔍 **Anomaly Severity**: Unusual behavior (pattern-level issue)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_180000.png
+2025-05-31 19:00:00,21.1,1010.8,0.0,25.2,0.0,24.7,1.5791733894999849,-0.5234497116811697,1.8047207976754327,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,19,5,-0.9659258262890684,0.2588190451025203,0.4999999999999999,-0.8660254037844387,0.16739388214207584,0,0.6689630066830164,1,0.0330438584870278,0.6425,Pattern anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Precip z 24h** (importance: 1.53)
+- **Surface pressure z** (importance: 1.52)
+
+What happened?
+The model identified some unusual patterns but only from a single perspective.
+
+Why did it happen?
+This could be due to isolated irregularities or potential model sensitivity.
+
+What can we do about it?
+Further review is advised to confirm whether this is a true anomaly.
+
+⚠️ This sample was labeled as **Pattern anomaly**, flagged by only one detection model.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_2.png,"⚠️ **Pattern anomaly**: Flagged by one detection model.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.6408
+
+Key features contributing to the score:
+- **Wind r** (value: 1.80)  contributed to the score with a SHAP value of -2.1923.
+- **Temperature 2m z** (value: 1.58)  contributed to the score with a SHAP value of -0.6538.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4801.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4777.
+- **Surface pressure z** (value: -0.52)  contributed to the score with a SHAP value of 0.2475.
+
+Interpretation:
+While flagged by one model, the SHAP values show which features pushed the score away from the baseline. Review these features to understand the potential anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_2.png,"🔍 **Anomaly Severity**: Unusual behavior (pattern-level issue)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_190000.png
+2025-05-31 20:00:00,20.1,1010.9,0.0,15.8,0.0,21.933333333333334,1.3674682411133707,-0.5095722614856282,1.448497667575407,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,20,5,-0.8660254037844386,0.5000000000000001,0.4999999999999999,-0.8660254037844387,0.2003753784341799,0,0.507134208353873,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.61)
+- **Precip z 24h** (importance: 1.55)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_3.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -0.5733
+
+Key features contributing to the score:
+- **Wind r** (value: 1.45)  contributed to the score with a SHAP value of -1.3786.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5178.
+- **Temperature 2m z** (value: 1.37)  contributed to the score with a SHAP value of -0.4791.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4472.
+- **Surface pressure z** (value: -0.51)  contributed to the score with a SHAP value of 0.3193.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_3.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_200000.png
+2025-05-31 21:00:00,18.7,1011.7,0.0,18.4,0.0,19.8,1.0710810333721104,-0.3985526599213118,1.1738195913537004,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,21,5,-0.7071067811865477,0.7071067811865474,0.4999999999999999,-0.8660254037844387,0.23464549059783174,0,0.508397414786235,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.65)
+- **Wind r** (importance: 1.64)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_4.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 0.6242
+
+Key features contributing to the score:
+- **Wind r** (value: 1.17)  contributed to the score with a SHAP value of -0.8818.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5458.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4710.
+- **Surface pressure z** (value: -0.40)  contributed to the score with a SHAP value of 0.4051.
+- **Temperature 2m z** (value: 1.07)  contributed to the score with a SHAP value of 0.0841.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_4.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_210000.png
+2025-05-31 22:00:00,17.9,1011.9,0.0,14.0,0.0,16.066666666666666,0.9017169146628188,-0.3707977595302445,0.6931329579657134,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,22,5,-0.5000000000000004,0.8660254037844384,0.4999999999999999,-0.8660254037844387,0.26545825612793256,0,0.407580151567855,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.71)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_5.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.7905
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5832.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4978.
+- **Surface pressure z** (value: -0.37)  contributed to the score with a SHAP value of 0.4036.
+- **Temperature 2m z** (value: 0.90)  contributed to the score with a SHAP value of 0.2255.
+- **Wind r** (value: 0.69)  contributed to the score with a SHAP value of 0.0802.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_5.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_220000.png
+2025-05-31 23:00:00,16.8,1012.1,0.0,18.4,0.0,16.933333333333334,0.6688412514375437,-0.3430428591391614,0.8047209264307819,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,23,5,-0.2588190451025215,0.965925826289068,0.4999999999999999,-0.8660254037844387,0.2668567480753478,0,0.4340598422768567,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.89)
+- **Temperature 2m z** (importance: 1.70)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_6.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.8456
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5631.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4916.
+- **Surface pressure z** (value: -0.34)  contributed to the score with a SHAP value of 0.4033.
+- **Temperature 2m z** (value: 0.67)  contributed to the score with a SHAP value of 0.3947.
+- **Wind r** (value: 0.80)  contributed to the score with a SHAP value of -0.0071.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_6.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250531_230000.png
+2025-06-01 00:00:00,15.8,1012.3,0.0,14.8,0.0,15.733333333333333,0.4571361030509295,-0.3152879587480942,0.6502145085560717,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0,6,0.0,1.0,1.2246467991473532e-16,-1.0,0.2690053977086907,0,0.3420143707317916,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.86)
+- **Temperature 2m z** (importance: 1.71)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_7.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.9308
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5549.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4726.
+- **Temperature 2m z** (value: 0.46)  contributed to the score with a SHAP value of 0.3679.
+- **Surface pressure z** (value: -0.32)  contributed to the score with a SHAP value of 0.3622.
+- **Wind r** (value: 0.65)  contributed to the score with a SHAP value of 0.1732.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_7.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_000000.png
+2025-06-01 01:00:00,15.0,1012.0,0.0,8.6,0.0,13.933333333333335,0.287771984341638,-0.356920309334703,0.4184548817440069,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,1,6,0.2588190451025207,0.9659258262890684,1.2246467991473532e-16,-1.0,0.27601916706718416,0,0.3766842789878132,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.86)
+- **Temperature 2m z** (importance: 1.67)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_8.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.2124
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5564.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5046.
+- **Temperature 2m z** (value: 0.29)  contributed to the score with a SHAP value of 0.4262.
+- **Surface pressure z** (value: -0.36)  contributed to the score with a SHAP value of 0.4041.
+- **Wind r** (value: 0.42)  contributed to the score with a SHAP value of 0.3210.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_8.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_010000.png
+2025-06-01 02:00:00,14.7,1011.7,0.0,13.3,0.0,12.233333333333334,0.2242604398256536,-0.3985526599213118,0.1995707897548341,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,2,6,0.4999999999999999,0.8660254037844387,1.2246467991473532e-16,-1.0,0.2752336633249881,0,0.3528383850573023,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.69)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_9.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.1806
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5707.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4996.
+- **Temperature 2m z** (value: 0.22)  contributed to the score with a SHAP value of 0.4289.
+- **Surface pressure z** (value: -0.40)  contributed to the score with a SHAP value of 0.3414.
+- **Wind r** (value: 0.20)  contributed to the score with a SHAP value of 0.3400.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_9.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_020000.png
+2025-06-01 03:00:00,14.8,1011.5,0.0,15.5,0.0,12.466666666666669,0.2454309546643153,-0.4263075603123948,0.2296137043415832,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,3,6,0.7071067811865476,0.7071067811865476,1.2246467991473532e-16,-1.0,0.2763114387668079,0,0.3965732057666835,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.69)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_10.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.2242
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5703.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4989.
+- **Temperature 2m z** (value: 0.25)  contributed to the score with a SHAP value of 0.4332.
+- **Wind r** (value: 0.23)  contributed to the score with a SHAP value of 0.3717.
+- **Surface pressure z** (value: -0.43)  contributed to the score with a SHAP value of 0.3501.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_10.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_030000.png
+2025-06-01 04:00:00,14.4,1011.5,0.0,17.6,0.0,15.466666666666669,0.1607488953096696,-0.4263075603123948,0.6158797490283584,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,4,6,0.8660254037844386,0.5000000000000001,1.2246467991473532e-16,-1.0,0.27186810183134935,0,0.4313264369296614,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.71)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_11.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.0451
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5620.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4812.
+- **Temperature 2m z** (value: 0.16)  contributed to the score with a SHAP value of 0.4795.
+- **Surface pressure z** (value: -0.43)  contributed to the score with a SHAP value of 0.3761.
+- **Wind r** (value: 0.62)  contributed to the score with a SHAP value of 0.1463.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_11.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_040000.png
+2025-06-01 05:00:00,13.1,1011.7,0.0,13.7,0.0,15.6,-0.1144677975929289,-0.3985526599213118,0.633047128792215,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,5,6,0.9659258262890684,0.2588190451025207,1.2246467991473532e-16,-1.0,0.2730663756847319,0,0.3714089225999087,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.83)
+- **Temperature 2m z** (importance: 1.67)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_12.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.0932
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5671.
+- **Temperature 2m z** (value: -0.11)  contributed to the score with a SHAP value of 0.5356.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4807.
+- **Surface pressure z** (value: -0.40)  contributed to the score with a SHAP value of 0.4079.
+- **Wind r** (value: 0.63)  contributed to the score with a SHAP value of 0.1019.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_12.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_050000.png
+2025-06-01 06:00:00,12.9,1011.9,0.0,14.8,0.0,15.366666666666667,-0.1568088272702516,-0.3707977595302445,0.6030042142054659,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,6,6,1.0,6.123233995736766e-17,1.2246467991473532e-16,-1.0,0.2724780363861911,0,0.3606092220680071,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.67)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_13.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.0695
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5589.
+- **Temperature 2m z** (value: -0.16)  contributed to the score with a SHAP value of 0.4894.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4781.
+- **Surface pressure z** (value: -0.37)  contributed to the score with a SHAP value of 0.4281.
+- **Wind r** (value: 0.60)  contributed to the score with a SHAP value of 0.1151.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_13.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_060000.png
+2025-06-01 07:00:00,13.4,1012.1,0.0,16.6,0.0,15.033333333333331,-0.0509562530769445,-0.3430428591391614,0.5600857647958242,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,7,6,0.9659258262890684,-0.2588190451025206,1.2246467991473532e-16,-1.0,0.2738758599330945,0,0.4014874438456933,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.87)
+- **Temperature 2m z** (importance: 1.66)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_14.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.1258
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5505.
+- **Temperature 2m z** (value: -0.05)  contributed to the score with a SHAP value of 0.5417.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4882.
+- **Surface pressure z** (value: -0.34)  contributed to the score with a SHAP value of 0.3966.
+- **Wind r** (value: 0.56)  contributed to the score with a SHAP value of 0.1487.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_14.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_070000.png
+2025-06-01 08:00:00,14.5,1012.3,0.0,19.1,0.0,16.833333333333332,0.1819194101483309,-0.3152879587480942,0.7918453916078891,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,8,6,0.8660254037844387,-0.4999999999999998,1.2246467991473532e-16,-1.0,0.26928844733317464,0,0.4304446896881722,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.88)
+- **Temperature 2m z** (importance: 1.68)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_15.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.9421
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5484.
+- **Temperature 2m z** (value: 0.18)  contributed to the score with a SHAP value of 0.4951.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4871.
+- **Surface pressure z** (value: -0.32)  contributed to the score with a SHAP value of 0.3738.
+- **Wind r** (value: 0.79)  contributed to the score with a SHAP value of 0.0377.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_15.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_080000.png
+2025-06-01 09:00:00,15.6,1012.1,0.0,16.9,0.0,17.533333333333335,0.4147950733736065,-0.3430428591391614,0.8819741353681371,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,9,6,0.7071067811865476,-0.7071067811865475,1.2246467991473532e-16,-1.0,0.25780943368965437,0,0.4134285195599551,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.80)
+- **Temperature 2m z** (importance: 1.70)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_16.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.4922
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5359.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4769.
+- **Surface pressure z** (value: -0.34)  contributed to the score with a SHAP value of 0.4252.
+- **Temperature 2m z** (value: 0.41)  contributed to the score with a SHAP value of 0.3191.
+- **Wind r** (value: 0.88)  contributed to the score with a SHAP value of -0.2648.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_16.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_090000.png
+2025-06-01 10:00:00,16.6,1012.0,0.0,18.4,0.0,18.13333333333333,0.626500221760221,-0.356920309334703,0.9592273443054914,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,10,6,0.4999999999999999,-0.8660254037844387,1.2246467991473532e-16,-1.0,0.2526715132989598,0,0.4539214814870441,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.81)
+- **Temperature 2m z** (importance: 1.70)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_17.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.2952
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5305.
+- **Wind r** (value: 0.96)  contributed to the score with a SHAP value of -0.4886.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4744.
+- **Surface pressure z** (value: -0.36)  contributed to the score with a SHAP value of 0.4203.
+- **Temperature 2m z** (value: 0.63)  contributed to the score with a SHAP value of 0.3587.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_17.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_100000.png
+2025-06-01 11:00:00,18.4,1011.7,0.0,22.3,0.0,19.2,1.007569488856126,-0.3985526599213118,1.0965663824163452,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,11,6,0.258819045102521,-0.9659258262890682,1.2246467991473532e-16,-1.0,0.23365911180003762,0,0.5438579192266388,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.69)
+- **Temperature 2m z** (importance: 1.63)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_18.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 0.5883
+
+Key features contributing to the score:
+- **Wind r** (value: 1.10)  contributed to the score with a SHAP value of -0.8643.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5196.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4608.
+- **Surface pressure z** (value: -0.40)  contributed to the score with a SHAP value of 0.3783.
+- **Temperature 2m z** (value: 1.01)  contributed to the score with a SHAP value of 0.0938.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_18.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_110000.png
+2025-06-01 12:00:00,19.5,1011.4,0.0,21.2,0.0,20.633333333333336,1.2404451520814015,-0.4401850105079363,1.281115714877805,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,12,6,1.2246467991473532e-16,-1.0,1.2246467991473532e-16,-1.0,0.21795862746933892,0,0.5256627199026371,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.63)
+- **Wind r** (importance: 1.59)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_19.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 0.0290
+
+Key features contributing to the score:
+- **Wind r** (value: 1.28)  contributed to the score with a SHAP value of -1.1583.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5362.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4565.
+- **Surface pressure z** (value: -0.44)  contributed to the score with a SHAP value of 0.3787.
+- **Temperature 2m z** (value: 1.24)  contributed to the score with a SHAP value of -0.1841.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_19.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_120000.png
+2025-06-01 13:00:00,20.1,1010.9,0.0,24.1,0.0,22.53333333333333,1.3674682411133707,-0.5095722614856282,1.525750876512762,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,13,6,-0.2588190451025208,-0.9659258262890684,1.2246467991473532e-16,-1.0,0.2012682956452868,0,0.6217662812695546,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.60)
+- **Precip z 24h** (importance: 1.58)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_20.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -0.5433
+
+Key features contributing to the score:
+- **Wind r** (value: 1.53)  contributed to the score with a SHAP value of -1.4421.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5190.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4543.
+- **Temperature 2m z** (value: 1.37)  contributed to the score with a SHAP value of -0.4009.
+- **Surface pressure z** (value: -0.51)  contributed to the score with a SHAP value of 0.3265.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_20.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_130000.png
+2025-06-01 14:00:00,20.0,1010.7,0.0,21.2,0.0,22.166666666666668,1.346297726274709,-0.5373271618766954,1.4785405821621564,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,14,6,-0.4999999999999997,-0.8660254037844388,1.2246467991473532e-16,-1.0,0.2003035276484792,0,0.5915006024299604,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.60)
+- **Precip z 24h** (importance: 1.57)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_21.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -0.5757
+
+Key features contributing to the score:
+- **Wind r** (value: 1.48)  contributed to the score with a SHAP value of -1.3958.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5116.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4504.
+- **Temperature 2m z** (value: 1.35)  contributed to the score with a SHAP value of -0.4350.
+- **Surface pressure z** (value: -0.54)  contributed to the score with a SHAP value of 0.2930.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_21.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_140000.png
+2025-06-01 15:00:00,20.0,1010.4,0.0,25.6,0.0,23.633333333333336,1.346297726274709,-0.57895951246332,1.66738175956458,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,15,6,-0.7071067811865471,-0.7071067811865479,1.2246467991473532e-16,-1.0,0.18725304388094682,0,0.673945396902098,1,0.0330438584870278,0.6425,Pattern anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.56)
+- **Precip z 24h** (importance: 1.54)
+
+What happened?
+The model identified some unusual patterns but only from a single perspective.
+
+Why did it happen?
+This could be due to isolated irregularities or potential model sensitivity.
+
+What can we do about it?
+Further review is advised to confirm whether this is a true anomaly.
+
+⚠️ This sample was labeled as **Pattern anomaly**, flagged by only one detection model.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_22.png,"⚠️ **Pattern anomaly**: Flagged by one detection model.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.0073
+
+Key features contributing to the score:
+- **Wind r** (value: 1.67)  contributed to the score with a SHAP value of -1.7925.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4918.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4490.
+- **Temperature 2m z** (value: 1.35)  contributed to the score with a SHAP value of -0.3889.
+- **Surface pressure z** (value: -0.58)  contributed to the score with a SHAP value of 0.2334.
+
+Interpretation:
+While flagged by one model, the SHAP values show which features pushed the score away from the baseline. Review these features to understand the potential anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_22.png,"🔍 **Anomaly Severity**: Unusual behavior (pattern-level issue)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_150000.png
+2025-06-01 16:00:00,19.4,1010.2,0.0,28.4,0.0,25.066666666666663,1.21927463724274,-0.6067144128543872,1.851931092026039,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,16,6,-0.8660254037844385,-0.5000000000000004,1.2246467991473532e-16,-1.0,0.18118307794061317,0,0.7028679855515685,1,0.0330438584870278,0.6425,Pattern anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.61)
+- **Precip z 12h** (importance: 1.51)
+
+What happened?
+The model identified some unusual patterns but only from a single perspective.
+
+Why did it happen?
+This could be due to isolated irregularities or potential model sensitivity.
+
+What can we do about it?
+Further review is advised to confirm whether this is a true anomaly.
+
+⚠️ This sample was labeled as **Pattern anomaly**, flagged by only one detection model.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_23.png,"⚠️ **Pattern anomaly**: Flagged by one detection model.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.2038
+
+Key features contributing to the score:
+- **Wind r** (value: 1.85)  contributed to the score with a SHAP value of -2.2884.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4951.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4803.
+- **Surface pressure z** (value: -0.61)  contributed to the score with a SHAP value of 0.2041.
+- **Temperature 2m z** (value: 1.22)  contributed to the score with a SHAP value of -0.0948.
+
+Interpretation:
+While flagged by one model, the SHAP values show which features pushed the score away from the baseline. Review these features to understand the potential anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_23.png,"🔍 **Anomaly Severity**: Unusual behavior (pattern-level issue)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_160000.png
+2025-06-01 17:00:00,17.9,1010.4,0.0,21.6,0.0,25.2,0.9017169146628188,-0.57895951246332,1.8690984717898955,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,17,6,-0.9659258262890684,-0.2588190451025206,1.2246467991473532e-16,-1.0,0.18464887248607315,0,0.5341257351409515,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.63)
+- **Temperature 2m z** (importance: 1.54)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_24.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.0919
+
+Key features contributing to the score:
+- **Wind r** (value: 1.87)  contributed to the score with a SHAP value of -2.4001.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4963.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4763.
+- **Surface pressure z** (value: -0.58)  contributed to the score with a SHAP value of 0.2426.
+- **Temperature 2m z** (value: 0.90)  contributed to the score with a SHAP value of 0.0930.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_24.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_170000.png
+2025-06-01 18:00:00,18.2,1010.0,0.0,25.6,0.0,25.2,0.9652284591788032,-0.6344693132454703,1.8690984717898955,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,18,6,-1.0,-1.8369701987210294e-16,1.2246467991473532e-16,-1.0,0.1827920676680237,0,0.5843809642860659,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.63)
+- **Precip z 12h** (importance: 1.52)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_25.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -1.1520
+
+Key features contributing to the score:
+- **Wind r** (value: 1.87)  contributed to the score with a SHAP value of -2.3666.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4919.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4594.
+- **Surface pressure z** (value: -0.63)  contributed to the score with a SHAP value of 0.1842.
+- **Temperature 2m z** (value: 0.97)  contributed to the score with a SHAP value of 0.0792.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_25.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_180000.png
+2025-06-01 19:00:00,17.8,1010.0,0.0,25.6,0.0,24.26666666666667,0.8805463998241578,-0.6344693132454703,1.7489268134428992,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,19,6,-0.9659258262890684,0.2588190451025203,1.2246467991473532e-16,-1.0,0.18988346289988778,0,0.6003007867479595,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.63)
+- **Temperature 2m z** (importance: 1.55)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_26.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -0.9213
+
+Key features contributing to the score:
+- **Wind r** (value: 1.75)  contributed to the score with a SHAP value of -2.1614.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4910.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4489.
+- **Surface pressure z** (value: -0.63)  contributed to the score with a SHAP value of 0.1758.
+- **Temperature 2m z** (value: 0.88)  contributed to the score with a SHAP value of 0.1244.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_26.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_190000.png
+2025-06-01 20:00:00,16.9,1010.3,0.0,23.0,0.0,24.73333333333333,0.6900117662762046,-0.5928369626588615,1.8090126426163973,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,20,6,-0.8660254037844386,0.5000000000000001,1.2246467991473532e-16,-1.0,0.1918989426589885,0,0.5466012134546423,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.64)
+- **Temperature 2m z** (importance: 1.56)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_27.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -0.8551
+
+Key features contributing to the score:
+- **Wind r** (value: 1.81)  contributed to the score with a SHAP value of -2.2893.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4795.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4686.
+- **Temperature 2m z** (value: 0.69)  contributed to the score with a SHAP value of 0.2851.
+- **Surface pressure z** (value: -0.59)  contributed to the score with a SHAP value of 0.2010.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_27.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_200000.png
+2025-06-01 21:00:00,15.8,1010.9,0.0,19.1,0.0,22.566666666666663,0.4571361030509295,-0.5095722614856282,1.5300427214537262,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,21,6,-0.7071067811865477,0.7071067811865474,1.2246467991473532e-16,-1.0,0.2231868469018234,0,0.4491328778480307,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.64)
+- **Wind r** (importance: 1.61)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_28.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 0.2129
+
+Key features contributing to the score:
+- **Wind r** (value: 1.53)  contributed to the score with a SHAP value of -1.4616.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5039.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4369.
+- **Surface pressure z** (value: -0.51)  contributed to the score with a SHAP value of 0.3777.
+- **Temperature 2m z** (value: 0.46)  contributed to the score with a SHAP value of 0.3560.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_28.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_210000.png
+2025-06-01 22:00:00,14.8,1011.5,0.0,16.6,0.0,19.566666666666663,0.2454309546643153,-0.4263075603123948,1.143776676766951,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,22,6,-0.5000000000000004,0.8660254037844384,1.2246467991473532e-16,-1.0,0.24673577555240056,0,0.3666553001871105,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.68)
+- **Wind r** (importance: 1.68)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_29.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.0709
+
+Key features contributing to the score:
+- **Wind r** (value: 1.14)  contributed to the score with a SHAP value of -0.7549.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4944.
+- **Temperature 2m z** (value: 0.25)  contributed to the score with a SHAP value of 0.4940.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4702.
+- **Surface pressure z** (value: -0.43)  contributed to the score with a SHAP value of 0.3670.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_29.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_220000.png
+2025-06-01 23:00:00,14.2,1011.7,0.0,16.9,0.0,17.533333333333335,0.1184078656323465,-0.3985526599213118,0.8819741353681371,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,23,6,-0.2588190451025215,0.965925826289068,1.2246467991473532e-16,-1.0,0.26217341966263874,0,0.3604857055580149,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.77)
+- **Temperature 2m z** (importance: 1.70)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_30.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.6616
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5493.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4852.
+- **Temperature 2m z** (value: 0.12)  contributed to the score with a SHAP value of 0.4672.
+- **Surface pressure z** (value: -0.40)  contributed to the score with a SHAP value of 0.4276.
+- **Wind r** (value: 0.88)  contributed to the score with a SHAP value of -0.2677.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_30.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250601_230000.png
+2025-06-02 00:00:00,13.7,1012.1,0.0,15.8,0.0,16.433333333333334,0.0125552914390394,-0.3430428591391614,0.7403432523163194,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0,6,0.0,1.0,1.2246467991473532e-16,-1.0,0.27344444580946353,0,0.3164541027685485,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.86)
+- **Temperature 2m z** (importance: 1.66)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_31.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.1084
+
+Key features contributing to the score:
+- **Temperature 2m z** (value: 0.01)  contributed to the score with a SHAP value of 0.5641.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5494.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4912.
+- **Surface pressure z** (value: -0.34)  contributed to the score with a SHAP value of 0.4363.
+- **Wind r** (value: 0.74)  contributed to the score with a SHAP value of 0.0673.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_31.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_000000.png
+2025-06-02 01:00:00,13.2,1012.3,0.0,14.8,0.0,15.833333333333334,-0.0932972827542676,-0.3152879587480942,0.6630900433789644,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,1,6,0.2588190451025207,0.9659258262890684,1.2246467991473532e-16,-1.0,0.2720232498773503,0,0.3337241899259645,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.84)
+- **Temperature 2m z** (importance: 1.66)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_32.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.0513
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5512.
+- **Temperature 2m z** (value: -0.09)  contributed to the score with a SHAP value of 0.5301.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4866.
+- **Surface pressure z** (value: -0.32)  contributed to the score with a SHAP value of 0.3733.
+- **Wind r** (value: 0.66)  contributed to the score with a SHAP value of 0.1102.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_32.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_010000.png
+2025-06-02 02:00:00,12.9,1012.7,0.0,13.0,0.0,14.533333333333331,-0.1568088272702516,-0.2597781579659281,0.4957080906813617,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,2,6,0.4999999999999999,0.8660254037844387,1.2246467991473532e-16,-1.0,0.27477875006918273,0,0.3188005048902934,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.86)
+- **Temperature 2m z** (importance: 1.66)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_33.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.1622
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5469.
+- **Temperature 2m z** (value: -0.16)  contributed to the score with a SHAP value of 0.4909.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4895.
+- **Surface pressure z** (value: -0.26)  contributed to the score with a SHAP value of 0.3932.
+- **Wind r** (value: 0.50)  contributed to the score with a SHAP value of 0.2416.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_33.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_020000.png
+2025-06-02 03:00:00,12.5,1013.1,0.0,10.1,0.0,12.633333333333333,-0.2414908866248974,-0.2042683571837778,0.251072929046404,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,3,6,0.7071067811865476,0.7071067811865476,1.2246467991473532e-16,-1.0,0.27957629458386973,0,0.3529960732793914,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.83)
+- **Temperature 2m z** (importance: 1.63)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_34.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.3572
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5611.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5090.
+- **Temperature 2m z** (value: -0.24)  contributed to the score with a SHAP value of 0.4605.
+- **Surface pressure z** (value: -0.20)  contributed to the score with a SHAP value of 0.4369.
+- **Wind r** (value: 0.25)  contributed to the score with a SHAP value of 0.3896.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_34.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_030000.png
+2025-06-02 04:00:00,12.3,1013.6,0.0,8.6,0.0,10.566666666666666,-0.2838319163022201,-0.134881106206086,-0.0150214572933744,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,4,6,0.8660254037844386,0.5000000000000001,1.2246467991473532e-16,-1.0,0.28279089956141346,0,0.3645058843502552,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.82)
+- **Temperature 2m z** (importance: 1.63)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_35.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.4894
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5697.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5208.
+- **Temperature 2m z** (value: -0.28)  contributed to the score with a SHAP value of 0.4845.
+- **Surface pressure z** (value: -0.13)  contributed to the score with a SHAP value of 0.4623.
+- **Wind r** (value: -0.02)  contributed to the score with a SHAP value of 0.4520.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_35.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_040000.png
+2025-06-02 05:00:00,12.3,1014.4,0.0,6.5,0.0,8.4,-0.2838319163022201,-0.0238615046417853,-0.2939913784560453,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,5,6,0.9659258262890684,0.2588190451025207,1.2246467991473532e-16,-1.0,0.28206790233325696,0,0.3635003744180441,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.77)
+- **Temperature 2m z** (importance: 1.67)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_36.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.4595
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5564.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5425.
+- **Temperature 2m z** (value: -0.28)  contributed to the score with a SHAP value of 0.4686.
+- **Surface pressure z** (value: -0.02)  contributed to the score with a SHAP value of 0.4499.
+- **Wind r** (value: -0.29)  contributed to the score with a SHAP value of 0.4420.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_36.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_050000.png
+2025-06-02 06:00:00,12.8,1015.2,0.0,10.1,0.0,8.4,-0.1779793421089129,0.0871580969225309,-0.2939913784560453,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,6,6,1.0,6.123233995736766e-17,1.2246467991473532e-16,-1.0,0.2813920978559014,0,0.2483925909565634,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.76)
+- **Temperature 2m z** (importance: 1.68)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_37.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.4317
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5539.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5358.
+- **Surface pressure z** (value: 0.09)  contributed to the score with a SHAP value of 0.4788.
+- **Temperature 2m z** (value: -0.18)  contributed to the score with a SHAP value of 0.4499.
+- **Wind r** (value: -0.29)  contributed to the score with a SHAP value of 0.4133.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_37.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_060000.png
+2025-06-02 07:00:00,13.0,1016.0,0.0,14.0,0.0,10.2,-0.1356383124315903,0.1981776984868316,-0.0622317516439801,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,7,6,0.9659258262890684,-0.2588190451025206,1.2246467991473532e-16,-1.0,0.28871746877568505,0,0.2485104305256645,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.82)
+- **Temperature 2m z** (importance: 1.63)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_38.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.7361
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5731.
+- **Surface pressure z** (value: 0.20)  contributed to the score with a SHAP value of 0.5587.
+- **Wind r** (value: -0.06)  contributed to the score with a SHAP value of 0.5492.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5366.
+- **Temperature 2m z** (value: -0.14)  contributed to the score with a SHAP value of 0.5186.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_38.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_070000.png
+2025-06-02 08:00:00,13.8,1016.5,0.0,13.3,0.0,12.466666666666669,0.0337258062777011,0.2675649494645234,0.2296137043415834,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,8,6,0.8660254037844387,-0.4999999999999998,1.2246467991473532e-16,-1.0,0.28324726168792164,0,0.2468694533764426,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.60)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_39.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.5082
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5709.
+- **Surface pressure z** (value: 0.27)  contributed to the score with a SHAP value of 0.5609.
+- **Temperature 2m z** (value: 0.03)  contributed to the score with a SHAP value of 0.5191.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5189.
+- **Wind r** (value: 0.23)  contributed to the score with a SHAP value of 0.3384.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_39.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_080000.png
+2025-06-02 09:00:00,15.4,1016.6,0.0,14.0,0.0,13.766666666666666,0.3724540436962837,0.2814423996600649,0.3969956570391856,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,9,6,0.7071067811865476,-0.7071067811865475,1.2246467991473532e-16,-1.0,0.2783455156298725,0,0.2576527350438613,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.64)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_40.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.3069
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5703.
+- **Surface pressure z** (value: 0.28)  contributed to the score with a SHAP value of 0.5314.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4972.
+- **Temperature 2m z** (value: 0.37)  contributed to the score with a SHAP value of 0.4222.
+- **Wind r** (value: 0.40)  contributed to the score with a SHAP value of 0.2859.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_40.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_090000.png
+2025-06-02 10:00:00,15.9,1017.0,0.0,18.4,0.0,15.233333333333334,0.4783066178895909,0.3369522004422152,0.5858368344416094,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,10,6,0.4999999999999999,-0.8660254037844387,1.2246467991473532e-16,-1.0,0.2689963962441037,0,0.3424965142371636,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.81)
+- **Temperature 2m z** (importance: 1.65)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_41.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.9305
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5589.
+- **Surface pressure z** (value: 0.34)  contributed to the score with a SHAP value of 0.5144.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4861.
+- **Temperature 2m z** (value: 0.48)  contributed to the score with a SHAP value of 0.2998.
+- **Wind r** (value: 0.59)  contributed to the score with a SHAP value of 0.0711.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_41.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_100000.png
+2025-06-02 11:00:00,16.7,1017.3,0.0,13.0,0.0,15.133333333333336,0.647670736598882,0.378584551028824,0.5729612996187169,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,11,6,0.258819045102521,-0.9659258262890682,1.2246467991473532e-16,-1.0,0.2703694735268752,0,0.2590374066224456,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.82)
+- **Temperature 2m z** (importance: 1.66)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_42.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.9852
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5710.
+- **Surface pressure z** (value: 0.38)  contributed to the score with a SHAP value of 0.5066.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4813.
+- **Temperature 2m z** (value: 0.65)  contributed to the score with a SHAP value of 0.3544.
+- **Wind r** (value: 0.57)  contributed to the score with a SHAP value of 0.0718.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_42.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_110000.png
+2025-06-02 12:00:00,18.0,1016.9,0.0,10.1,0.0,13.833333333333334,0.9228874295014806,0.3230747502466737,0.4055793469211142,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,12,6,1.2246467991473532e-16,-1.0,1.2246467991473532e-16,-1.0,0.27315142635412637,0,0.2799711896591158,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.63)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_43.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.0966
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5848.
+- **Surface pressure z** (value: 0.32)  contributed to the score with a SHAP value of 0.5629.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5225.
+- **Wind r** (value: 0.41)  contributed to the score with a SHAP value of 0.2503.
+- **Temperature 2m z** (value: 0.92)  contributed to the score with a SHAP value of 0.1760.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_43.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_120000.png
+2025-06-02 13:00:00,19.0,1016.5,0.0,11.5,0.0,11.533333333333331,1.1345925778880948,0.2675649494645234,0.1094420459945864,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,13,6,-0.2588190451025208,-0.9659258262890684,1.2246467991473532e-16,-1.0,0.27564085503457925,0,0.2969244920833831,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Precip z 12h** (importance: 1.61)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_44.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.1970
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.6055.
+- **Surface pressure z** (value: 0.27)  contributed to the score with a SHAP value of 0.5769.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5219.
+- **Wind r** (value: 0.11)  contributed to the score with a SHAP value of 0.4017.
+- **Temperature 2m z** (value: 1.13)  contributed to the score with a SHAP value of 0.0910.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_44.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_130000.png
+2025-06-02 14:00:00,18.2,1016.0,0.0,10.4,0.0,10.666666666666666,0.9652284591788032,0.1981776984868316,-0.0021459224704819,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,14,6,-0.4999999999999997,-0.8660254037844388,1.2246467991473532e-16,-1.0,0.2791173783312217,0,0.3036097688114558,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.89)
+- **Temperature 2m z** (importance: 1.62)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_45.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.3384
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5954.
+- **Surface pressure z** (value: 0.20)  contributed to the score with a SHAP value of 0.5871.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5219.
+- **Wind r** (value: -0.00)  contributed to the score with a SHAP value of 0.4933.
+- **Temperature 2m z** (value: 0.97)  contributed to the score with a SHAP value of 0.1408.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_45.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_140000.png
+2025-06-02 15:00:00,18.7,1015.3,0.0,11.2,0.0,11.033333333333331,1.0710810333721104,0.1010355471180567,0.0450643718801237,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,15,6,-0.7071067811865471,-0.7071067811865479,1.2246467991473532e-16,-1.0,0.2791131684578054,0,0.3147006443726813,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.83)
+- **Precip z 12h** (importance: 1.64)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_46.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.3383
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.6061.
+- **Surface pressure z** (value: 0.10)  contributed to the score with a SHAP value of 0.5796.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5271.
+- **Wind r** (value: 0.05)  contributed to the score with a SHAP value of 0.4459.
+- **Temperature 2m z** (value: 1.07)  contributed to the score with a SHAP value of 0.1796.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_46.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_150000.png
+2025-06-02 16:00:00,19.1,1014.7,0.0,11.9,0.0,11.166666666666666,1.1557630927267564,0.0177708459448391,0.0622317516439805,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,16,6,-0.8660254037844385,-0.5000000000000004,1.2246467991473532e-16,-1.0,0.27466924423649913,0,0.3179818911107902,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.82)
+- **Precip z 12h** (importance: 1.61)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_47.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 2.1578
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.6015.
+- **Surface pressure z** (value: 0.02)  contributed to the score with a SHAP value of 0.5511.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5179.
+- **Wind r** (value: 0.06)  contributed to the score with a SHAP value of 0.4088.
+- **Temperature 2m z** (value: 1.16)  contributed to the score with a SHAP value of 0.0785.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_47.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_160000.png
+2025-06-02 17:00:00,19.5,1014.1,0.0,12.6,0.0,11.9,1.2404451520814015,-0.0654938552283941,0.1566523403451924,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,17,6,-0.9659258262890684,-0.2588190451025206,1.2246467991473532e-16,-1.0,0.2679865379162148,0,0.3135608931748848,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Precip z 12h** (importance: 1.61)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_48.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.8904
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5938.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5211.
+- **Surface pressure z** (value: -0.07)  contributed to the score with a SHAP value of 0.4684.
+- **Wind r** (value: 0.16)  contributed to the score with a SHAP value of 0.3768.
+- **Temperature 2m z** (value: 1.24)  contributed to the score with a SHAP value of -0.0698.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_48.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_170000.png
+2025-06-02 18:00:00,19.9,1013.5,0.0,13.7,0.0,12.733333333333334,1.3251272114360473,-0.1487585564016275,0.2639484638692967,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,18,6,-1.0,-1.8369701987210294e-16,1.2246467991473532e-16,-1.0,0.2644015417885947,0,0.323946246924747,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.80)
+- **Temperature 2m z** (importance: 1.60)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_49.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.7489
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5957.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5186.
+- **Surface pressure z** (value: -0.15)  contributed to the score with a SHAP value of 0.4888.
+- **Wind r** (value: 0.26)  contributed to the score with a SHAP value of 0.4084.
+- **Temperature 2m z** (value: 1.33)  contributed to the score with a SHAP value of -0.2627.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_49.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_180000.png
+2025-06-02 19:00:00,19.9,1013.0,0.0,14.8,0.0,13.7,1.3251272114360473,-0.2181458073793193,0.3884119671572576,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,19,6,-0.9659258262890684,0.2588190451025203,1.2246467991473532e-16,-1.0,0.26070384367248295,0,0.3791964785968448,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.81)
+- **Temperature 2m z** (importance: 1.61)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_50.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.6044
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5871.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5147.
+- **Surface pressure z** (value: -0.22)  contributed to the score with a SHAP value of 0.4666.
+- **Wind r** (value: 0.39)  contributed to the score with a SHAP value of 0.3088.
+- **Temperature 2m z** (value: 1.33)  contributed to the score with a SHAP value of -0.2729.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_50.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_190000.png
+2025-06-02 20:00:00,19.1,1012.9,0.0,16.2,0.0,14.9,1.1557630927267564,-0.2320232575748608,0.5429183850319675,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,20,6,-0.8660254037844386,0.5000000000000001,1.2246467991473532e-16,-1.0,0.26761107355909064,0,0.4033280793432038,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.87)
+- **Temperature 2m z** (importance: 1.65)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_51.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.8755
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5909.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5080.
+- **Surface pressure z** (value: -0.23)  contributed to the score with a SHAP value of 0.4819.
+- **Wind r** (value: 0.54)  contributed to the score with a SHAP value of 0.2136.
+- **Temperature 2m z** (value: 1.16)  contributed to the score with a SHAP value of 0.0811.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_51.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_200000.png
+2025-06-02 21:00:00,18.0,1012.9,0.0,17.6,0.0,16.2,0.9228874295014806,-0.2320232575748608,0.71030033772957,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,21,6,-0.7071067811865477,0.7071067811865474,1.2246467991473532e-16,-1.0,0.26820613396550974,0,0.4070448899850986,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.85)
+- **Temperature 2m z** (importance: 1.67)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_52.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.8991
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5788.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.5093.
+- **Surface pressure z** (value: -0.23)  contributed to the score with a SHAP value of 0.4925.
+- **Temperature 2m z** (value: 0.92)  contributed to the score with a SHAP value of 0.2365.
+- **Wind r** (value: 0.71)  contributed to the score with a SHAP value of 0.0820.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_52.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_210000.png
+2025-06-02 22:00:00,16.8,1012.7,0.0,18.4,0.0,17.4,0.6688412514375437,-0.2597781579659281,0.86480675560428,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,22,6,-0.5000000000000004,0.8660254037844384,1.2246467991473532e-16,-1.0,0.2580593058323015,0,0.3909635756145364,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.78)
+- **Temperature 2m z** (importance: 1.71)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_53.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.5019
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5501.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4750.
+- **Surface pressure z** (value: -0.26)  contributed to the score with a SHAP value of 0.3905.
+- **Temperature 2m z** (value: 0.67)  contributed to the score with a SHAP value of 0.3781.
+- **Wind r** (value: 0.86)  contributed to the score with a SHAP value of -0.2919.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_53.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_220000.png
+2025-06-02 23:00:00,15.6,1012.1,0.0,18.0,0.0,18.0,0.4147950733736065,-0.3430428591391614,0.9420599645416352,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,23,6,-0.2588190451025215,0.965925826289068,1.2246467991473532e-16,-1.0,0.25516970236992315,0,0.352187347306355,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.80)
+- **Temperature 2m z** (importance: 1.69)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_54.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.3907
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5272.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4827.
+- **Surface pressure z** (value: -0.34)  contributed to the score with a SHAP value of 0.4151.
+- **Wind r** (value: 0.94)  contributed to the score with a SHAP value of -0.3724.
+- **Temperature 2m z** (value: 0.41)  contributed to the score with a SHAP value of 0.3381.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_54.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250602_230000.png
+2025-06-03 00:00:00,14.5,1011.2,0.0,16.9,0.0,17.766666666666666,0.1819194101483309,-0.4679399108990036,0.912017049954886,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,0,6,0.0,1.0,1.2246467991473532e-16,-1.0,0.26187866810411853,0,0.314231165673148,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.81)
+- **Temperature 2m z** (importance: 1.70)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_55.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.6501
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5472.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4863.
+- **Temperature 2m z** (value: 0.18)  contributed to the score with a SHAP value of 0.4771.
+- **Surface pressure z** (value: -0.47)  contributed to the score with a SHAP value of 0.4169.
+- **Wind r** (value: 0.91)  contributed to the score with a SHAP value of -0.2774.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_55.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_000000.png
+2025-06-03 01:00:00,13.5,1010.3,0.0,16.6,0.0,17.166666666666668,-0.0297857382382832,-0.5928369626588615,0.8347638410175312,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,1,6,0.2588190451025207,0.9659258262890684,1.2246467991473532e-16,-1.0,0.2632209970832435,0,0.3778029650643736,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.84)
+- **Temperature 2m z** (importance: 1.69)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_56.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.7026
+
+Key features contributing to the score:
+- **Temperature 2m z** (value: -0.03)  contributed to the score with a SHAP value of 0.5608.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5453.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4852.
+- **Surface pressure z** (value: -0.59)  contributed to the score with a SHAP value of 0.3197.
+- **Wind r** (value: 0.83)  contributed to the score with a SHAP value of -0.2084.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_56.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_010000.png
+2025-06-03 02:00:00,12.9,1009.3,0.0,16.9,0.0,16.8,-0.1568088272702516,-0.7316114646142451,0.7875535466669252,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,2,6,0.4999999999999999,0.8660254037844387,1.2246467991473532e-16,-1.0,0.2607790351770299,0,0.434238654098706,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.89)
+- **Temperature 2m z** (importance: 1.66)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_57.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.6073
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5280.
+- **Temperature 2m z** (value: -0.16)  contributed to the score with a SHAP value of 0.5065.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4592.
+- **Surface pressure z** (value: -0.73)  contributed to the score with a SHAP value of 0.1843.
+- **Wind r** (value: 0.79)  contributed to the score with a SHAP value of -0.0708.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_57.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_020000.png
+2025-06-03 03:00:00,12.6,1008.2,0.0,17.3,0.0,16.933333333333334,-0.220320371786236,-0.8842634167651545,0.8047209264307819,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,3,6,0.7071067811865476,0.7071067811865476,1.2246467991473532e-16,-1.0,0.25490865993285594,0,0.476183514884703,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.86)
+- **Temperature 2m z** (importance: 1.72)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_58.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.3807
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5170.
+- **Temperature 2m z** (value: -0.22)  contributed to the score with a SHAP value of 0.4859.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4572.
+- **Wind r** (value: 0.80)  contributed to the score with a SHAP value of -0.1276.
+- **Surface pressure z** (value: -0.88)  contributed to the score with a SHAP value of 0.0482.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_58.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_030000.png
+2025-06-03 04:00:00,12.5,1007.2,0.0,18.4,0.0,17.53333333333333,-0.2414908866248974,-1.023037918720538,0.8819741353681366,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,4,6,0.8660254037844386,0.5000000000000001,1.2246467991473532e-16,-1.0,0.24677659200884605,0,0.510961162887429,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.74)
+- **Temperature 2m z** (importance: 1.72)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_59.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 1.0724
+
+Key features contributing to the score:
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.5110.
+- **Temperature 2m z** (value: -0.24)  contributed to the score with a SHAP value of 0.4708.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4540.
+- **Wind r** (value: 0.88)  contributed to the score with a SHAP value of -0.3261.
+- **Surface pressure z** (value: -1.02)  contributed to the score with a SHAP value of -0.0374.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_59.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_040000.png
+2025-06-03 05:00:00,12.6,1006.3,0.0,19.8,0.0,18.5,-0.220320371786236,-1.147934970480396,1.0064376386560978,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,5,6,0.9659258262890684,0.2588190451025207,1.2246467991473532e-16,-1.0,0.23744861895406888,0,0.5325946479956533,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.68)
+- **Temperature 2m z** (importance: 1.67)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_60.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 0.7265
+
+Key features contributing to the score:
+- **Temperature 2m z** (value: -0.22)  contributed to the score with a SHAP value of 0.5290.
+- **Wind r** (value: 1.01)  contributed to the score with a SHAP value of -0.5017.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4750.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4690.
+- **Surface pressure z** (value: -1.15)  contributed to the score with a SHAP value of -0.2447.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_60.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_050000.png
+2025-06-03 06:00:00,12.9,1005.6,0.0,21.6,0.0,19.933333333333334,-0.1568088272702516,-1.2450771218491552,1.1909869711175571,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,6,6,1.0,6.123233995736766e-17,1.2246467991473532e-16,-1.0,0.229909804078394,0,0.542102188765104,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.66)
+- **Wind r** (importance: 1.58)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_61.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: 0.4528
+
+Key features contributing to the score:
+- **Wind r** (value: 1.19)  contributed to the score with a SHAP value of -0.7284.
+- **Temperature 2m z** (value: -0.16)  contributed to the score with a SHAP value of 0.5319.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4880.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4430.
+- **Surface pressure z** (value: -1.25)  contributed to the score with a SHAP value of -0.2818.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_61.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_060000.png
+2025-06-03 07:00:00,13.2,1004.8,0.0,23.0,0.0,21.46666666666667,-0.0932972827542676,-1.3560967234134715,1.388411838401909,0.0,0.0,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,7,6,0.9659258262890684,-0.2588190451025206,1.2246467991473532e-16,-1.0,0.21329201335139464,0,0.6034317100936153,0,0.0330438584870278,0.6425,Normal,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Temperature 2m z** (importance: 1.64)
+- **Wind r** (importance: 1.59)
+
+What happened?
+The sample shows normal behavior with no flagged anomalies.
+
+Why did it happen?
+The features fell within expected ranges based on training data.
+
+What can we do about it?
+No immediate action is required.
+
+✅ This sample was classified as **Normal**, meaning the model found no significant deviations in the data.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_62.png,"✅ **Normal**: No significant deviations found.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -0.1333
+
+Key features contributing to the score:
+- **Wind r** (value: 1.39)  contributed to the score with a SHAP value of -1.0537.
+- **Temperature 2m z** (value: -0.09)  contributed to the score with a SHAP value of 0.5572.
+- **Surface pressure z** (value: -1.36)  contributed to the score with a SHAP value of -0.5343.
+- **Precip z 12h** (value: 0.00)  contributed to the score with a SHAP value of 0.4653.
+- **Precip z 24h** (value: 0.00)  contributed to the score with a SHAP value of 0.4323.
+
+Interpretation:
+The feature contributions balance out, resulting in a score close to the baseline, consistent with normal behavior.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_62.png,"🔍 **Anomaly Severity**: No concern
+
+✅ No anomalies were detected in this sample. Model predictions were consistent with expected weather patterns.
+No action is required for this time window.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_070000.png
+2025-06-03 08:00:00,13.4,1004.0,0.2,24.5,0.1823215567939546,23.03333333333333,-0.0509562530769445,-1.467116324977772,1.5901285506272245,182321.55679395463,182321.55679395463,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,8,6,0.8660254037844387,-0.4999999999999998,1.2246467991473532e-16,-1.0,-0.02027517601144546,1,0.6810051970504034,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.19)
+- **Precip z 12h** (importance: 1.17)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_63.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -6.5766
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 182321.56) significantly contributed to the score with a SHAP value of -3.0467.
+- **Precip z 12h** (value: 182321.56) significantly contributed to the score with a SHAP value of -2.5452.
+- **Wind r** (value: 1.59)  contributed to the score with a SHAP value of -0.8639.
+- **Surface pressure z** (value: -1.47)  contributed to the score with a SHAP value of -0.4346.
+- **Temperature 2m z** (value: -0.05)  contributed to the score with a SHAP value of 0.3137.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_63.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_080000.png
+2025-06-03 09:00:00,13.5,1003.2,0.2,25.6,0.1823215567939546,24.366666666666664,-0.0297857382382832,-1.578135926542073,1.761802348265791,182321.55679395463,182321.55679395463,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,9,6,0.7071067811865476,-0.7071067811865475,1.2246467991473532e-16,-1.0,-0.03682509049567051,1,0.7199308817532906,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.16)
+- **Precip z 12h** (importance: 1.13)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_64.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -6.9421
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 182321.56) significantly contributed to the score with a SHAP value of -2.9861.
+- **Precip z 12h** (value: 182321.56)  contributed to the score with a SHAP value of -2.5158.
+- **Wind r** (value: 1.76)  contributed to the score with a SHAP value of -1.2125.
+- **Surface pressure z** (value: -1.58)  contributed to the score with a SHAP value of -0.5336.
+- **Temperature 2m z** (value: -0.03)  contributed to the score with a SHAP value of 0.3059.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_64.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_090000.png
+2025-06-03 10:00:00,13.9,1002.5,0.2,26.3,0.1823215567939546,25.46666666666667,0.0548963211163625,-1.6752780779108476,1.9034332313176088,182321.55679395463,182321.55679395463,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,10,6,0.4999999999999999,-0.8660254037844387,1.2246467991473532e-16,-1.0,-0.03792298105478498,1,0.7315803802488745,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.18)
+- **Precip z 12h** (importance: 1.13)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_65.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -6.9661
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 182321.56) significantly contributed to the score with a SHAP value of -2.8974.
+- **Precip z 12h** (value: 182321.56)  contributed to the score with a SHAP value of -2.4322.
+- **Wind r** (value: 1.90)  contributed to the score with a SHAP value of -1.3913.
+- **Surface pressure z** (value: -1.68)  contributed to the score with a SHAP value of -0.5598.
+- **Temperature 2m z** (value: 0.05)  contributed to the score with a SHAP value of 0.3146.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_65.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_100000.png
+2025-06-03 11:00:00,14.5,1001.9,0.1,27.0,0.0953101798043248,26.3,0.1819194101483309,-1.7585427790840809,2.0107293548417133,95310.17980432489,95310.17980432489,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,11,6,0.258819045102521,-0.9659258262890682,1.2246467991473532e-16,-1.0,-0.0463477301394003,1,0.7141174383051411,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.19)
+- **Precip z 24h** (importance: 1.11)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_66.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -7.1484
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 95310.18) significantly contributed to the score with a SHAP value of -2.7707.
+- **Precip z 12h** (value: 95310.18)  contributed to the score with a SHAP value of -2.3849.
+- **Wind r** (value: 2.01)  contributed to the score with a SHAP value of -1.6216.
+- **Surface pressure z** (value: -1.76)  contributed to the score with a SHAP value of -0.6278.
+- **Temperature 2m z** (value: 0.18)  contributed to the score with a SHAP value of 0.2565.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_66.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_110000.png
+2025-06-03 12:00:00,15.3,1001.4,0.1,27.4,0.0953101798043248,26.9,0.3512835288576224,-1.827930030061773,2.087982563779068,95310.17980432489,95310.17980432489,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,12,6,1.2246467991473532e-16,-1.0,1.2246467991473532e-16,-1.0,-0.05382606653597388,1,0.7095973307348254,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.16)
+- **Precip z 12h** (importance: 1.08)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_67.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -7.3084
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 95310.18) significantly contributed to the score with a SHAP value of -2.7582.
+- **Precip z 12h** (value: 95310.18)  contributed to the score with a SHAP value of -2.3773.
+- **Wind r** (value: 2.09)  contributed to the score with a SHAP value of -1.6853.
+- **Surface pressure z** (value: -1.83)  contributed to the score with a SHAP value of -0.7384.
+- **Temperature 2m z** (value: 0.35)  contributed to the score with a SHAP value of 0.2507.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_67.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_120000.png
+2025-06-03 13:00:00,16.1,1001.0,0.1,27.0,0.0953101798043248,27.133333333333336,0.520647647566914,-1.883439830843923,2.118025478365817,95310.17980432489,95310.17980432489,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,13,6,-0.2588190451025208,-0.9659258262890684,1.2246467991473532e-16,-1.0,-0.055806065217434364,1,0.757791132889809,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.16)
+- **Precip z 12h** (importance: 1.08)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_68.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -7.3505
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 95310.18) significantly contributed to the score with a SHAP value of -2.7034.
+- **Precip z 12h** (value: 95310.18)  contributed to the score with a SHAP value of -2.3619.
+- **Wind r** (value: 2.12)  contributed to the score with a SHAP value of -1.6862.
+- **Surface pressure z** (value: -1.88)  contributed to the score with a SHAP value of -0.7953.
+- **Temperature 2m z** (value: 0.52)  contributed to the score with a SHAP value of 0.1963.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_68.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_130000.png
+2025-06-03 14:00:00,16.9,1000.9,0.9,25.6,0.6418538861723948,26.666666666666668,0.6900117662762046,-1.8973172810394645,2.057939649192319,641853.8861723949,641853.8861723949,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,14,6,-0.4999999999999997,-0.8660254037844388,1.2246467991473532e-16,-1.0,-0.05769369875649866,1,0.8427204770420906,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.15)
+- **Precip z 12h** (importance: 1.13)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_69.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -7.3905
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 641853.89) significantly contributed to the score with a SHAP value of -2.6227.
+- **Precip z 12h** (value: 641853.89)  contributed to the score with a SHAP value of -2.4493.
+- **Wind r** (value: 2.06)  contributed to the score with a SHAP value of -1.6340.
+- **Surface pressure z** (value: -1.90)  contributed to the score with a SHAP value of -0.7907.
+- **Temperature 2m z** (value: 0.69)  contributed to the score with a SHAP value of 0.1062.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_69.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_140000.png
+2025-06-03 15:00:00,17.7,1000.9,0.9,23.4,0.6418538861723948,25.33333333333333,0.8593758849854961,-1.8973172810394645,1.8862658515537525,641853.8861723949,641853.8861723949,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,15,6,-0.7071067811865471,-0.7071067811865479,1.2246467991473532e-16,-1.0,-0.05363200741962382,1,0.8325184364955205,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.16)
+- **Precip z 12h** (importance: 1.11)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_70.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -7.3043
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 641853.89) significantly contributed to the score with a SHAP value of -2.7424.
+- **Precip z 12h** (value: 641853.89)  contributed to the score with a SHAP value of -2.4328.
+- **Wind r** (value: 1.89)  contributed to the score with a SHAP value of -1.3695.
+- **Surface pressure z** (value: -1.90)  contributed to the score with a SHAP value of -0.8038.
+- **Temperature 2m z** (value: 0.86)  contributed to the score with a SHAP value of 0.0442.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_70.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_150000.png
+2025-06-03 16:00:00,18.4,1000.8,0.9,22.0,0.6418538861723948,23.666666666666668,1.007569488856126,-1.9111947312350064,1.671673604505544,641853.8861723949,641853.8861723949,10.0,26.25,4.1,27.1,1000.1600750316976,1028.9838138571915,16,6,-0.8660254037844385,-0.5000000000000004,1.2246467991473532e-16,-1.0,-0.04680090225835687,1,0.8225135013035132,1,0.0330438584870278,0.6425,Compound anomaly,"🧠 Tree Path Analysis shows these top features influenced the model's decision:
+- **Wind r** (importance: 1.20)
+- **Precip z 24h** (importance: 1.08)
+
+What happened?
+The sample exhibits multiple unusual characteristics detected by both models.
+
+Why did it happen?
+The combined flags indicate consistent unusual activity across different feature subsets.
+
+What can we do about it?
+Consider prioritizing this sample for further investigation or mitigation.
+
+🔺 This sample was flagged as a **Compound Anomaly**, meaning both sub-models detected unusual patterns. This may suggest a more credible anomaly, but should still be reviewed in context.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/tpa_sample_71.png,"🔺 **Compound Anomaly**: Both sub-models detected unusual patterns.
+
+🧠 SHAP Explanation:
+Model baseline (average expected score): 12.6954
+Sample score deviation: -7.1581
+
+Key features contributing to the score:
+- **Precip z 24h** (value: 641853.89) significantly contributed to the score with a SHAP value of -2.8560.
+- **Precip z 12h** (value: 641853.89)  contributed to the score with a SHAP value of -2.4533.
+- **Wind r** (value: 1.67)  contributed to the score with a SHAP value of -1.0168.
+- **Surface pressure z** (value: -1.91)  contributed to the score with a SHAP value of -0.8166.
+- **Temperature 2m z** (value: 1.01)  contributed to the score with a SHAP value of -0.0155.
+
+Interpretation:
+This sample's features caused a notable deviation from the expected baseline. The combined flags across models suggest robust evidence of an anomaly.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/treeshap_sample_71.png,"🔍 **Anomaly Severity**: Potential weather anomaly (multiple detection methods agree)
+
+⚠️ The model flagged this sample as **anomalous** based on unusual reconstruction behavior.
+
+📌 **What this means:**
+This time window exhibited deviations from typical weather patterns, which may indicate unexpected events or data irregularities.
+
+🛠️ **Recommended action:** Consider reviewing operational context (e.g., weather warnings, sudden shifts in conditions) for this period.",/content/drive/MyDrive/Data Science Group Project/Current_Version_XAI_Outputs/Plots/rea_plot_20250603_160000.png
